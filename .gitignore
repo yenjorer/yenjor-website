@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Large binary files (keep images)
+*.psd
+*.ai
+*.sketch
+
+# Base64 text files
+*_base64.txt
+
+# Temporary files
+*.tmp
+*.temp

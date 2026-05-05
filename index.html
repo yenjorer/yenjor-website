@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yenjor Co., Ltd. - Premium Button & Garment Accessories Manufacturer</title>
+    <meta name="description" content="Yenjor Co., Ltd. is a leading manufacturer of high-quality buttons, snaps, rivets and garment accessories with 20+ years of experience. OEKO-TEX certified supplier.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#4a4a4a',
+                        accent: '#c9a227',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-slide-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+        
+        /* Animation delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Hero gradient */
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        }
+        
+        /* Product card hover */
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .product-overlay {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        /* Counter animation */
+        .counter {
+            display: inline-block;
+        }
+        
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Button styles */
+        .btn-primary {
+            background: #1a1a1a;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #c9a227;
+            transform: translateY(-2px);
+        }
+        
+        /* Partner logos */
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Form inputs */
+        .form-input {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .form-input:focus {
+            border-color: #c9a227;
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+        }
+        
+        /* Process step connector */
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: calc(50% + 50px);
+            width: calc(100% - 100px);
+            height: 2px;
+            background: linear-gradient(90deg, #c9a227 0%, #e5e7eb 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Certification badge */
+        .certification-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .certification-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Stat counter */
+        .stat-item {
+            position: relative;
+        }
+        
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-item:last-child::after {
+            display: none;
+        }
+        
+        /* Section divider */
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a227 0%, #1a1a1a 100%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img src="images/logo-new.png" alt="Yenjor Logo" class="h-12 w-auto">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-accent font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-accent font-medium transition-colors">About</a>
+                    <a href="#products" class="text-gray-700 hover:text-accent font-medium transition-colors">Products</a>
+                    <a href="#why-us" class="text-gray-700 hover:text-accent font-medium transition-colors">Why Us</a>
+                    <a href="#process" class="text-gray-700 hover:text-accent font-medium transition-colors">Process</a>
+                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full font-medium">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl lg:hidden z-50">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-primary">Menu</span>
+                    <button id="close-menu" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-times text-2xl text-gray-700"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
+                    <a href="#about" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">About</a>
+                    <a href="#products" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Products</a>
+                    <a href="#why-us" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Why Us</a>
+                    <a href="#process" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Process</a>
+                    <a href="#contact" class="mobile-link btn-primary py-3 px-4 text-lg font-medium text-white rounded-lg text-center mt-4">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <span class="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6 animate-fade-in-up">
+                        Premium Button Manufacturer Since 2003
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up delay-100">
+                        Create. Enhance.<br>
+                        <span class="text-accent">Sustain.</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-xl animate-fade-in-up delay-200">
+                        Premium quality buttons and garment accessories crafted with precision. 
+                        20+ years of expertise serving global fashion brands with excellence.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300">
+                        <a href="#products" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center justify-center gap-2">
+                            <span>Explore Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="px-8 py-4 rounded-full font-semibold text-lg border-2 border-white text-white hover:bg-white hover:text-primary transition-all inline-flex items-center justify-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>Get Quote</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative animate-fade-in delay-400">
+                    <!-- [替换为：Hero主图 - 展示按钮产品陈列或工厂生产场景] -->
+                    <img src="images/factory.jpg" 
+                         alt="Yenjor Button Products" 
+                         class="rounded-2xl shadow-2xl w-full"
+                         style="aspect-ratio: 6/5;">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-accent text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-primary">20+</p>
+                                <p class="text-gray-500 text-sm">Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-primary py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="stat-item px-4">
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">20+</p>
+                    <p class="text-gray-400 text-sm md:text-base">Years Experience</p>
+                </div>
+                <div class="stat-item px-4">
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">50+</p>
+                    <p class="text-gray-400 text-sm md:text-base">Countries Served</p>
+                </div>
+                <div class="stat-item px-4">
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">500+</p>
+                    <p class="text-gray-400 text-sm md:text-base">Happy Clients</p>
+                </div>
+                <div class="stat-item px-4">
+                    <p class="text-4xl md:text-5xl font-bold text-accent mb-2">1000+</p>
+                    <p class="text-gray-400 text-sm md:text-base">Products Range</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <!-- [替换为：About主图 - 工厂车间或产品展示图] -->
+                    <img src="images/factory.jpg" 
+                         alt="Yenjor Factory" 
+                         class="rounded-2xl shadow-xl w-full"
+                         style="aspect-ratio: 6/5;">
+                    <div class="absolute -bottom-8 -right-8 bg-accent text-white p-8 rounded-2xl shadow-xl hidden md:block">
+                        <p class="text-5xl font-bold">3000</p>
+                        <p class="text-sm opacity-90">Square Meters Factory</p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                        ABOUT YENJOR
+                    </span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+                        We Are The Leading Button Manufacturer in The World.
+                    </h2>
+                    <div class="section-divider mb-8"></div>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        <strong>Yenjor Co., Ltd.</strong> was established in 2003 and currently covers an area of 3000 square meters 
+                        with over 100 employees. Located in the center of the Yangtze River Delta urban agglomeration of 
+                        Shanghai, Hangzhou, Suzhou, and Ningbo, with convenient transportation and superior location.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        The main production and development of clothing accessories include metal button, resin button, 
+                        natural material button, snap button, jeans button, rivets, pants hooks, adjustable button, 
+                        prong snap button, Eyelet, and so on. It has automated die-casting workshops, rolling plating 
+                        workshops, hanging plating workshops, painting workshops, packaging finished product workshops, 
+                        and so on.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">OEM/ODM Service</h4>
+                                <p class="text-gray-500 text-sm">Custom design available</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">OEKO-TEX Certified</h4>
+                                <p class="text-gray-500 text-sm">Eco-friendly production</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Global Shipping</h4>
+                                <p class="text-gray-500 text-sm">Worldwide delivery</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Quality Assurance</h4>
+                                <p class="text-gray-500 text-sm">Strict QC process</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    OUR PRODUCTS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Premium Button Collection
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Discover our extensive range of high-quality buttons and garment accessories, 
+                    designed to meet the diverse needs of the fashion industry.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Wooden Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Wooden Button产品图 - 木质纽扣特写] -->
+                        <img src="images/shell-button.jpg" 
+                             alt="Wooden Button" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">
+                            Hot
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Wooden Button</h3>
+                        <p class="text-gray-500 text-sm mb-4">Natural wood buttons with various finishes and sizes</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Snap Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Snap Button产品图 - 四合扣特写] -->
+                        <img src="images/metal-button.jpg" 
+                             alt="Snap Button" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Snap Button</h3>
+                        <p class="text-gray-500 text-sm mb-4">Premium snap buttons for garments and accessories</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shell Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Shell Button产品图 - 贝壳纽扣特写] -->
+                        <img src="images/rivet.jpg" 
+                             alt="Shell Button" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                            New
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Shell Button</h3>
+                        <p class="text-gray-500 text-sm mb-4">Elegant shell buttons with natural luster</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resin Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Resin Button产品图 - 树脂纽扣特写] -->
+                        <img src="images/horn-button.jpg" 
+                             alt="Resin Button" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Resin Button</h3>
+                        <p class="text-gray-500 text-sm mb-4">Versatile resin buttons in various colors</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jeans Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Jeans Button产品图 - 牛仔裤纽扣/铆钉特写] -->
+                        <img src="images/metal-buckle.jpg" 
+                             alt="Jeans Button" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Jeans Button</h3>
+                        <p class="text-gray-500 text-sm mb-4">Durable jeans buttons and rivets</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rivet -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Rivet产品图 - 金属铆钉特写] -->
+                        <img src="images/eyelet.jpg" 
+                             alt="Rivet" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Rivet</h3>
+                        <p class="text-gray-500 text-sm mb-4">Metal rivets for denim and leather</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eyelet -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Eyelet产品图 - 鸡眼扣/气眼特写] -->
+                        <img src="images/wooden-button.jpg" 
+                             alt="Eyelet" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Eyelet</h3>
+                        <p class="text-gray-500 text-sm mb-4">Metal eyelets for footwear and garments</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metal Buckle -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                    <div class="relative overflow-hidden">
+                        <!-- [替换为：Metal Buckle产品图 - 金属扣特写] -->
+                        <img src="images/resin-button.jpg" 
+                             alt="Metal Buckle" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">
+                            Premium
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Metal Buckle</h3>
+                        <p class="text-gray-500 text-sm mb-4">Heavy-duty metal buckles for belts</p>
+                        <div class="flex items-center text-accent">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                    <span>View All Products</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    WHY CHOOSE US
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Real People. Real Work. Real Rewards.
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Partner with Yenjor for unmatched quality, competitive pricing, and exceptional service.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
+                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-gem text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Premium Quality</h3>
+                    <p class="text-gray-600">
+                        Bibendum placerat massa enim eget diam conubia ac metus posuere tempor letius. 
+                        Our strict QC ensures every button meets international standards.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
+                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Advanced Technology</h3>
+                    <p class="text-gray-600">
+                        State-of-the-art manufacturing equipment and automated production lines 
+                        for consistent quality and efficiency.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
+                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-truck text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Fast Delivery</h3>
+                    <p class="text-gray-600">
+                        Efficient logistics network ensuring timely delivery worldwide. 
+                        Sample in 7 days, bulk order in 15-30 days.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
+                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Custom Design</h3>
+                    <p class="text-gray-600">
+                        OEM/ODM services available. We can create custom buttons based on your 
+                        specifications and design requirements.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
+                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Eco-Friendly</h3>
+                    <p class="text-gray-600">
+                        OEKO-TEX certified production. We use sustainable materials and 
+                        environmentally responsible manufacturing processes.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
+                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">24/7 Support</h3>
+                    <p class="text-gray-600">
+                        Dedicated customer service team ready to assist you. Multi-language 
+                        support for global clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    OUR PROCESS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    How We Work Together
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    A streamlined process designed to deliver your products efficiently and on time.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-step relative text-center reveal">
+                    <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Consultation</h3>
+                    <p class="text-gray-600">
+                        Share your requirements. We'll analyze your needs and provide professional suggestions.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Quotation & Contract</h3>
+                    <p class="text-gray-600">
+                        Receive detailed quotation. Confirm pricing and terms, sign the contract.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Production</h3>
+                    <p class="text-gray-600">
+                        Sample approval followed by bulk production with strict quality control.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Delivery</h3>
+                    <p class="text-gray-600">
+                        Quality inspection, secure packaging, and worldwide shipping to your doorstep.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    OUR CLIENTS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Trusted by Global Fashion Brands
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    We are proud to collaborate with world-renowned clothing brands who trust our quality and service.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+                <!-- [替换为：品牌Logo图片] -->
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 1" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 2" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 3" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 4" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 5" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 6" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 7" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
+                    <img src="images/banner.jpg" alt="Partner Brand 8" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 text-sm mt-8 reveal">
+                <i class="fas fa-info-circle mr-2"></i>
+                Partner logos should be replaced with actual brand logos before deployment
+            </p>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    CERTIFICATIONS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Quality You Can Trust
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Our commitment to quality is backed by international certifications.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 reveal">
+                <!-- [替换为：认证证书图片] -->
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
+                    <img src="images/banner.jpg" alt="OEKO-TEX" class="max-h-16 object-contain mb-2">
+                    <span class="text-xs text-gray-500 font-medium">OEKO-TEX</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
+                    <img src="images/banner.jpg" alt="ISO 9001" class="max-h-16 object-contain mb-2">
+                    <span class="text-xs text-gray-500 font-medium">ISO 9001</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
+                    <img src="images/banner.jpg" alt="ISO 14001" class="max-h-16 object-contain mb-2">
+                    <span class="text-xs text-gray-500 font-medium">ISO 14001</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
+                    <img src="images/banner.jpg" alt="SGS" class="max-h-16 object-contain mb-2">
+                    <span class="text-xs text-gray-500 font-medium">SGS</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
+                    <img src="images/banner.jpg" alt="CE" class="max-h-16 object-contain mb-2">
+                    <span class="text-xs text-gray-500 font-medium">CE</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
+                    <img src="images/banner.jpg" alt="BSCI" class="max-h-16 object-contain mb-2">
+                    <span class="text-xs text-gray-500 font-medium">BSCI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-32 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <span class="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-4">
+                        CONTACT US
+                    </span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                        Let's Start Your Project
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8">
+                        Ready to discuss your button and garment accessory needs? 
+                        Get in touch with our team for a free consultation and quotation.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-building text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Company</h4>
+                                <!-- [可替换为公司地址] -->
+                                <p class="text-gray-400">Yenjor Co., Ltd.</p>
+                                <p class="text-gray-400 text-sm">Premium Button Manufacturer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Address</h4>
+                                <!-- [可替换为实际地址] -->
+                                <p class="text-gray-400">Jiashan County, Jiaxing City</p>
+                                <p class="text-gray-400">Zhejiang Province, China</p>
+                                <p class="text-gray-400 text-sm">(Near Shanghai, Hangzhou, Suzhou, Ningbo)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <!-- [可替换为实际邮箱] -->
+                                <p class="text-gray-400">sales@yenjor.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone / WhatsApp</h4>
+                                <!-- [可替换为实际电话] -->
+                                <p class="text-gray-400"><a href="https://wa.me/8615257397811" target="_blank" class="text-accent hover:text-white transition-colors font-medium">+86 152-XXX-7811  <i class="fab fa-whatsapp ml-1"></i> (Click to WhatsApp)</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Working Hours</h4>
+                                <p class="text-gray-400">Mon - Sat: 8:00 AM - 6:00 PM (GMT+8)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 lg:p-10 text-gray-800 reveal">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                                <input type="text" name="name" required 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" 
+                                       placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                                <input type="text" name="company" 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" 
+                                       placeholder="Your Company Name">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                <input type="email" name="email" required 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" 
+                                       placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone / WhatsApp</label>
+                                <input type="tel" name="phone" 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" 
+                                       placeholder="+1 234 567 890">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Product Interest *</label>
+                            <select name="product" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                                <option value="">Select a product category</option>
+                                <option value="wooden-button">Wooden Button</option>
+                                <option value="snap-button">Snap Button</option>
+                                <option value="shell-button">Shell Button</option>
+                                <option value="resin-button">Resin Button</option>
+                                <option value="jeans-button">Jeans Button</option>
+                                <option value="rivet">Rivet</option>
+                                <option value="eyelet">Eyelet</option>
+                                <option value="metal-buckle">Metal Buckle</option>
+                                <option value="other">Other / Custom</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea name="message" rows="4" required 
+                                      class="form-input w-full px-4 py-3 rounded-lg focus:outline-none resize-none" 
+                                      placeholder="Please describe your requirements, estimated quantity, target price, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full btn-primary py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2">
+                            <span>Send Inquiry</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <p class="text-center text-gray-500 text-sm mt-6">
+                        <i class="fas fa-lock mr-1"></i>
+                        Your information is secure and will never be shared.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                            <img src="images/logo-new.png" alt="Yenjor" class="h-8 w-auto">
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold text-white tracking-tight">Yenjor</span>
+                            <span class="block text-xs text-gray-500 tracking-widest">CO., LTD.</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 mb-6">
+                        Leading manufacturer of premium buttons and garment accessories since 2003. 
+                        Quality, innovation, and reliability.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-youtube text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-500 hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-500 hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Products</a></li>
+                        <li><a href="#why-us" class="text-gray-500 hover:text-accent transition-colors">Why Choose Us</a></li>
+                        <li><a href="#contact" class="text-gray-500 hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Wooden Button</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Snap Button</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Shell Button</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Resin Button</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Jeans Button</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Metal Products</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <!-- [可替换为实际联系信息] -->
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                            <span>Jiashan, Zhejiang, China</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope text-accent mt-1"></i>
+                            <span>sales@yenjor.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-phone text-accent mt-1"></i>
+                            <span></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-clock text-accent mt-1"></i>
+                            <span>Mon-Sat: 8:00-18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-500 text-sm text-center md:text-left">
+                        © 2024 Yenjor Co., Ltd. All rights reserved.
+                    </p>
+                    <div class="flex gap-6 text-sm">
+                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-accent text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all hover:bg-primary z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let counted = false;
+
+        const animateCounters = () => {
+            if (counted) return;
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+            
+            counted = true;
+        };
+
+        // Form Submission (Demo)
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i> Sent Successfully!';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.classList.remove('bg-green-500');
+                    btn.classList.add('bg-primary');
+                    contactForm.reset();
+                }, 3000);
+            }, 2000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
