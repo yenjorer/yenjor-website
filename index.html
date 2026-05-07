@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yenjor Co., Ltd. - Premium Button & Garment Accessories Manufacturer</title>
-    <meta name="description" content="Yenjor Co., Ltd. is a leading manufacturer of high-quality buttons, snaps, rivets and garment accessories with 20+ years of experience. OEKO-TEX certified supplier.">
+    <title>Yenjor Co., Ltd. - Premium Button & Garment Accessories Manufacturer | OEKO-TEX & GRS Certified</title>
+    <meta name="description" content="Yenjor Co., Ltd. is a leading manufacturer of eco-friendly buttons and garment accessories with 20+ years of experience. OEKO-TEX Standard 100 & GRS certified supplier. Specializing in metal buttons, resin buttons for garment factories and brands worldwide.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
                         primary: '#1a1a1a',
                         secondary: '#4a4a4a',
                         accent: '#c9a227',
+                        eco: '#2d7d46',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -258,6 +259,45 @@
             height: 3px;
             background: linear-gradient(90deg, #c9a227 0%, #1a1a1a 100%);
         }
+        
+        /* Eco badge */
+        .eco-badge {
+            background: linear-gradient(135deg, #2d7d46 0%, #4ade80 100%);
+        }
+        
+        /* Feature highlight */
+        .feature-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Testimonial card */
+        .testimonial-card {
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 80px;
+            color: #c9a227;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        /* Market tag */
+        .market-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
@@ -266,8 +306,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <a href="#" class="flex items-center">
-                    <img src="images/logo-new.png" alt="Yenjor Logo" class="h-12 w-auto">
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="images/logo-new-inverted.png" alt="Yenjor Logo" class="h-12 w-auto object-contain">
+                    <div>
+                        <span class="text-xl font-bold text-gray-900 tracking-tight">YENJOR</span>
+                        <span class="block text-xs text-gray-400 tracking-widest -mt-1">CO., LTD.</span>
+                    </div>
                 </a>
                 
                 <!-- Desktop Navigation -->
@@ -275,8 +319,8 @@
                     <a href="#home" class="text-gray-700 hover:text-accent font-medium transition-colors">Home</a>
                     <a href="#about" class="text-gray-700 hover:text-accent font-medium transition-colors">About</a>
                     <a href="#products" class="text-gray-700 hover:text-accent font-medium transition-colors">Products</a>
+                    <a href="#certifications" class="text-gray-700 hover:text-accent font-medium transition-colors">Certifications</a>
                     <a href="#why-us" class="text-gray-700 hover:text-accent font-medium transition-colors">Why Us</a>
-                    <a href="#process" class="text-gray-700 hover:text-accent font-medium transition-colors">Process</a>
                     <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full font-medium">Contact Us</a>
                 </div>
                 
@@ -300,8 +344,8 @@
                     <a href="#home" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
                     <a href="#about" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">About</a>
                     <a href="#products" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Products</a>
+                    <a href="#certifications" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Certifications</a>
                     <a href="#why-us" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Why Us</a>
-                    <a href="#process" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Process</a>
                     <a href="#contact" class="mobile-link btn-primary py-3 px-4 text-lg font-medium text-white rounded-lg text-center mt-4">Contact Us</a>
                 </div>
             </div>
@@ -313,17 +357,39 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
-                    <span class="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6 animate-fade-in-up">
-                        Premium Button Manufacturer Since 2003
-                    </span>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-6 animate-fade-in-up">
+                        <span class="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium">
+                            <i class="fas fa-leaf mr-1"></i> GRS Certified
+                        </span>
+                        <span class="inline-block px-4 py-2 bg-eco/20 text-eco rounded-full text-sm font-medium">
+                            <i class="fas fa-recycle mr-1"></i> Eco-Friendly
+                        </span>
+                        <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium">
+                            <i class="fas fa-globe mr-1"></i> Global Shipping
+                        </span>
+                    </div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up delay-100">
-                        Create. Enhance.<br>
-                        <span class="text-accent">Sustain.</span>
+                        Premium Buttons for<br>
+                        <span class="text-accent">Sustainable Fashion.</span>
                     </h1>
                     <p class="text-gray-300 text-lg md:text-xl mb-8 max-w-xl animate-fade-in-up delay-200">
-                        Premium quality buttons and garment accessories crafted with precision. 
-                        20+ years of expertise serving global fashion brands with excellence.
+                        Leading manufacturer of eco-friendly metal buttons and resin buttons since 2003. 
+                        20+ years of factory expertise serving garment factories, brands, and SOHO buyers worldwide.
                     </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-8 animate-fade-in-up delay-200">
+                        <div class="flex items-center gap-2 text-gray-300">
+                            <i class="fas fa-check-circle text-eco"></i>
+                            <span class="text-sm">Free Samples Available</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300">
+                            <i class="fas fa-check-circle text-eco"></i>
+                            <span class="text-sm">Small Batch Support</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-300">
+                            <i class="fas fa-check-circle text-eco"></i>
+                            <span class="text-sm">OEM/ODM Custom</span>
+                        </div>
+                    </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300">
                         <a href="#products" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center justify-center gap-2">
                             <span>Explore Products</span>
@@ -336,7 +402,6 @@
                     </div>
                 </div>
                 <div class="relative animate-fade-in delay-400">
-                    <!-- [替换为：Hero主图 - 展示按钮产品陈列或工厂生产场景] -->
                     <img src="images/factory.jpg" 
                          alt="Yenjor Button Products" 
                          class="rounded-2xl shadow-2xl w-full"
@@ -351,6 +416,10 @@
                                 <p class="text-gray-500 text-sm">Years Experience</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-eco text-white px-4 py-2 rounded-lg shadow-xl hidden md:flex items-center gap-2">
+                        <i class="fas fa-leaf"></i>
+                        <span class="font-semibold text-sm">Eco-Certified</span>
                     </div>
                 </div>
             </div>
@@ -386,7 +455,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="relative reveal">
-                    <!-- [替换为：About主图 - 工厂车间或产品展示图] -->
                     <img src="images/factory.jpg" 
                          alt="Yenjor Factory" 
                          class="rounded-2xl shadow-xl w-full"
@@ -401,22 +469,75 @@
                         ABOUT YENJOR
                     </span>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
-                        We Are The Leading Button Manufacturer in The World.
+                        Your Trusted Partner for<br>
+                        <span class="text-accent">Premium Button Solutions</span>
                     </h2>
                     <div class="section-divider mb-8"></div>
                     <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                        <strong>Yenjor Co., Ltd.</strong> was established in 2003 and currently covers an area of 3000 square meters 
-                        with over 100 employees. Located in the center of the Yangtze River Delta urban agglomeration of 
-                        Shanghai, Hangzhou, Suzhou, and Ningbo, with convenient transportation and superior location.
+                        <strong>Yenjor Co., Ltd.</strong> was established in 2003 with 20+ years of factory experience 
+                        in the button and garment accessories industry. Our 3000 sqm production facility is located 
+                        in the Yangtze River Delta, near Shanghai, with convenient logistics access to global markets.
                     </p>
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        The main production and development of clothing accessories include metal button, resin button, 
-                        natural material button, snap button, jeans button, rivets, pants hooks, adjustable button, 
-                        prong snap button, Eyelet, and so on. It has automated die-casting workshops, rolling plating 
-                        workshops, hanging plating workshops, painting workshops, packaging finished product workshops, 
-                        and so on.
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        We specialize in <strong>metal buttons</strong>, <strong>eco-friendly resin buttons</strong>, 
+                        and sustainable garment accessories. Our products are trusted by garment factories, fashion brands, 
+                        and wholesalers in <strong>Southeast Asia</strong> (Bangladesh, Vietnam), <strong>Europe</strong>, 
+                        and <strong>America</strong>.
                     </p>
+                    
+                    <!-- Market Focus -->
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 mb-8 border border-blue-100">
+                        <h4 class="font-semibold text-primary mb-3 flex items-center gap-2">
+                            <i class="fas fa-globe-asia text-blue-500"></i>
+                            Global Market Focus
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="market-tag bg-blue-100 text-blue-700">
+                                <i class="fas fa-flag"></i> Bangladesh
+                            </span>
+                            <span class="market-tag bg-blue-100 text-blue-700">
+                                <i class="fas fa-flag"></i> Vietnam
+                            </span>
+                            <span class="market-tag bg-green-100 text-green-700">
+                                <i class="fas fa-flag"></i> Europe
+                            </span>
+                            <span class="market-tag bg-red-100 text-red-700">
+                                <i class="fas fa-flag"></i> USA
+                            </span>
+                            <span class="market-tag bg-purple-100 text-purple-700">
+                                <i class="fas fa-flag"></i> Middle East
+                            </span>
+                        </div>
+                    </div>
+                    
                     <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Small Batch Support</h4>
+                                <p class="text-gray-500 text-sm">Perfect for SOHO buyers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-eco/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-leaf text-eco text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Eco-Certified</h4>
+                                <p class="text-gray-500 text-sm">GRS & OEKO-TEX</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bolt text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Fast Sample</h4>
+                                <p class="text-gray-500 text-sm">7 days sample lead time</p>
+                            </div>
+                        </div>
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-check text-accent text-xl"></i>
@@ -424,33 +545,6 @@
                             <div>
                                 <h4 class="font-semibold text-primary">OEM/ODM Service</h4>
                                 <p class="text-gray-500 text-sm">Custom design available</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-accent text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-primary">OEKO-TEX Certified</h4>
-                                <p class="text-gray-500 text-sm">Eco-friendly production</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-accent text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-primary">Global Shipping</h4>
-                                <p class="text-gray-500 text-sm">Worldwide delivery</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-accent text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-primary">Quality Assurance</h4>
-                                <p class="text-gray-500 text-sm">Strict QC process</p>
                             </div>
                         </div>
                     </div>
@@ -463,54 +557,166 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-20 lg:py-32">
+    <!-- Featured Products Section - Main Product Lines -->
+    <section id="products" class="py-20 lg:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                    OUR PRODUCTS
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-eco/10 text-eco rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-star mr-1"></i> STAR PRODUCTS
                 </span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    Premium Button Collection
+                    Our Core Product Lines
                 </h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Discover our extensive range of high-quality buttons and garment accessories, 
-                    designed to meet the diverse needs of the fashion industry.
+                    Specialized in mid-range metal buttons and eco-friendly resin buttons, 
+                    serving garment factories and fashion brands worldwide.
+                </p>
+            </div>
+            
+            <!-- Featured Product 1: Metal Buttons -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12 mb-12 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Core Product</span>
+                            <span class="bg-eco/20 text-eco px-4 py-1 rounded-full text-sm font-semibold">GRS Available</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Mid-Range Metal Buttons
+                        </h3>
+                        <p class="text-gray-300 text-lg mb-6">
+                            Premium quality metal buttons with excellent durability and stylish finishes. 
+                            Available in zinc alloy, brass, and aluminum materials with various plating options.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white/10 rounded-lg p-4">
+                                <i class="fas fa-palette text-accent text-2xl mb-2"></i>
+                                <p class="text-white font-medium">Finishes</p>
+                                <p class="text-gray-400 text-sm">Nickel, Gold, Rose Gold, Black, Antique</p>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-4">
+                                <i class="fas fa-ruler text-accent text-2xl mb-2"></i>
+                                <p class="text-white font-medium">Sizes</p>
+                                <p class="text-gray-400 text-sm">10L-60L (Custom sizes available)</p>
+                            </div>
+                        </div>
+                        <div class="bg-eco/20 rounded-xl p-4 mb-6">
+                            <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+                                <i class="fas fa-recycle"></i> Eco-Friendly Options
+                            </h4>
+                            <p class="text-gray-300 text-sm">
+                                GRS-certified recycled metal materials available for sustainable production. 
+                                Lead-free and cadmium-free plating options compliant with EU regulations.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/metal-button.jpg" alt="Metal Buttons" class="rounded-2xl shadow-2xl w-full" style="aspect-ratio: 4/3;">
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/10">
+                    <h4 class="text-white font-semibold mb-4">Typical Applications & Target Markets:</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-gray-300 text-sm">
+                            <i class="fas fa-tshirt mr-2"></i> Denim & Casual Wear
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-gray-300 text-sm">
+                            <i class="fas fa-tshirt mr-2"></i> Jackets & Coats
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-gray-300 text-sm">
+                            <i class="fas fa-tshirt mr-2"></i> Leather Goods
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-gray-300 text-sm">
+                            <i class="fas fa-industry mr-2"></i> Garment Factories (Bangladesh, Vietnam)
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-gray-300 text-sm">
+                            <i class="fas fa-store mr-2"></i> Fashion Brands
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Product 2: Eco Resin Buttons -->
+            <div class="bg-gradient-to-r from-eco to-emerald-700 rounded-3xl p-8 lg:p-12 mb-16 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-white text-eco px-4 py-1 rounded-full text-sm font-semibold">Eco-Friendly</span>
+                            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">OEKO-TEX Certified</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Eco Resin Buttons
+                        </h3>
+                        <p class="text-white/90 text-lg mb-6">
+                            Biodegradable and sustainable resin buttons made from plant-based materials. 
+                            Perfect for eco-conscious brands and sustainable fashion lines.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white/10 rounded-lg p-4">
+                                <i class="fas fa-seedling text-white text-2xl mb-2"></i>
+                                <p class="text-white font-medium">Biodegradable</p>
+                                <p class="text-white/70 text-sm">Plant-based materials</p>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-4">
+                                <i class="fas fa-shield-alt text-white text-2xl mb-2"></i>
+                                <p class="text-white font-medium">OEKO-TEX 100</p>
+                                <p class="text-white/70 text-sm">Skin-safe certified</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4 mb-6">
+                            <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+                                <i class="fas fa-certificate"></i> Certification Benefits
+                            </h4>
+                            <ul class="text-white/80 text-sm space-y-1">
+                                <li>• Meets EU REACH regulations</li>
+                                <li>• Required for H&M, Zara, GAP supplier compliance</li>
+                                <li>• Essential for entering European & US retail markets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/resin-button.jpg" alt="Eco Resin Buttons" class="rounded-2xl shadow-2xl w-full" style="aspect-ratio: 4/3;">
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-white/20">
+                    <h4 class="text-white font-semibold mb-4">Typical Applications & Target Markets:</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
+                            <i class="fas fa-tshirt mr-2"></i> Children's Clothing
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
+                            <i class="fas fa-tshirt mr-2"></i> Organic Cotton Wear
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
+                            <i class="fas fa-tshirt mr-2"></i> Sustainable Fashion
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
+                            <i class="fas fa-store mr-2"></i> Eco Fashion Brands
+                        </span>
+                        <span class="bg-white/10 px-4 py-2 rounded-lg text-white text-sm">
+                            <i class="fas fa-tshirt mr-2"></i> Shirts & Blouses
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- All Products Grid -->
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    ALL PRODUCTS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Complete Button Collection
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Explore our full range of buttons and garment accessories for every application.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Wooden Button -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
-                    <div class="relative overflow-hidden">
-                        <!-- [替换为：Wooden Button产品图 - 木质纽扣特写] -->
-                        <img src="images/shell-button.jpg" 
-                             alt="Wooden Button" 
-                             class="w-full h-56 object-cover transition-transform duration-500"
-                             style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-                                Inquire Now
-                            </a>
-                        </div>
-                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">
-                            Hot
-                        </span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Wooden Button</h3>
-                        <p class="text-gray-500 text-sm mb-4">Natural wood buttons with various finishes and sizes</p>
-                        <div class="flex items-center text-accent">
-                            <span class="text-sm font-medium">View Details</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Snap Button -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="relative overflow-hidden">
-                        <!-- [替换为：Snap Button产品图 - 四合扣特写] -->
                         <img src="images/metal-button.jpg" 
                              alt="Snap Button" 
                              class="w-full h-56 object-cover transition-transform duration-500"
@@ -520,11 +726,17 @@
                                 Inquire Now
                             </a>
                         </div>
+                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">
+                            <i class="fas fa-fire mr-1"></i> Hot
+                        </span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Snap Button</h3>
-                        <p class="text-gray-500 text-sm mb-4">Premium snap buttons for garments and accessories</p>
-                        <div class="flex items-center text-accent">
+                        <p class="text-gray-500 text-sm mb-3">Premium snap buttons for garments</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Jackets, Children's Wear, Bags
+                        </div>
+                        <div class="flex items-center text-eco">
                             <span class="text-sm font-medium">View Details</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </div>
@@ -532,10 +744,9 @@
                 </div>
 
                 <!-- Shell Button -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="relative overflow-hidden">
-                        <!-- [替换为：Shell Button产品图 - 贝壳纽扣特写] -->
-                        <img src="images/rivet.jpg" 
+                        <img src="images/shell-button.jpg" 
                              alt="Shell Button" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
@@ -545,37 +756,16 @@
                             </a>
                         </div>
                         <span class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-                            New
+                            <i class="fas fa-leaf mr-1"></i> Natural
                         </span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Shell Button</h3>
-                        <p class="text-gray-500 text-sm mb-4">Elegant shell buttons with natural luster</p>
-                        <div class="flex items-center text-accent">
-                            <span class="text-sm font-medium">View Details</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        <p class="text-gray-500 text-sm mb-3">Elegant natural shell buttons</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Shirts, Blouses, Premium Wear
                         </div>
-                    </div>
-                </div>
-
-                <!-- Resin Button -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
-                    <div class="relative overflow-hidden">
-                        <!-- [替换为：Resin Button产品图 - 树脂纽扣特写] -->
-                        <img src="images/horn-button.jpg" 
-                             alt="Resin Button" 
-                             class="w-full h-56 object-cover transition-transform duration-500"
-                             style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-                                Inquire Now
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Resin Button</h3>
-                        <p class="text-gray-500 text-sm mb-4">Versatile resin buttons in various colors</p>
-                        <div class="flex items-center text-accent">
+                        <div class="flex items-center text-eco">
                             <span class="text-sm font-medium">View Details</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </div>
@@ -583,9 +773,8 @@
                 </div>
 
                 <!-- Jeans Button -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="relative overflow-hidden">
-                        <!-- [替换为：Jeans Button产品图 - 牛仔裤纽扣/铆钉特写] -->
                         <img src="images/metal-buckle.jpg" 
                              alt="Jeans Button" 
                              class="w-full h-56 object-cover transition-transform duration-500"
@@ -598,8 +787,11 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Jeans Button</h3>
-                        <p class="text-gray-500 text-sm mb-4">Durable jeans buttons and rivets</p>
-                        <div class="flex items-center text-accent">
+                        <p class="text-gray-500 text-sm mb-3">Durable jeans buttons & rivets</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Denim, Workwear, Casual
+                        </div>
+                        <div class="flex items-center text-eco">
                             <span class="text-sm font-medium">View Details</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </div>
@@ -607,10 +799,9 @@
                 </div>
 
                 <!-- Rivet -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="relative overflow-hidden">
-                        <!-- [替换为：Rivet产品图 - 金属铆钉特写] -->
-                        <img src="images/eyelet.jpg" 
+                        <img src="images/rivet.jpg" 
                              alt="Rivet" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
@@ -622,8 +813,11 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Rivet</h3>
-                        <p class="text-gray-500 text-sm mb-4">Metal rivets for denim and leather</p>
-                        <div class="flex items-center text-accent">
+                        <p class="text-gray-500 text-sm mb-3">Metal rivets for denim & leather</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Denim, Leather Goods, Bags
+                        </div>
+                        <div class="flex items-center text-eco">
                             <span class="text-sm font-medium">View Details</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </div>
@@ -631,10 +825,9 @@
                 </div>
 
                 <!-- Eyelet -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="relative overflow-hidden">
-                        <!-- [替换为：Eyelet产品图 - 鸡眼扣/气眼特写] -->
-                        <img src="images/wooden-button.jpg" 
+                        <img src="images/eyelet.jpg" 
                              alt="Eyelet" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
@@ -646,8 +839,11 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Eyelet</h3>
-                        <p class="text-gray-500 text-sm mb-4">Metal eyelets for footwear and garments</p>
-                        <div class="flex items-center text-accent">
+                        <p class="text-gray-500 text-sm mb-3">Metal eyelets for footwear</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Shoes, Garments, Accessories
+                        </div>
+                        <div class="flex items-center text-eco">
                             <span class="text-sm font-medium">View Details</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                         </div>
@@ -655,10 +851,9 @@
                 </div>
 
                 <!-- Metal Buckle -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal">
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="relative overflow-hidden">
-                        <!-- [替换为：Metal Buckle产品图 - 金属扣特写] -->
-                        <img src="images/resin-button.jpg" 
+                        <img src="images/wooden-button.jpg" 
                              alt="Metal Buckle" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
@@ -673,10 +868,58 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Metal Buckle</h3>
-                        <p class="text-gray-500 text-sm mb-4">Heavy-duty metal buckles for belts</p>
-                        <div class="flex items-center text-accent">
+                        <p class="text-gray-500 text-sm mb-3">Heavy-duty metal buckles</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Belts, Bags, Outdoor Gear
+                        </div>
+                        <div class="flex items-center text-eco">
                             <span class="text-sm font-medium">View Details</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wooden Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="relative overflow-hidden">
+                        <img src="images/horn-button.jpg" 
+                             alt="Wooden Button" 
+                             class="w-full h-56 object-cover transition-transform duration-500"
+                             style="aspect-ratio: 1/1;">
+                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
+                                Inquire Now
+                            </a>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                            <i class="fas fa-tree mr-1"></i> Natural
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Wooden Button</h3>
+                        <p class="text-gray-500 text-sm mb-3">Natural wood buttons</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Coats, Crafts, Children's Wear
+                        </div>
+                        <div class="flex items-center text-eco">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom/Other -->
+                <div class="product-card group bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl overflow-hidden shadow-lg reveal border-2 border-dashed border-accent">
+                    <div class="relative overflow-hidden h-full flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-plus text-accent text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-primary mb-2">Custom Requirements</h3>
+                            <p class="text-gray-500 text-sm mb-4">Need something special?</p>
+                            <a href="#contact" class="bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-primary transition-colors inline-block">
+                                Contact Us
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -684,9 +927,245 @@
             
             <div class="text-center mt-12 reveal">
                 <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
-                    <span>View All Products</span>
+                    <span>Request Full Catalog</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section - Enhanced -->
+    <section id="certifications" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-certificate mr-1"></i> CERTIFICATIONS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Quality Certifications That Matter
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Our certifications are your gateway to global markets. 
+                    Compliance made simple for garment factories and fashion brands.
+                </p>
+            </div>
+            
+            <!-- Featured Certifications -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- OEKO-TEX -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl reveal border-t-4 border-blue-500">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-biohazard text-blue-500 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary">OEKO-TEX</h3>
+                            <p class="text-blue-600 font-medium">Standard 100</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Ensures our products are free from harmful substances. 
+                        Essential certification for products sold in EU and US markets.
+                    </p>
+                    <div class="bg-blue-50 rounded-xl p-4">
+                        <h4 class="font-semibold text-primary mb-2 text-sm">
+                            <i class="fas fa-star text-blue-500 mr-1"></i> Customer Benefits
+                        </h4>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• Required by H&M, Zara, GAP, Target</li>
+                            <li>• Meets EU REACH regulations</li>
+                            <li>• Consumer safety assurance</li>
+                            <li>• Essential for European retail</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- ISO 9001 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl reveal border-t-4 border-accent">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-award text-accent text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary">ISO 9001</h3>
+                            <p class="text-accent font-medium">Quality Management</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        International quality management system certification. 
+                        Demonstrates consistent quality and continuous improvement.
+                    </p>
+                    <div class="bg-amber-50 rounded-xl p-4">
+                        <h4 class="font-semibold text-primary mb-2 text-sm">
+                            <i class="fas fa-star text-accent mr-1"></i> Customer Benefits
+                        </h4>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• Consistent product quality</li>
+                            <li>• Professional factory management</li>
+                            <li>• Reduced defect rates</li>
+                            <li>• Global business credibility</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- GRS -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl reveal border-t-4 border-eco">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-20 h-20 bg-eco/10 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-recycle text-eco text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-primary">GRS</h3>
+                            <p class="text-eco font-medium">Global Recycled Standard</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Verifies recycled content and responsible social and environmental practices. 
+                        Critical for eco-friendly product lines.
+                    </p>
+                    <div class="bg-green-50 rounded-xl p-4">
+                        <h4 class="font-semibold text-primary mb-2 text-sm">
+                            <i class="fas fa-star text-eco mr-1"></i> Customer Benefits
+                        </h4>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• Required for Nike, Adidas, H&M eco lines</li>
+                            <li>• Sustainable brand positioning</li>
+                            <li>• EU Green Deal compliance</li>
+                            <li>• Carbon footprint reduction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Certifications Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-leaf text-gray-500 text-xl"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">ISO 14001</span>
+                    <span class="text-xs text-gray-500">Environmental</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-shield-alt text-gray-500 text-xl"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">SGS</span>
+                    <span class="text-xs text-gray-500">Quality Testing</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-check-circle text-gray-500 text-xl"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">BSCI</span>
+                    <span class="text-xs text-gray-500">Social Audit</span>
+                </div>
+                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-euro-sign text-gray-500 text-xl"></i>
+                    </div>
+                    <span class="text-sm font-medium text-gray-700">CE</span>
+                    <span class="text-xs text-gray-500">EU Standards</span>
+                </div>
+            </div>
+            
+            <!-- Certification Value Summary -->
+            <div class="mt-12 bg-gradient-to-r from-primary to-gray-800 rounded-2xl p-8 reveal">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-white mb-2">Why Certifications Matter for Your Business</h3>
+                    <p class="text-gray-400">Compliance opens doors to premium markets</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-store text-accent text-2xl"></i>
+                        </div>
+                        <h4 class="text-white font-semibold mb-2">Brand Requirements</h4>
+                        <p class="text-gray-400 text-sm">Major brands like H&M, Zara, GAP, Nike require these certifications from suppliers</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-eco/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-gavel text-eco text-2xl"></i>
+                        </div>
+                        <h4 class="text-white font-semibold mb-2">Regulatory Compliance</h4>
+                        <p class="text-gray-400 text-sm">Meet EU REACH, US CPSIA, and other international safety regulations</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-trophy text-blue-400 text-2xl"></i>
+                        </div>
+                        <h4 class="text-white font-semibold mb-2">Brand Credibility</h4>
+                        <p class="text-gray-400 text-sm">Build trust with end consumers through certified, safe products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Innovation Section -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-eco/10 text-eco rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-flask mr-1"></i> R&D & INNOVATION
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Technology & Innovation
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Continuous investment in research and development to bring you the latest in button technology.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Eco Materials -->
+                <div class="feature-card rounded-2xl p-8 reveal">
+                    <div class="w-16 h-16 eco-badge rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Eco-Friendly Materials</h3>
+                    <p class="text-gray-600 mb-4">
+                        Biodegradable resin buttons made from plant-based sources. 
+                        Recycled metal materials with GRS certification.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-eco mr-2"></i>Biodegradable resin compounds</li>
+                        <li><i class="fas fa-check text-eco mr-2"></i>Recycled aluminum & zinc alloys</li>
+                        <li><i class="fas fa-check text-eco mr-2"></i>Water-based coatings</li>
+                    </ul>
+                </div>
+                
+                <!-- Functional Buttons -->
+                <div class="feature-card rounded-2xl p-8 reveal">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Functional Buttons</h3>
+                    <p class="text-gray-600 mb-4">
+                        Specialty buttons with enhanced performance features for demanding applications.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Anti-allergy (nickel-free)</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>High-temperature resistant</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Industrial wash durable</li>
+                    </ul>
+                </div>
+                
+                <!-- R&D Capability -->
+                <div class="feature-card rounded-2xl p-8 reveal">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-microscope text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">R&D Capability</h3>
+                    <p class="text-gray-600 mb-4">
+                        Dedicated R&D team developing new designs, materials, and manufacturing processes.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i>Custom mold development</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i>New material research</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i>Annual new product launches</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -699,10 +1178,10 @@
                     WHY CHOOSE US
                 </span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    Real People. Real Work. Real Rewards.
+                    Your Strategic Button Partner
                 </h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Partner with Yenjor for unmatched quality, competitive pricing, and exceptional service.
+                    20+ years of factory expertise serving garment factories, fashion brands, and SOHO buyers globally.
                 </p>
             </div>
             
@@ -713,81 +1192,178 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-4">Premium Quality</h3>
                     <p class="text-gray-600">
-                        Bibendum placerat massa enim eget diam conubia ac metus posuere tempor letius. 
-                        Our strict QC ensures every button meets international standards.
+                        Strict QC at every production stage. Our 20+ years of experience ensures 
+                        consistent quality that meets international standards.
                     </p>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
-                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-cogs text-accent text-3xl"></i>
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-box-open text-blue-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Advanced Technology</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Small Batch Friendly</h3>
                     <p class="text-gray-600">
-                        State-of-the-art manufacturing equipment and automated production lines 
-                        for consistent quality and efficiency.
+                        Perfect for SOHO buyers and small businesses. We support small MOQ orders 
+                        with the same quality standards as bulk orders.
                     </p>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
-                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-truck text-accent text-3xl"></i>
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-green-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Fast Delivery</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Fast Sample Service</h3>
                     <p class="text-gray-600">
-                        Efficient logistics network ensuring timely delivery worldwide. 
-                        Sample in 7 days, bulk order in 15-30 days.
+                        Sample lead time: 7 days. Free samples available for qualified inquiries. 
+                        Quick-turn prototypes for new designs.
                     </p>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
-                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-palette text-accent text-3xl"></i>
+                    <div class="w-16 h-16 bg-eco/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-leaf text-eco text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Custom Design</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Eco-Certified Production</h3>
                     <p class="text-gray-600">
-                        OEM/ODM services available. We can create custom buttons based on your 
-                        specifications and design requirements.
+                        OEKO-TEX & GRS certified. Sustainable materials and responsible 
+                        manufacturing for eco-conscious brands.
                     </p>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
-                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-leaf text-accent text-3xl"></i>
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-drafting-compass text-purple-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Eco-Friendly</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">OEM/ODM Custom Design</h3>
                     <p class="text-gray-600">
-                        OEKO-TEX certified production. We use sustainable materials and 
-                        environmentally responsible manufacturing processes.
+                        Full custom design service from concept to production. 
+                        Mold making and logo customization available.
                     </p>
                 </div>
                 
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow reveal">
-                    <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-headset text-accent text-3xl"></i>
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-truck text-orange-500 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">24/7 Support</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Global Shipping</h3>
                     <p class="text-gray-600">
-                        Dedicated customer service team ready to assist you. Multi-language 
-                        support for global clients.
+                        Efficient logistics to Bangladesh, Vietnam, Europe, USA, Middle East. 
+                        Door-to-door shipping options available.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Customer Types Section -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-users mr-1"></i> OUR CUSTOMERS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Who We Serve
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Trusted by businesses of all sizes, from established garment factories to emerging fashion brands.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Garment Factory -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center reveal border border-blue-100">
+                    <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-industry text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Garment Factories</h3>
+                    <p class="text-gray-600 mb-6">
+                        Bulk orders with consistent quality. Technical support for production requirements. 
+                        Long-term partnership for Bangladesh, Vietnam factories.
+                    </p>
+                    <ul class="text-sm text-gray-500 text-left space-y-2">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Bulk MOQ flexible</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Technical specifications support</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i>Quality consistency guarantee</li>
+                    </ul>
+                </div>
+                
+                <!-- Wholesaler -->
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 text-center reveal border border-amber-100">
+                    <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-warehouse text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Wholesalers</h3>
+                    <p class="text-gray-600 mb-6">
+                        Wide product range with competitive pricing. Stock programs and dropshipping options. 
+                        Regular new product updates.
+                    </p>
+                    <ul class="text-sm text-gray-500 text-left space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Competitive wholesale pricing</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Stock inventory programs</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Fast reorder processing</li>
+                    </ul>
+                </div>
+                
+                <!-- Fashion Brand -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 text-center reveal border border-purple-100">
+                    <div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tshirt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Fashion Brands</h3>
+                    <p class="text-gray-600 mb-6">
+                        Custom design and branding services. OEKO-TEX certified products for premium positioning. 
+                        Collaborative product development.
+                    </p>
+                    <ul class="text-sm text-gray-500 text-left space-y-2">
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i>Custom logo buttons</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i>Exclusive design partnership</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i>Brand-compliant packaging</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sample Policy Highlight -->
+            <div class="mt-12 bg-gradient-to-r from-accent to-amber-500 rounded-2xl p-8 reveal">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4">
+                            <i class="fas fa-gift mr-2"></i> Free Sample Program
+                        </h3>
+                        <p class="text-white/90 mb-4">
+                            Experience our quality firsthand. We offer free samples for qualified inquiries 
+                            to help you make informed purchasing decisions.
+                        </p>
+                        <ul class="text-white/90 space-y-2">
+                            <li><i class="fas fa-check-circle mr-2"></i>Free samples (buyer pays shipping)</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>7-day sample production</li>
+                            <li><i class="fas fa-check-circle mr-2"></i>Multiple style options per inquiry</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white/20 rounded-2xl p-8">
+                            <p class="text-white text-5xl font-bold mb-2">FREE</p>
+                            <p class="text-white/80 text-lg mb-4">Sample Shipping</p>
+                            <p class="text-white/70 text-sm">For orders over $500 or first-time buyers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Process Section -->
-    <section id="process" class="py-20 lg:py-32">
+    <section id="process" class="py-20 lg:py-32 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
                     OUR PROCESS
                 </span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    How We Work Together
+                    Simple & Transparent Cooperation
                 </h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    A streamlined process designed to deliver your products efficiently and on time.
+                    From inquiry to delivery, our streamlined process ensures a smooth experience.
                 </p>
             </div>
             
@@ -796,19 +1372,19 @@
                     <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Consultation</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Inquiry & Consultation</h3>
                     <p class="text-gray-600">
-                        Share your requirements. We'll analyze your needs and provide professional suggestions.
+                        Share your requirements. We'll analyze your needs, suggest suitable products, and provide professional advice.
                     </p>
                 </div>
                 
                 <div class="process-step relative text-center reveal">
                     <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
-                        <i class="fas fa-file-contract"></i>
+                        <i class="fas fa-vial"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Quotation & Contract</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Sample & Quotation</h3>
                     <p class="text-gray-600">
-                        Receive detailed quotation. Confirm pricing and terms, sign the contract.
+                        Receive free samples and detailed quotation. Confirm quality before placing bulk order. 7-day sample lead time.
                     </p>
                 </div>
                 
@@ -816,9 +1392,9 @@
                     <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
                         <i class="fas fa-industry"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Production</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Production & QC</h3>
                     <p class="text-gray-600">
-                        Sample approval followed by bulk production with strict quality control.
+                        Bulk production with strict quality control. Regular updates and photos. 15-30 day production lead time.
                     </p>
                 </div>
                 
@@ -826,10 +1402,97 @@
                     <div class="w-20 h-20 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold relative z-10">
                         <i class="fas fa-shipping-fast"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Delivery</h3>
+                    <h3 class="text-xl font-bold text-primary mb-4">Shipping & Delivery</h3>
                     <p class="text-gray-600">
-                        Quality inspection, secure packaging, and worldwide shipping to your doorstep.
+                        Quality inspection, secure packaging, and worldwide shipping. Door-to-door options available.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-quote-left mr-1"></i> TESTIMONIALS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    What Our Clients Say
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-50 rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-blue-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">Ahmed Rahman</h4>
+                            <p class="text-gray-500 text-sm">Garment Factory Owner, Bangladesh</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "We've been sourcing metal buttons from Yenjor for 5 years. Their consistent quality 
+                        and OEKO-TEX certification make them our trusted supplier. Great communication and 
+                        always meet our delivery schedules."
+                    </p>
+                    <div class="flex text-accent mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-green-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">Nguyen Thi Mai</h4>
+                            <p class="text-gray-500 text-sm">Purchasing Manager, Vietnam</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "The eco-resin buttons from Yenjor are exactly what we needed for our sustainable fashion line. 
+                        OEKO-TEX certified and great quality. Their fast sample service helps us develop new products quickly."
+                    </p>
+                    <div class="flex text-accent mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-50 rounded-2xl p-8 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-purple-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">Sarah Miller</h4>
+                            <p class="text-gray-500 text-sm">Brand Designer, Germany</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Working with Yenjor on custom logo buttons was a great experience. They understood our 
+                        brand requirements perfectly and delivered high-quality products. Highly recommend for 
+                        fashion brands looking for customization."
+                    </p>
+                    <div class="flex text-accent mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -843,38 +1506,38 @@
                     OUR CLIENTS
                 </span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    Trusted by Global Fashion Brands
+                    Trusted by Global Brands
                 </h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    We are proud to collaborate with world-renowned clothing brands who trust our quality and service.
+                    We are proud to serve garment factories and fashion brands worldwide. 
+                    [Partner logos should be replaced with actual brand logos]
                 </p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
-                <!-- [替换为：品牌Logo图片] -->
                 <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 1" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-industry text-gray-300 text-3xl mb-2"></i>
+                        <p class="text-gray-400 text-xs">Factory 1</p>
+                    </div>
                 </div>
                 <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 2" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-tshirt text-gray-300 text-3xl mb-2"></i>
+                        <p class="text-gray-400 text-xs">Brand 2</p>
+                    </div>
                 </div>
                 <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 3" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-store text-gray-300 text-3xl mb-2"></i>
+                        <p class="text-gray-400 text-xs">Wholesaler 3</p>
+                    </div>
                 </div>
                 <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 4" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 5" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 6" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 7" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
-                </div>
-                <div class="partner-logo bg-white p-6 rounded-xl flex items-center justify-center h-28 shadow-md">
-                    <img src="images/banner.jpg" alt="Partner Brand 8" class="max-h-12 object-contain grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center">
+                        <i class="fas fa-globe text-gray-300 text-3xl mb-2"></i>
+                        <p class="text-gray-400 text-xs">Global 4</p>
+                    </div>
                 </div>
             </div>
             
@@ -882,51 +1545,6 @@
                 <i class="fas fa-info-circle mr-2"></i>
                 Partner logos should be replaced with actual brand logos before deployment
             </p>
-        </div>
-    </section>
-
-    <!-- Certification Section -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                    CERTIFICATIONS
-                </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    Quality You Can Trust
-                </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Our commitment to quality is backed by international certifications.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 reveal">
-                <!-- [替换为：认证证书图片] -->
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
-                    <img src="images/banner.jpg" alt="OEKO-TEX" class="max-h-16 object-contain mb-2">
-                    <span class="text-xs text-gray-500 font-medium">OEKO-TEX</span>
-                </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
-                    <img src="images/banner.jpg" alt="ISO 9001" class="max-h-16 object-contain mb-2">
-                    <span class="text-xs text-gray-500 font-medium">ISO 9001</span>
-                </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
-                    <img src="images/banner.jpg" alt="ISO 14001" class="max-h-16 object-contain mb-2">
-                    <span class="text-xs text-gray-500 font-medium">ISO 14001</span>
-                </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
-                    <img src="images/banner.jpg" alt="SGS" class="max-h-16 object-contain mb-2">
-                    <span class="text-xs text-gray-500 font-medium">SGS</span>
-                </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
-                    <img src="images/banner.jpg" alt="CE" class="max-h-16 object-contain mb-2">
-                    <span class="text-xs text-gray-500 font-medium">CE</span>
-                </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-32">
-                    <img src="images/banner.jpg" alt="BSCI" class="max-h-16 object-contain mb-2">
-                    <span class="text-xs text-gray-500 font-medium">BSCI</span>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -943,7 +1561,7 @@
                     </h2>
                     <p class="text-gray-400 text-lg mb-8">
                         Ready to discuss your button and garment accessory needs? 
-                        Get in touch with our team for a free consultation and quotation.
+                        Get in touch for a free consultation and quotation. We respond within 24 hours.
                     </p>
                     
                     <div class="space-y-6">
@@ -953,7 +1571,6 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Company</h4>
-                                <!-- [可替换为公司地址] -->
                                 <p class="text-gray-400">Yenjor Co., Ltd.</p>
                                 <p class="text-gray-400 text-sm">Premium Button Manufacturer</p>
                             </div>
@@ -965,7 +1582,6 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Address</h4>
-                                <!-- [可替换为实际地址] -->
                                 <p class="text-gray-400">Jiashan County, Jiaxing City</p>
                                 <p class="text-gray-400">Zhejiang Province, China</p>
                                 <p class="text-gray-400 text-sm">(Near Shanghai, Hangzhou, Suzhou, Ningbo)</p>
@@ -978,7 +1594,6 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Email</h4>
-                                <!-- [可替换为实际邮箱] -->
                                 <p class="text-gray-400">sales@yenjor.com</p>
                             </div>
                         </div>
@@ -989,7 +1604,6 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Phone / WhatsApp</h4>
-                                <!-- [可替换为实际电话] -->
                                 <p class="text-gray-400"><a href="https://wa.me/8615257397811" target="_blank" class="text-accent hover:text-white transition-colors font-medium">+86 152-XXX-7811  <i class="fab fa-whatsapp ml-1"></i> (Click to WhatsApp)</a></p>
                             </div>
                         </div>
@@ -1001,6 +1615,31 @@
                             <div>
                                 <h4 class="font-semibold mb-1">Working Hours</h4>
                                 <p class="text-gray-400">Mon - Sat: 8:00 AM - 6:00 PM (GMT+8)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Benefits -->
+                    <div class="mt-8 p-6 bg-white/5 rounded-xl">
+                        <h4 class="font-semibold mb-4 text-white">
+                            <i class="fas fa-bolt text-accent mr-2"></i>Why Contact Us?
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>Free samples available</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>7-day sample lead time</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>Small MOQ supported</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-300">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>Custom design service</span>
                             </div>
                         </div>
                     </div>
@@ -1033,9 +1672,14 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                                <input type="text" name="company" 
-                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" 
-                                       placeholder="Your Company Name">
+                                <select name="company_type" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                                    <option value="">Select your business type</option>
+                                    <option value="factory">Garment Factory</option>
+                                    <option value="wholesaler">Wholesaler/Distributor</option>
+                                    <option value="brand">Fashion Brand</option>
+                                    <option value="soho">SOHO/Individual</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </div>
                         </div>
                         
@@ -1058,23 +1702,60 @@
                             <label class="block text-sm font-medium text-gray-700 mb-2">Product Interest *</label>
                             <select name="product" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                                 <option value="">Select a product category</option>
-                                <option value="wooden-button">Wooden Button</option>
-                                <option value="snap-button">Snap Button</option>
-                                <option value="shell-button">Shell Button</option>
-                                <option value="resin-button">Resin Button</option>
-                                <option value="jeans-button">Jeans Button</option>
-                                <option value="rivet">Rivet</option>
-                                <option value="eyelet">Eyelet</option>
-                                <option value="metal-buckle">Metal Buckle</option>
-                                <option value="other">Other / Custom</option>
+                                <optgroup label="Featured Products">
+                                    <option value="metal-button">Metal Button (Mid-Range)</option>
+                                    <option value="eco-resin-button">Eco Resin Button</option>
+                                </optgroup>
+                                <optgroup label="Other Products">
+                                    <option value="snap-button">Snap Button</option>
+                                    <option value="shell-button">Shell Button</option>
+                                    <option value="jeans-button">Jeans Button</option>
+                                    <option value="rivet">Rivet</option>
+                                    <option value="eyelet">Eyelet</option>
+                                    <option value="metal-buckle">Metal Buckle</option>
+                                    <option value="wooden-button">Wooden Button</option>
+                                </optgroup>
+                                <option value="custom">Custom / OEM / ODM</option>
                             </select>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Target Market</label>
+                                <select name="market" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                                    <option value="">Select your market</option>
+                                    <option value="bangladesh">Bangladesh</option>
+                                    <option value="vietnam">Vietnam</option>
+                                    <option value="europe">Europe</option>
+                                    <option value="usa">USA</option>
+                                    <option value="middle-east">Middle East</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Quantity</label>
+                                <select name="quantity" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                                    <option value="">Select quantity range</option>
+                                    <option value="small">Under 10,000 pcs</option>
+                                    <option value="medium">10,000 - 50,000 pcs</option>
+                                    <option value="large">50,000 - 100,000 pcs</option>
+                                    <option value="xlarge">Over 100,000 pcs</option>
+                                </select>
+                            </div>
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
                             <textarea name="message" rows="4" required 
                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none resize-none" 
-                                      placeholder="Please describe your requirements, estimated quantity, target price, etc."></textarea>
+                                      placeholder="Please describe your requirements, target price, certifications needed (OEKO-TEX, GRS), delivery timeline, etc."></textarea>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="sample-request" name="sample_request" class="mt-1">
+                            <label for="sample-request" class="text-sm text-gray-600">
+                                <strong>Request free samples</strong> - I'll provide shipping address for sample delivery (Available for orders over $500 or first-time buyers)
+                            </label>
                         </div>
                         
                         <button type="submit" 
@@ -1100,7 +1781,7 @@
                 <div>
                     <div class="flex items-center space-x-3 mb-6">
                         <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-                            <img src="images/logo-new.png" alt="Yenjor" class="h-8 w-auto">
+                            <span class="text-white font-bold text-xl">Y</span>
                         </div>
                         <div>
                             <span class="text-xl font-bold text-white tracking-tight">Yenjor</span>
@@ -1109,9 +1790,20 @@
                     </div>
                     <p class="text-gray-500 mb-6">
                         Leading manufacturer of premium buttons and garment accessories since 2003. 
-                        Quality, innovation, and reliability.
+                        Eco-certified supplier for garment factories and fashion brands worldwide.
                     </p>
-                    <div class="flex gap-3">
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="bg-white/10 px-3 py-1 rounded-full text-xs text-gray-400">
+                            <i class="fas fa-certificate mr-1"></i>OEKO-TEX
+                        </span>
+                        <span class="bg-white/10 px-3 py-1 rounded-full text-xs text-gray-400">
+                            <i class="fas fa-certificate mr-1"></i>GRS
+                        </span>
+                        <span class="bg-white/10 px-3 py-1 rounded-full text-xs text-gray-400">
+                            <i class="fas fa-certificate mr-1"></i>ISO 9001
+                        </span>
+                    </div>
+                    <div class="flex gap-3 mt-6">
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
                             <i class="fab fa-facebook-f text-white"></i>
                         </a>
@@ -1122,7 +1814,7 @@
                             <i class="fab fa-instagram text-white"></i>
                         </a>
                         <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-youtube text-white"></i>
+                            <i class="fab fa-whatsapp text-white"></i>
                         </a>
                     </div>
                 </div>
@@ -1133,6 +1825,7 @@
                         <li><a href="#home" class="text-gray-500 hover:text-accent transition-colors">Home</a></li>
                         <li><a href="#about" class="text-gray-500 hover:text-accent transition-colors">About Us</a></li>
                         <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Products</a></li>
+                        <li><a href="#certifications" class="text-gray-500 hover:text-accent transition-colors">Certifications</a></li>
                         <li><a href="#why-us" class="text-gray-500 hover:text-accent transition-colors">Why Choose Us</a></li>
                         <li><a href="#contact" class="text-gray-500 hover:text-accent transition-colors">Contact</a></li>
                     </ul>
@@ -1141,19 +1834,18 @@
                 <div>
                     <h4 class="text-white font-semibold mb-6">Products</h4>
                     <ul class="space-y-3">
-                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Wooden Button</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Metal Button</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Eco Resin Button</a></li>
                         <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Snap Button</a></li>
                         <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Shell Button</a></li>
-                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Resin Button</a></li>
                         <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Jeans Button</a></li>
-                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Metal Products</a></li>
+                        <li><a href="#products" class="text-gray-500 hover:text-accent transition-colors">Rivets & Eyelets</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-white font-semibold mb-6">Contact Info</h4>
                     <ul class="space-y-3 text-gray-500">
-                        <!-- [可替换为实际联系信息] -->
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt text-accent mt-1"></i>
                             <span>Jiashan, Zhejiang, China</span>
@@ -1163,21 +1855,27 @@
                             <span>sales@yenjor.com</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fas fa-phone text-accent mt-1"></i>
-                            <span></span>
+                            <i class="fab fa-whatsapp text-accent mt-1"></i>
+                            <span>+86 152-XXX-7811</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fas fa-clock text-accent mt-1"></i>
-                            <span>Mon-Sat: 8:00-18:00</span>
+                            <span>Mon-Sat: 8:00-18:00 (GMT+8)</span>
                         </li>
                     </ul>
+                    <div class="mt-4 p-4 bg-white/5 rounded-lg">
+                        <p class="text-gray-400 text-sm">
+                            <i class="fas fa-truck text-accent mr-2"></i>
+                            Global shipping: Bangladesh, Vietnam, Europe, USA, Middle East
+                        </p>
+                    </div>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                     <p class="text-gray-500 text-sm text-center md:text-left">
-                        © 2024 Yenjor Co., Ltd. All rights reserved.
+                        © 2024 Yenjor Co., Ltd. All rights reserved. | 20+ Years of Button Manufacturing Excellence
                     </p>
                     <div class="flex gap-6 text-sm">
                         <a href="#" class="text-gray-500 hover:text-accent transition-colors">Privacy Policy</a>
