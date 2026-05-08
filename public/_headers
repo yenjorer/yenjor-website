@@ -1,0 +1,20 @@
+# Static assets - no caching, proper content-type
+/images/*
+  Content-Type: image/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# HTML files - no caching for development
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Root index.html for SPA
+/index.html
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Global headers
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
