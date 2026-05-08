@@ -298,6 +298,160 @@
             font-size: 12px;
             font-weight: 500;
         }
+        
+        /* Product Gallery Styles */
+        .product-gallery {
+            position: relative;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        
+        .gallery-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .gallery-thumb {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 3/2;
+        }
+        
+        .gallery-thumb:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-thumb .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 0.75rem;
+        }
+        
+        .gallery-thumb:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-thumb .gallery-overlay span {
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .lightbox-close:hover {
+            opacity: 1;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+        }
+        
+        .lightbox-nav:hover {
+            opacity: 1;
+        }
+        
+        .lightbox-prev {
+            left: -4rem;
+        }
+        
+        .lightbox-next {
+            right: -4rem;
+        }
+        
+        .lightbox-counter {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .lightbox-prev {
+                left: 0.5rem;
+            }
+            
+            .lightbox-next {
+                right: 0.5rem;
+            }
+            
+            .lightbox-nav {
+                font-size: 1.5rem;
+                padding: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
@@ -610,8 +764,21 @@
                             </p>
                         </div>
                     </div>
-                    <div>
-                        <img src="images/metal-button.jpg" alt="Metal Buttons" class="rounded-2xl shadow-2xl w-full" style="aspect-ratio: 4/3;">
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'metal')">
+                                <img src="images/metal-button-1.jpg" alt="Metal Button - Gold Finish">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'metal')">
+                                <img src="images/metal-button-2.jpg" alt="Metal Button - Gunmetal Finish">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'metal')">
+                                <img src="images/metal-button-3.jpg" alt="Metal Button - Bronze Finish">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mt-8 pt-8 border-t border-white/10">
@@ -674,8 +841,21 @@
                             </ul>
                         </div>
                     </div>
-                    <div>
-                        <img src="images/resin-button.jpg" alt="Eco Resin Buttons" class="rounded-2xl shadow-2xl w-full" style="aspect-ratio: 4/3;">
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'resin')">
+                                <img src="images/resin-button-1.jpg" alt="Resin Button - White Matte">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'resin')">
+                                <img src="images/resin-button-2.jpg" alt="Resin Button - Black Glossy">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'resin')">
+                                <img src="images/resin-button-3.jpg" alt="Resin Button - Tortoiseshell">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="mt-8 pt-8 border-t border-white/20">
@@ -774,15 +954,20 @@
 
                 <!-- Jeans Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="relative overflow-hidden">
-                        <img src="images/metal-buckle.jpg" 
-                             alt="Jeans Button" 
-                             class="w-full h-56 object-cover transition-transform duration-500"
-                             style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-                                Inquire Now
-                            </a>
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'jeans')">
+                                <img src="images/jeans-button-1.jpg" alt="Jeans Button - Champagne Gold">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'jeans')">
+                                <img src="images/jeans-button-2.jpg" alt="Jeans Button - Rose Gold Crystal">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'jeans')">
+                                <img src="images/jeans-button-3.jpg" alt="Jeans Button - Brass Embossed">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -800,15 +985,20 @@
 
                 <!-- Rivet -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="relative overflow-hidden">
-                        <img src="images/rivet.jpg" 
-                             alt="Rivet" 
-                             class="w-full h-56 object-cover transition-transform duration-500"
-                             style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-                                Inquire Now
-                            </a>
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'rivet')">
+                                <img src="images/rivet-1.jpg" alt="Rivet - Antique Copper">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'rivet')">
+                                <img src="images/rivet-2.jpg" alt="Rivet - Vintage Brass">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'rivet')">
+                                <img src="images/rivet-3.jpg" alt="Rivet - Silver Star">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -881,25 +1071,151 @@
 
                 <!-- Wooden Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="relative overflow-hidden">
-                        <img src="images/horn-button.jpg" 
-                             alt="Wooden Button" 
-                             class="w-full h-56 object-cover transition-transform duration-500"
-                             style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-                                Inquire Now
-                            </a>
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'wooden')">
+                                <img src="images/wooden-button-1.jpg" alt="Wooden Button - Honey Brown">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'wooden')">
+                                <img src="images/wooden-button-2.jpg" alt="Wooden Button - Mahogany">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'wooden')">
+                                <img src="images/wooden-button-3.jpg" alt="Wooden Button - Carved Round">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
                         </div>
-                        <span class="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                            <i class="fas fa-tree mr-1"></i> Natural
-                        </span>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Wooden Button</h3>
                         <p class="text-gray-500 text-sm mb-3">Natural wood buttons</p>
                         <div class="text-xs text-gray-400 mb-3">
                             <i class="fas fa-industry mr-1"></i> Coats, Crafts, Children's Wear
+                        </div>
+                        <div class="flex items-center text-eco">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horn Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'horn')">
+                                <img src="images/horn-button-1.jpg" alt="Horn Button - Dark Brown">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'horn')">
+                                <img src="images/horn-button-2.jpg" alt="Horn Button - Amber">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'horn')">
+                                <img src="images/horn-button-3.jpg" alt="Horn Button - Black Buffalo">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Horn Button</h3>
+                        <p class="text-gray-500 text-sm mb-3">Natural buffalo horn buttons</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Premium Wear, Coats, Formal
+                        </div>
+                        <div class="flex items-center text-eco">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coconut Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'coconut')">
+                                <img src="images/coconut-button-1.jpg" alt="Coconut Button - Natural">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'coconut')">
+                                <img src="images/coconut-button-2.jpg" alt="Coconut Button - Set">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'coconut')">
+                                <img src="images/coconut-button-3.jpg" alt="Coconut Button - Mixed">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Coconut Button</h3>
+                        <p class="text-gray-500 text-sm mb-3">Natural coconut shell buttons</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Eco Fashion, Beachwear, Crafts
+                        </div>
+                        <div class="flex items-center text-eco">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shank Metal Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'shank')">
+                                <img src="images/shank-metal-button-1.jpg" alt="Shank Button - Pearl">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'shank')">
+                                <img src="images/shank-metal-button-2.jpg" alt="Shank Button - Crystal">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'shank')">
+                                <img src="images/shank-metal-button-3.jpg" alt="Shank Button - Enamel">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Shank Metal Button</h3>
+                        <p class="text-gray-500 text-sm mb-3">Decorative metal shank buttons</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Evening Wear, Formal, Jewelry
+                        </div>
+                        <div class="flex items-center text-eco">
+                            <span class="text-sm font-medium">View Details</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stopper -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-gallery">
+                        <div class="gallery-grid gallery-grid-3">
+                            <div class="gallery-thumb" onclick="openLightbox(0, 'stopper')">
+                                <img src="images/stopper-1.jpg" alt="Stopper - Antique Bronze">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(1, 'stopper')">
+                                <img src="images/stopper-2.jpg" alt="Stopper - Antique Silver">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                            <div class="gallery-thumb" onclick="openLightbox(2, 'stopper')">
+                                <img src="images/stopper-3.jpg" alt="Stopper - Black Steel">
+                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Stopper</h3>
+                        <p class="text-gray-500 text-sm mb-3">Spring cord stopper fasteners</p>
+                        <div class="text-xs text-gray-400 mb-3">
+                            <i class="fas fa-industry mr-1"></i> Hoodies, Sportswear, Drawstrings
                         </div>
                         <div class="flex items-center text-eco">
                             <span class="text-sm font-medium">View Details</span>
@@ -2037,6 +2353,86 @@
                 }
             });
         });
+
+        // Product Gallery Lightbox
+        const galleryImages = {
+            metal: ['images/metal-button-1.jpg', 'images/metal-button-2.jpg', 'images/metal-button-3.jpg'],
+            resin: ['images/resin-button-1.jpg', 'images/resin-button-2.jpg', 'images/resin-button-3.jpg'],
+            jeans: ['images/jeans-button-1.jpg', 'images/jeans-button-2.jpg', 'images/jeans-button-3.jpg'],
+            rivet: ['images/rivet-1.jpg', 'images/rivet-2.jpg', 'images/rivet-3.jpg'],
+            wooden: ['images/wooden-button-1.jpg', 'images/wooden-button-2.jpg', 'images/wooden-button-3.jpg'],
+            horn: ['images/horn-button-1.jpg', 'images/horn-button-2.jpg', 'images/horn-button-3.jpg'],
+            coconut: ['images/coconut-button-1.jpg', 'images/coconut-button-2.jpg', 'images/coconut-button-3.jpg'],
+            shank: ['images/shank-metal-button-1.jpg', 'images/shank-metal-button-2.jpg', 'images/shank-metal-button-3.jpg'],
+            stopper: ['images/stopper-1.jpg', 'images/stopper-2.jpg', 'images/stopper-3.jpg']
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+        let currentCategory = '';
+
+        function openLightbox(index, category) {
+            currentGallery = galleryImages[category] || [];
+            currentIndex = index;
+            currentCategory = category;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
+            if (img && currentGallery[currentIndex]) {
+                img.src = currentGallery[currentIndex];
+            }
+            if (counter) {
+                counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+            }
+        }
+
+        function nextImage() {
+            if (currentGallery.length > 0) {
+                currentIndex = (currentIndex + 1) % currentGallery.length;
+                updateLightboxImage();
+            }
+        }
+
+        function prevImage() {
+            if (currentGallery.length > 0) {
+                currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                updateLightboxImage();
+            }
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+            if (e.key === 'ArrowRight') {
+                nextImage();
+            }
+            if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+        });
     </script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="if(event.target === this) closeLightbox()">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+            <span class="lightbox-nav lightbox-prev" onclick="prevImage()"><i class="fas fa-chevron-left"></i></span>
+            <img id="lightbox-img" src="" alt="Product Image">
+            <span class="lightbox-nav lightbox-next" onclick="nextImage()"><i class="fas fa-chevron-right"></i></span>
+            <div id="lightbox-counter" class="lightbox-counter"></div>
+        </div>
+    </div>
 </body>
 </html>
