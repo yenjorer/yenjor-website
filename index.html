@@ -28,20 +28,79 @@
         }
     </script>
     <style>
+        /* ================================
+           UNIFORM DESIGN SYSTEM
+           ================================ */
+        
+        :root {
+            /* Core Colors */
+            --color-primary: #1a1a1a;
+            --color-secondary: #4a4a4a;
+            --color-accent: #c9a227;
+            --color-accent-light: #d4b54a;
+            --color-eco: #2d7d46;
+            --color-eco-light: #34d399;
+            --color-bg-light: #f8fafc;
+            --color-bg-white: #ffffff;
+            --color-text-dark: #1f2937;
+            --color-text-muted: #6b7280;
+            --color-border: #e5e7eb;
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
         * {
             scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-primary);
         }
         
         /* Custom Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes fadeIn {
@@ -50,59 +109,31 @@
         }
         
         @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
         
         @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
         
         @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
         
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
         
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        .animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
+        .animate-slide-right { animation: slideInRight 0.8s ease-out forwards; }
+        .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
         
-        .animate-slide-left {
-            animation: slideInLeft 0.8s ease-out forwards;
-        }
-        
-        .animate-slide-right {
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-        
-        .animate-scale-in {
-            animation: scaleIn 0.6s ease-out forwards;
-        }
-        
-        /* Animation delays */
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
@@ -122,120 +153,204 @@
             transform: translateY(0);
         }
         
-        /* Hero gradient */
-        .hero-gradient {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-        }
-        
-        /* Product card hover */
-        .product-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .product-card:hover .product-overlay {
-            opacity: 1;
-        }
-        
-        .product-card:hover img {
-            transform: scale(1.1);
-        }
-        
-        .product-overlay {
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        
-        /* Counter animation */
-        .counter {
-            display: inline-block;
-        }
-        
-        /* Navbar scroll effect */
+        /* ================================
+           NAVIGATION - Clean & Consistent
+           ================================ */
         .navbar-scrolled {
             background: rgba(255, 255, 255, 0.98) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
         }
         
-        /* Button styles */
-        .btn-primary {
-            background: #1a1a1a;
+        /* ================================
+           HERO SECTION - Unified Dark Theme
+           ================================ */
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+        }
+        
+        .hero-section {
+            padding: 6rem 0 4rem;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+        }
+        
+        .hero-badge-accent {
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--color-accent);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        .hero-badge-eco {
+            background: rgba(45, 125, 70, 0.15);
+            color: var(--color-eco-light);
+            border: 1px solid rgba(45, 125, 70, 0.3);
+        }
+        
+        .hero-badge-blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .hero-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
             color: white;
-            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title .accent {
+            color: var(--color-accent);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 2rem;
+            max-width: 36rem;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9375rem;
+        }
+        
+        .hero-feature i {
+            color: var(--color-eco-light);
+        }
+        
+        /* Hero Image Card */
+        .hero-image-container {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .hero-stat-card {
+            position: absolute;
+            background: white;
+            padding: 1.25rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .hero-stat-card.bottom-left {
+            bottom: -1.5rem;
+            left: -1.5rem;
+        }
+        
+        .hero-stat-card.top-right {
+            top: -1rem;
+            right: -1rem;
+        }
+        
+        .hero-eco-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-eco);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* ================================
+           BUTTONS - Unified Style
+           ================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
         }
         
         .btn-primary:hover {
-            background: #c9a227;
+            background: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--color-primary);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+        
+        .btn-accent {
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background: var(--color-accent-light);
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 162, 39, 0.35);
         }
         
-        /* Partner logos */
-        .partner-logo {
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: all 0.3s ease;
+        /* ================================
+           STATS SECTION
+           ================================ */
+        .stats-section {
+            background: var(--color-primary);
+            padding: 3rem 0;
         }
         
-        .partner-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        
-        /* Form inputs */
-        .form-input {
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .form-input:focus {
-            border-color: #c9a227;
-            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
-        }
-        
-        /* Process step connector */
-        .process-step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: calc(50% + 50px);
-            width: calc(100% - 100px);
-            height: 2px;
-            background: linear-gradient(90deg, #c9a227 0%, #e5e7eb 100%);
-        }
-        
-        @media (max-width: 768px) {
-            .process-step:not(:last-child)::after {
-                display: none;
-            }
-        }
-        
-        /* Mobile menu */
-        .mobile-menu {
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        /* Certification badge */
-        .certification-badge {
-            transition: all 0.3s ease;
-        }
-        
-        .certification-badge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Stat counter */
         .stat-item {
             position: relative;
+            text-align: center;
+            padding: 1rem 2rem;
         }
         
         .stat-item::after {
@@ -246,117 +361,483 @@
             transform: translateY(-50%);
             height: 60%;
             width: 1px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.15);
         }
         
         .stat-item:last-child::after {
             display: none;
         }
         
-        /* Section divider */
-        .section-divider {
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #c9a227 0%, #1a1a1a 100%);
-        }
-        
-        /* Eco badge */
-        .eco-badge {
-            background: linear-gradient(135deg, #2d7d46 0%, #4ade80 100%);
-        }
-        
-        /* Feature highlight */
-        .feature-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border: 1px solid #e2e8f0;
-        }
-        
-        /* Testimonial card */
-        .testimonial-card {
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 80px;
-            color: #c9a227;
-            opacity: 0.2;
-            font-family: Georgia, serif;
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-accent);
             line-height: 1;
+            margin-bottom: 0.5rem;
         }
         
-        /* Market tag */
-        .market-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 12px;
-            font-weight: 500;
+        .stat-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.875rem;
         }
         
-        /* Product Gallery Styles */
-        .product-gallery {
-            position: relative;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
-        
-        .gallery-grid-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        
-        .gallery-thumb {
-            position: relative;
+        /* ================================
+           PRODUCT CARDS - Unified Style
+           ================================ */
+        .product-card {
+            background: white;
+            border-radius: var(--radius-xl);
             overflow: hidden;
-            border-radius: 0.75rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--color-accent);
+        }
+        
+        .product-card .product-overlay {
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.375rem 0.875rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            z-index: 5;
+        }
+        
+        .product-badge-hot {
+            background: var(--color-accent);
+        }
+        
+        .product-badge-natural {
+            background: var(--color-eco);
+        }
+        
+        .product-badge-premium {
+            background: linear-gradient(135deg, var(--color-primary), #4a4a4a);
+        }
+        
+        .product-info {
+            padding: 1.25rem;
+        }
+        
+        .product-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.375rem;
+        }
+        
+        .product-desc {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .product-tags {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+        
+        .product-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-eco);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+        
+        .product-link:hover {
+            color: var(--color-accent);
+        }
+        
+        .product-link i {
+            transition: transform var(--transition-fast);
+        }
+        
+        .product-link:hover i {
+            transform: translateX(4px);
+        }
+        
+        /* ================================
+           PRODUCT CAROUSEL - Large Image
+           ================================ */
+        .product-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+        }
+        
+        .carousel-main {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
             cursor: pointer;
-            transition: all 0.3s ease;
-            aspect-ratio: 3/2;
         }
         
-        .gallery-thumb:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .gallery-thumb img {
+        .carousel-main img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform var(--transition-slow);
         }
         
-        .gallery-thumb .gallery-overlay {
+        .carousel-main:hover img {
+            transform: scale(1.03);
+        }
+        
+        .carousel-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity var(--transition-normal);
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding-bottom: 0.75rem;
+            padding-bottom: 1.5rem;
         }
         
-        .gallery-thumb:hover .gallery-overlay {
+        .carousel-main:hover .carousel-overlay {
             opacity: 1;
         }
         
-        .gallery-thumb .gallery-overlay span {
+        .carousel-overlay span {
             color: white;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
             font-weight: 500;
+            background: rgba(0,0,0,0.6);
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-full);
         }
         
-        /* Lightbox Modal */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.95);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all var(--transition-normal);
+            z-index: 10;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .product-carousel:hover .carousel-nav {
+            opacity: 1;
+        }
+        
+        .carousel-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-nav.prev { left: 1rem; }
+        .carousel-nav.next { right: 1rem; }
+        .carousel-nav i { color: var(--color-primary); font-size: 1rem; }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d1d5db;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            padding: 0;
+        }
+        
+        .carousel-dot.active {
+            background: var(--color-accent);
+            width: 24px;
+            border-radius: 4px;
+        }
+        
+        .carousel-dot:hover:not(.active) {
+            background: #9ca3af;
+        }
+        
+        /* ================================
+           FEATURED PRODUCTS - Unified Banners
+           ================================ */
+        .featured-banner {
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .featured-banner {
+                padding: 3rem;
+            }
+        }
+        
+        .featured-banner-metal {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        
+        .featured-banner-resin {
+            background: linear-gradient(135deg, #2d7d46 0%, #059669 100%);
+        }
+        
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+        
+        .featured-badge-white {
+            background: white;
+            color: var(--color-primary);
+        }
+        
+        .featured-badge-transparent {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        .featured-title {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-desc {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .featured-stat-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .featured-stat-card i {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .featured-stat-card h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .featured-stat-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+        }
+        
+        .featured-info-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .featured-info-card h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .featured-info-card h4 i {
+            color: var(--color-accent);
+        }
+        
+        .featured-info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .featured-info-card li {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+            padding: 0.25rem 0;
+        }
+        
+        .featured-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.875rem;
+            transition: all var(--transition-normal);
+        }
+        
+        .featured-tag:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* ================================
+           SECTIONS - Unified Style
+           ================================ */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                padding: 6rem 0;
+            }
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(201, 162, 39, 0.1);
+            color: var(--color-accent);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-desc {
+            color: var(--color-text-muted);
+            font-size: 1.0625rem;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        
+        .section-divider {
+            width: 4rem;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+            border-radius: var(--radius-full);
+            margin: 1.5rem auto 0;
+        }
+        
+        /* ================================
+           FORMS - Unified Style
+           ================================ */
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+            background: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ================================
+           FOOTER - Unified Style
+           ================================ */
+        .footer {
+            background: var(--color-primary);
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer a:hover {
+            color: var(--color-accent);
+        }
+        
+        .footer-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+        
+        .footer-link {
+            display: block;
+            padding: 0.375rem 0;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9375rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--color-accent);
+            padding-left: 0.25rem;
+        }
+        
+        /* ================================
+           LIGHTBOX - Unified Style
+           ================================ */
         .lightbox {
             display: none;
             position: fixed;
@@ -382,7 +863,7 @@
             max-width: 100%;
             max-height: 85vh;
             object-fit: contain;
-            border-radius: 0.5rem;
+            border-radius: var(--radius-md);
         }
         
         .lightbox-close {
@@ -393,12 +874,10 @@
             font-size: 2rem;
             cursor: pointer;
             opacity: 0.8;
-            transition: opacity 0.3s;
+            transition: opacity var(--transition-normal);
         }
         
-        .lightbox-close:hover {
-            opacity: 1;
-        }
+        .lightbox-close:hover { opacity: 1; }
         
         .lightbox-nav {
             position: absolute;
@@ -408,23 +887,15 @@
             font-size: 2rem;
             cursor: pointer;
             opacity: 0.6;
-            transition: opacity 0.3s;
+            transition: opacity var(--transition-normal);
             padding: 1rem;
             background: rgba(0,0,0,0.3);
             border-radius: 50%;
         }
         
-        .lightbox-nav:hover {
-            opacity: 1;
-        }
-        
-        .lightbox-prev {
-            left: -4rem;
-        }
-        
-        .lightbox-next {
-            right: -4rem;
-        }
+        .lightbox-nav:hover { opacity: 1; }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
         
         .lightbox-counter {
             color: white;
@@ -435,23 +906,103 @@
         }
         
         @media (max-width: 768px) {
-            .gallery-grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .lightbox-prev {
-                left: 0.5rem;
-            }
-            
-            .lightbox-next {
-                right: 0.5rem;
-            }
-            
-            .lightbox-nav {
-                font-size: 1.5rem;
-                padding: 0.75rem;
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+            .stat-item { padding: 0.5rem 1rem; }
+            .stat-number { font-size: 2rem; }
+        }
+        
+        /* ================================
+           CERTIFICATIONS - Unified
+           ================================ */
+        .certification-badge {
+            transition: all var(--transition-normal);
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .certification-badge:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* ================================
+           PARTNERS - Unified
+           ================================ */
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: all var(--transition-normal);
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* ================================
+           PROCESS STEPS - Unified
+           ================================ */
+        .process-step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: calc(50% + 2rem);
+            width: calc(100% - 4rem);
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-border) 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:not(:last-child)::after {
+                display: none;
             }
         }
+        
+        .process-icon {
+            width: 5rem;
+            height: 5rem;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .process-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* ================================
+           MOBILE MENU - Unified
+           ================================ */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform var(--transition-normal);
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* ================================
+           UTILITIES
+           ================================ */
+        .text-accent { color: var(--color-accent); }
+        .text-eco { color: var(--color-eco); }
+        .bg-accent { background-color: var(--color-accent); }
+        .bg-eco { background-color: var(--color-eco); }
+        .border-accent { border-color: var(--color-accent); }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
@@ -556,10 +1107,10 @@
                     </div>
                 </div>
                 <div class="relative animate-fade-in delay-400">
-                    <img src="images/factory.jpg" 
-                         alt="Yenjor Button Products" 
+                    <img src="images/banner.jpg" 
+                         alt="Yenjor Premium Button Products" 
                          class="rounded-2xl shadow-2xl w-full"
-                         style="aspect-ratio: 6/5;">
+                         style="aspect-ratio: 16/9; object-fit: cover;">
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
@@ -764,20 +1315,17 @@
                             </p>
                         </div>
                     </div>
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'metal')">
-                                <img src="images/metal-button-1.jpg" alt="Metal Button - Gold Finish">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'metal')">
-                                <img src="images/metal-button-2.jpg" alt="Metal Button - Gunmetal Finish">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'metal')">
-                                <img src="images/metal-button-3.jpg" alt="Metal Button - Bronze Finish">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-metal">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('metal')">
+                            <img src="images/metal-button-1.jpg" alt="Metal Button - Gold Finish" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('metal')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('metal')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('metal', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metal', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metal', 2)"></button>
                         </div>
                     </div>
                 </div>
@@ -841,20 +1389,17 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'resin')">
-                                <img src="images/resin-button-1.jpg" alt="Resin Button - White Matte">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'resin')">
-                                <img src="images/resin-button-2.jpg" alt="Resin Button - Black Glossy">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'resin')">
-                                <img src="images/resin-button-3.jpg" alt="Resin Button - Tortoiseshell">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-resin">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('resin')">
+                            <img src="images/resin-button-1.jpg" alt="Resin Button - White Matte" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('resin')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('resin')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('resin', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 2)"></button>
                         </div>
                     </div>
                 </div>
@@ -954,20 +1499,17 @@
 
                 <!-- Jeans Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'jeans')">
-                                <img src="images/jeans-button-1.jpg" alt="Jeans Button - Champagne Gold">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'jeans')">
-                                <img src="images/jeans-button-2.jpg" alt="Jeans Button - Rose Gold Crystal">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'jeans')">
-                                <img src="images/jeans-button-3.jpg" alt="Jeans Button - Brass Embossed">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-jeans">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('jeans')">
+                            <img src="images/jeans-button-1.jpg" alt="Jeans Button - Champagne Gold" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('jeans')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('jeans')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('jeans', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 2)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -985,20 +1527,17 @@
 
                 <!-- Rivet -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'rivet')">
-                                <img src="images/rivet-1.jpg" alt="Rivet - Antique Copper">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'rivet')">
-                                <img src="images/rivet-2.jpg" alt="Rivet - Vintage Brass">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'rivet')">
-                                <img src="images/rivet-3.jpg" alt="Rivet - Silver Star">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-rivet">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('rivet')">
+                            <img src="images/rivet-1.jpg" alt="Rivet - Antique Copper" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('rivet')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('rivet')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('rivet', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 2)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -1071,20 +1610,17 @@
 
                 <!-- Wooden Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'wooden')">
-                                <img src="images/wooden-button-1.jpg" alt="Wooden Button - Honey Brown">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'wooden')">
-                                <img src="images/wooden-button-2.jpg" alt="Wooden Button - Mahogany">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'wooden')">
-                                <img src="images/wooden-button-3.jpg" alt="Wooden Button - Carved Round">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-wooden">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('wooden')">
+                            <img src="images/wooden-button-1.jpg" alt="Wooden Button - Honey Brown" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('wooden')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('wooden')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('wooden', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 2)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -1102,20 +1638,17 @@
 
                 <!-- Horn Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'horn')">
-                                <img src="images/horn-button-1.jpg" alt="Horn Button - Dark Brown">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'horn')">
-                                <img src="images/horn-button-2.jpg" alt="Horn Button - Amber">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'horn')">
-                                <img src="images/horn-button-3.jpg" alt="Horn Button - Black Buffalo">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-horn">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('horn')">
+                            <img src="images/horn-button-1.jpg" alt="Horn Button - Dark Brown" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('horn')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('horn')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('horn', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('horn', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('horn', 2)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -1133,20 +1666,17 @@
 
                 <!-- Coconut Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'coconut')">
-                                <img src="images/coconut-button-1.jpg" alt="Coconut Button - Natural">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'coconut')">
-                                <img src="images/coconut-button-2.jpg" alt="Coconut Button - Set">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'coconut')">
-                                <img src="images/coconut-button-3.jpg" alt="Coconut Button - Mixed">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-coconut">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('coconut')">
+                            <img src="images/coconut-button-1.jpg" alt="Coconut Button - Natural" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('coconut')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('coconut')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('coconut', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('coconut', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('coconut', 2)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -1164,20 +1694,17 @@
 
                 <!-- Shank Metal Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'shank')">
-                                <img src="images/shank-metal-button-1.jpg" alt="Shank Button - Pearl">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'shank')">
-                                <img src="images/shank-metal-button-2.jpg" alt="Shank Button - Crystal">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'shank')">
-                                <img src="images/shank-metal-button-3.jpg" alt="Shank Button - Enamel">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-shank">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shank')">
+                            <img src="images/shank-metal-button-1.jpg" alt="Shank Button - Pearl" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shank')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shank')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shank', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shank', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shank', 2)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -1195,21 +1722,19 @@
 
                 <!-- Stopper -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-gallery">
-                        <div class="gallery-grid gallery-grid-3">
-                            <div class="gallery-thumb" onclick="openLightbox(0, 'stopper')">
-                                <img src="images/stopper-1.jpg" alt="Stopper - Antique Bronze">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(1, 'stopper')">
-                                <img src="images/stopper-2.jpg" alt="Stopper - Antique Silver">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
-                            <div class="gallery-thumb" onclick="openLightbox(2, 'stopper')">
-                                <img src="images/stopper-3.jpg" alt="Stopper - Black Steel">
-                                <div class="gallery-overlay"><span><i class="fas fa-search-plus mr-1"></i> View</span></div>
-                            </div>
+                    <div class="product-carousel" id="carousel-stopper">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('stopper')">
+                            <img src="images/stopper-1.jpg" alt="Stopper - Antique Bronze" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('stopper')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('stopper')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('stopper', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 2)"></button>
+                        </div>
+                    </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-2">Stopper</h3>
@@ -2353,6 +2878,52 @@
                 }
             });
         });
+        
+        // Product Carousel Functions
+        const carouselState = {};
+        
+        function goToCarousel(category, index) {
+            const carousel = document.getElementById('carousel-' + category);
+            if (!carousel) return;
+            
+            const images = galleryImages[category] || [];
+            if (images.length === 0) return;
+            
+            carouselState[category] = index;
+            
+            const img = carousel.querySelector('.carousel-img');
+            if (img) {
+                img.src = images[index];
+            }
+            
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextCarousel(category) {
+            const images = galleryImages[category] || [];
+            if (images.length === 0) return;
+            
+            const current = carouselState[category] || 0;
+            const next = (current + 1) % images.length;
+            goToCarousel(category, next);
+        }
+        
+        function prevCarousel(category) {
+            const images = galleryImages[category] || [];
+            if (images.length === 0) return;
+            
+            const current = carouselState[category] || 0;
+            const prev = (current - 1 + images.length) % images.length;
+            goToCarousel(category, prev);
+        }
+        
+        function openLightboxFromCarousel(category) {
+            const current = carouselState[category] || 0;
+            openLightbox(current, category);
+        }
 
         // Product Gallery Lightbox
         const galleryImages = {
