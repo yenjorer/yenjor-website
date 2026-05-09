@@ -421,15 +421,24 @@
         }
         
         .product-badge-hot {
-            background: var(--color-accent);
+            background: rgba(201, 162, 39, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            color: #fbbf24;
         }
         
         .product-badge-natural {
-            background: var(--color-eco);
+            background: rgba(45, 125, 70, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(45, 125, 70, 0.3);
+            color: #6ee7b7;
         }
         
         .product-badge-premium {
-            background: linear-gradient(135deg, var(--color-primary), #4a4a4a);
+            background: rgba(26, 26, 26, 0.3);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e5e5e5;
         }
         
         .product-info {
@@ -607,11 +616,11 @@
         }
         
         .featured-banner-metal {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: rgba(26, 26, 26, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);
         }
         
         .featured-banner-resin {
-            background: linear-gradient(135deg, #2d7d46 0%, #059669 100%);
+            background: rgba(45, 125, 70, 0.3); backdrop-filter: blur(12px); border: 1px solid rgba(45, 125, 70, 0.2);
         }
         
         .featured-badge {
@@ -1118,7 +1127,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="absolute -top-4 -right-4 bg-eco text-white px-4 py-2 rounded-lg shadow-xl hidden md:flex items-center gap-2">
+                    <div class="absolute -top-4 -right-4 bg-emerald-500/20 backdrop-blur-xl text-emerald-100 px-4 py-2 rounded-lg shadow-xl border border-emerald-400/30 hidden md:flex items-center gap-2">
                         <i class="fas fa-leaf"></i>
                         <span class="font-semibold text-sm">Eco-Certified</span>
                     </div>
@@ -1418,12 +1427,12 @@
                              alt="Snap Button" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <div class="product-overlay absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
                             <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
                                 Inquire Now
                             </a>
                         </div>
-                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">
+                        <span class="absolute top-4 left-4 bg-amber-500/20 backdrop-blur-xl text-amber-200 px-3 py-1 rounded-full text-xs font-medium border border-amber-400/30">
                             <i class="fas fa-fire mr-1"></i> Hot
                         </span>
                     </div>
@@ -1447,12 +1456,12 @@
                              alt="Shell Button" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <div class="product-overlay absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
                             <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
                                 Inquire Now
                             </a>
                         </div>
-                        <span class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                        <span class="absolute top-4 left-4 bg-emerald-500/20 backdrop-blur-xl text-emerald-200 px-3 py-1 rounded-full text-xs font-medium border border-emerald-400/30">
                             <i class="fas fa-leaf mr-1"></i> Natural
                         </span>
                     </div>
@@ -1532,7 +1541,7 @@
                              alt="Eyelet" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <div class="product-overlay absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
                             <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
                                 Inquire Now
                             </a>
@@ -1558,12 +1567,12 @@
                              alt="Metal Buckle" 
                              class="w-full h-56 object-cover transition-transform duration-500"
                              style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <div class="product-overlay absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
                             <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
                                 Inquire Now
                             </a>
                         </div>
-                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">
+                        <span class="absolute top-4 left-4 bg-amber-500/20 backdrop-blur-xl text-amber-200 px-3 py-1 rounded-full text-xs font-medium border border-amber-400/30">
                             Premium
                         </span>
                     </div>
@@ -1851,28 +1860,28 @@
             
             <!-- Additional Certifications Grid -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                <div class="certification-badge bg-white/60 backdrop-blur-xl p-6 rounded-xl shadow-lg flex flex-col items-center justify-center border border-white/30">
                     <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
                         <i class="fas fa-leaf text-gray-500 text-xl"></i>
                     </div>
                     <span class="text-sm font-medium text-gray-700">ISO 14001</span>
                     <span class="text-xs text-gray-500">Environmental</span>
                 </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                <div class="certification-badge bg-white/60 backdrop-blur-xl p-6 rounded-xl shadow-lg flex flex-col items-center justify-center border border-white/30">
                     <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
                         <i class="fas fa-shield-alt text-gray-500 text-xl"></i>
                     </div>
                     <span class="text-sm font-medium text-gray-700">SGS</span>
                     <span class="text-xs text-gray-500">Quality Testing</span>
                 </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                <div class="certification-badge bg-white/60 backdrop-blur-xl p-6 rounded-xl shadow-lg flex flex-col items-center justify-center border border-white/30">
                     <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
                         <i class="fas fa-check-circle text-gray-500 text-xl"></i>
                     </div>
                     <span class="text-sm font-medium text-gray-700">BSCI</span>
                     <span class="text-xs text-gray-500">Social Audit</span>
                 </div>
-                <div class="certification-badge bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center">
+                <div class="certification-badge bg-white/60 backdrop-blur-xl p-6 rounded-xl shadow-lg flex flex-col items-center justify-center border border-white/30">
                     <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-3">
                         <i class="fas fa-euro-sign text-gray-500 text-xl"></i>
                     </div>
