@@ -1300,7 +1300,7 @@
                     </div>
                     <div class="product-carousel" id="carousel-shell">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('shell')">
-                            <img src="images/mop-button-1.jpg" alt="Mother of Pearl Buttons" class="carousel-img">
+                            <img src="images/shell-button-1.jpg" alt="Natural Shell Button" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shell')"><i class="fas fa-chevron-left"></i></button>
@@ -1311,8 +1311,6 @@
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 2)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 3)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 4)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 5)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 6)"></button>
                         </div>
                     </div>
                 </div>
@@ -1497,15 +1495,15 @@
 
                 <!-- Snap Button -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="relative overflow-hidden">
-                        <img src="images/metal-button.jpg" 
-                             alt="Snap Button" 
-                             class="w-full h-56 object-cover transition-transform duration-500"
-                             style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
-                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-                                Inquire Now
-                            </a>
+                    <div class="product-carousel" id="carousel-snap">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('snap')">
+                            <img src="images/snap-button-1.jpg" alt="Snap Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('snap')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('snap')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('snap', 0)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -1641,15 +1639,17 @@
 
                 <!-- Metal Buckle -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="relative overflow-hidden">
-                        <img src="images/metal-buckle.jpg" 
-                             alt="Metal Buckle" 
-                             class="w-full h-56 object-cover transition-transform duration-500"
-                             style="aspect-ratio: 1/1;">
-                        <div class="product-overlay absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
-                            <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors">
-                                Inquire Now
-                            </a>
+                    <div class="product-carousel" id="carousel-metalBuckle">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('metalBuckle')">
+                            <img src="images/metal-buckle-1.jpg" alt="Metal Buckle" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('metalBuckle')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('metalBuckle')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 2)"></button>
                         </div>
                     </div>
                     <div class="p-6">
@@ -2460,16 +2460,24 @@
                             <select name="product" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
                                 <option value="">Select a product category</option>
                                 <optgroup label="Featured Products">
-                                    <option value="shell-button">Natural Shell Buttons (MOP, Abalone)</option>
+                                    <option value="shell-button">Natural Shell Buttons</option>
+                                    <option value="shank-metal-button">Shank Metal Button</option>
                                     <option value="metal-button">Premium Metal Buttons</option>
                                 </optgroup>
-                                <optgroup label="Other Products">
+                                <optgroup label="Natural Materials">
+                                    <option value="horn-button">Horn Button</option>
+                                    <option value="coconut-button">Coconut Button</option>
+                                    <option value="wooden-button">Wooden Button</option>
+                                </optgroup>
+                                <optgroup label="Garment Accessories">
                                     <option value="snap-button">Snap Button</option>
                                     <option value="jeans-button">Jeans Button</option>
                                     <option value="rivet">Rivet</option>
-                                    <option value="horn-button">Horn Button</option>
-                                    <option value="coconut-button">Coconut Button</option>
+                                    <option value="stopper">Stopper</option>
+                                    <option value="eyelet">Eyelet</option>
+                                    <option value="metal-end">Metal End</option>
                                     <option value="metal-buckle">Metal Buckle</option>
+                                    <option value="resin-button">Resin Button</option>
                                 </optgroup>
                                 <option value="custom">Custom / OEM / ODM</option>
                             </select>
@@ -2836,7 +2844,8 @@
 
         // Product Gallery Lightbox
         const galleryImages = {
-            shell: ['images/mop-button-1.jpg', 'images/mop-button-2.jpg', 'images/mop-button-3.jpg', 'images/shell-button-4.jpg', 'images/abalone-button-4.jpg', 'images/troca-button-1.jpg', 'images/troca-button-2.jpg'],
+            shell: ['images/shell-button-1.jpg', 'images/shell-button-2.jpg', 'images/shell-button-3.jpg', 'images/shell-button-4.jpg', 'images/shell-button-5.jpg'],
+            shankMetal: ['images/shank-metal-button-1.jpg', 'images/shank-metal-button-2.jpg', 'images/shank-metal-button-3.jpg', 'images/shank-metal-button-4.jpg', 'images/shank-metal-button-5.jpg'],
             metal: ['images/metal-button-1.jpg', 'images/metal-button-2.jpg', 'images/metal-button-3.jpg', 'images/metal-button-4.jpg', 'images/metal-button-5.jpg', 'images/metal-button-6.jpg', 'images/metal-button-7.jpg', 'images/metal-button-8.jpg', 'images/metal-button-9.jpg', 'images/metal-button-10.jpg'],
             mop: ['images/mop-button-1.jpg', 'images/mop-button-2.jpg', 'images/mop-button-3.jpg'],
             abalone: ['images/abalone-button-1.jpg', 'images/abalone-button-2.jpg', 'images/abalone-button-3.jpg', 'images/abalone-button-4.jpg', 'images/abalone-button-5.jpg', 'images/abalone-button-6.jpg'],
@@ -2844,7 +2853,13 @@
             rivet: ['images/rivet-1.jpg', 'images/rivet-2.jpg', 'images/rivet-3.jpg'],
             horn: ['images/horn-button-1.jpg', 'images/horn-button-2.jpg', 'images/horn-button-3.jpg'],
             coconut: ['images/coconut-button-1.jpg', 'images/coconut-button-2.jpg', 'images/coconut-button-3.jpg'],
-            stopper: ['images/stopper-1.jpg', 'images/stopper-2.jpg', 'images/stopper-3.jpg']
+            stopper: ['images/stopper-1.jpg', 'images/stopper-2.jpg', 'images/stopper-3.jpg'],
+            eyelet: ['images/eyelet-1.jpg', 'images/eyelet-2.jpg', 'images/eyelet-3.jpg'],
+            resin: ['images/resin-button-1.jpg', 'images/resin-button-2.jpg', 'images/resin-button-3.jpg'],
+            wooden: ['images/wooden-button-1.jpg', 'images/wooden-button-2.jpg', 'images/wooden-button-3.jpg'],
+            metalEnd: ['images/metal-end-1.jpg', 'images/metal-end-2.jpg', 'images/metal-end-3.jpg'],
+            metalBuckle: ['images/metal-buckle-1.jpg', 'images/metal-buckle-2.jpg', 'images/metal-buckle-3.jpg'],
+            snap: ['images/snap-button-1.jpg']
         };
 
         let currentGallery = [];
