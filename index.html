@@ -352,21 +352,9 @@
         .stat-item {
             position: relative;
             text-align: center;
-            padding: 1.5rem 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            padding: 1rem 2rem;
         }
 
-        .stat-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        }
-        
         .stat-item::after {
             content: '';
             position: absolute;
@@ -375,9 +363,9 @@
             transform: translateY(-50%);
             height: 60%;
             width: 1px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
         }
-        
+
         .stat-item:last-child::after {
             display: none;
         }
@@ -1151,22 +1139,22 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="bg-primary py-12">
+    <section class="bg-primary/80 backdrop-blur-xl border-y border-white/10 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="stat-item px-4">
+                <div class="stat-item">
                     <p class="text-2xl md:text-3xl font-semibold text-accent mb-1">Expert</p>
                     <p class="text-gray-400 text-xs md:text-sm">Button Specialist</p>
                 </div>
-                <div class="stat-item px-4">
+                <div class="stat-item">
                     <p class="text-2xl md:text-3xl font-semibold text-white mb-1">Global</p>
                     <p class="text-gray-400 text-xs md:text-sm">Worldwide</p>
                 </div>
-                <div class="stat-item px-4">
+                <div class="stat-item">
                     <p class="text-2xl md:text-3xl font-semibold text-white mb-1">Quality</p>
                     <p class="text-gray-400 text-xs md:text-sm">Assured</p>
                 </div>
-                <div class="stat-item px-4">
+                <div class="stat-item">
                     <p class="text-2xl md:text-3xl font-semibold text-white mb-1">Eco</p>
                     <p class="text-gray-400 text-xs md:text-sm">Certified</p>
                 </div>
