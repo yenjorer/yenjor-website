@@ -1014,6 +1014,29 @@
         .bg-accent { background-color: var(--color-accent); }
         .bg-eco { background-color: var(--color-eco); }
         .border-accent { border-color: var(--color-accent); }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .btn-primary {
+                min-height: 48px;
+                font-size: 16px;
+            }
+            input, select, textarea {
+                min-height: 44px;
+                font-size: 16px;
+            }
+            h1 { font-size: 2rem !important; }
+            h2 { font-size: 1.75rem !important; }
+            h3 { font-size: 1.25rem !important; }
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+        /* Prevent zoom on input focus on iOS */
+        input[type="text"], input[type="email"], input[type="tel"], 
+        select, textarea {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
@@ -1091,6 +1114,21 @@
                             <span class="text-sm">OEM/ODM Custom</span>
                         </div>
                     </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 animate-fade-in-up delay-200">
+                            <div class="flex items-center gap-2 text-gray-600 bg-white/80 px-4 py-2 rounded-lg">
+                                <i class="fas fa-bolt text-accent"></i>
+                                <span class="text-sm">24h Fast Response</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600 bg-white/80 px-4 py-2 rounded-lg">
+                                <i class="fas fa-sliders-h text-accent"></i>
+                                <span class="text-sm">Low MOQ Flexible</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600 bg-white/80 px-4 py-2 rounded-lg">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="text-sm">Quality Guaranteed</span>
+                            </div>
+                        </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300">
                         <a href="#products" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center justify-center gap-2">
                             <span>Explore Products</span>
