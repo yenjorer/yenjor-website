@@ -1235,6 +1235,400 @@
                 </div>
             </div>
         </div>
+    <!-- Products Section -->
+    <section id="products" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-box-open mr-1"></i> OUR PRODUCTS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Complete Button Collection
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    13 product categories covering all button and garment accessory needs. 
+                    Natural materials, recycled options, and custom metal solutions for every market segment.
+                </p>
+            </div>
+            
+            <!-- Featured Product 1: Natural Buttons Collection -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12 mb-12 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Flagship</span>
+                            <span class="bg-eco/20 text-eco px-4 py-1 rounded-full text-sm font-semibold">100% Natural</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Natural Buttons Collection
+                        </h3>
+                        <p class="text-gray-300 text-lg mb-6">
+                            Sustainably crafted from Mother of Pearl, Coconut Shell, Horn, and Wood. 
+                            Each piece showcases unique natural textures, organic grain patterns, and eco-friendly properties — 
+                            perfect for sustainable fashion brands seeking authentic, zero-waste accessories.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ 100% Biodegradable</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ Unique Natural Patterns</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ Low MOQ 100pcs</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ Custom Dyeing Available</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-carousel" id="carousel-shell">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shell')">
+                            <img src="images/shell-button-1.jpg" alt="Natural Shell Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shell')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shell')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shell', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 6)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Product 2: GRS Certified Eco Buttons -->
+            <div class="bg-gradient-to-r from-eco to-emerald-700 rounded-3xl p-8 lg:p-12 mb-12 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-white text-eco px-4 py-1 rounded-full text-sm font-semibold">Eco Certified</span>
+                            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">GRS Compliant</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            GRS Certified Eco Buttons
+                        </h3>
+                        <p class="text-white/90 text-lg mb-6">
+                            Environmentally responsible buttons crafted from Global Recycled Standard certified materials. 
+                            Reduce your carbon footprint by 40% while meeting EU REACH and brand ESG requirements. 
+                            Full traceability documentation provided for every order.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ GRS Certified</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Recycled Materials</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Carbon Neutral Options</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Full Supply Chain Traceability</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3 col-span-2">
+                                <div class="text-white font-semibold text-sm">✓ OEKO-TEX Compliant</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-carousel" id="carousel-resin">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('resin')">
+                            <img src="images/resin-button-1.jpg" alt="GRS Certified Eco Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('resin')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('resin')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('resin', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 7)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 8)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 9)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Product 3: Premium Custom Metal Buttons -->
+            <div class="bg-gradient-to-r from-amber-600 to-orange-700 rounded-3xl p-8 lg:p-12 mb-16 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-white text-orange-700 px-4 py-1 rounded-full text-sm font-semibold">Premium</span>
+                            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">Customizable</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Premium Custom Metal Buttons
+                        </h3>
+                        <p class="text-white/90 text-lg mb-6">
+                            High quality hand-sewn metal buttons crafted from zinc alloy, brass, and stainless steel. 
+                            Available in diverse plating finishes with 3D embossment and laser engraving options 
+                            for brand differentiation. Ideal for outerwear, denim, and luxury accessories.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Custom Designs</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Multiple Plating Options</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Brand Logo Engraving</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ 0.05mm Precision</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3 col-span-2">
+                                <div class="text-white font-semibold text-sm">✓ Low MOQ 500pcs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-carousel" id="carousel-shankMetal">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shankMetal')">
+                            <img src="images/shank-metal-button-1.jpg" alt="Premium Metal Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shankMetal')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shankMetal')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shankMetal', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 6)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Complete Product Grid -->
+            <h3 class="text-2xl font-bold text-primary mb-10 text-center reveal">
+                Full Product Range
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Shell Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-shell-card">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shell')">
+                            <img src="images/shell-button-1.jpg" alt="Natural Shell Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shell')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shell')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shell', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Natural Shell Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">Mother of Pearl buttons with iridescent natural luster</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Shirts</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Blouses</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Luxury Apparel</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coconut Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
+                    <div class="product-carousel" id="carousel-coconut">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('coconut')">
+                            <img src="images/coconut-button-1.jpg" alt="Coconut Shell Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('coconut')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('coconut')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('coconut', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('coconut', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('coconut', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Coconut Shell Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">100% natural coconut shell, eco-friendly and unique</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Casual Wear</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Resort Collection</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Sustainable Brands</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Horn Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-horn">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('horn')">
+                            <img src="images/horn-button-1.jpg" alt="Horn Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('horn')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('horn')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('horn', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('horn', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('horn', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Horn Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">Genuine horn material, rich natural grain patterns</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Suits</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Coats</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">High-end Outerwear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wooden Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
+                    <div class="product-carousel" id="carousel-wooden">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('wooden')">
+                            <img src="images/wooden-button-1.jpg" alt="Wooden Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('wooden')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('wooden')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('wooden', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Wooden Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">Natural wood texture, warm and organic feel</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Knits</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Cardigans</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Children's Wear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recycled Resin Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
+                    <div class="product-carousel" id="carousel-resin-card">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('resin')">
+                            <img src="images/resin-button-1.jpg" alt="Recycled Resin Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('resin')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('resin')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('resin', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Recycled Resin Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">GRS certified recycled resin materials</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">General Apparel</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Uniforms</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Mass Production</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shank Metal Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-shankMetal-card">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shankMetal')">
+                            <img src="images/shank-metal-button-1.jpg" alt="Shank Metal Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shankMetal')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shankMetal')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shankMetal', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Shank Metal Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">Hand-sewn metal buttons for thick fabrics</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Coats</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Jackets</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Blazers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jeans Hardware Set -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-jeans">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('jeans')">
+                            <img src="images/jeans-button-1.jpg" alt="Jeans Hardware Set" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('jeans')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('jeans')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('jeans', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Jeans Hardware Set</h4>
+                        <p class="text-gray-600 text-sm mb-3">Denim buttons + rivets, complete jeans solution</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Denim</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Jeans</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Workwear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Metal Fasteners Collection -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-snap">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('snap')">
+                            <img src="images/snap-button-1.jpg" alt="Metal Fasteners Collection" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('snap')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('snap')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('snap', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Metal Fasteners Collection</h4>
+                        <p class="text-gray-600 text-sm mb-3">Snap buttons, eyelets, metal ends, stoppers, buckles</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sportswear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Outerwear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </section>
 
 

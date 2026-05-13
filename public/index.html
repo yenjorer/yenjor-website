@@ -1,0 +1,2535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yenjor Co., Ltd. - Superior Craftsmanship Button & Garment Accessories Manufacturer</title>
+    <meta name="description" content="Yenjor Co., Ltd. is a leading manufacturer of buttons and garment accessories with two decades of expertise. Specializing in metal buttons, resin buttons for garment factories and brands worldwide. OEKO-TEX & GRS-accredited facilities.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#4a4a4a',
+                        accent: '#c9a227',
+                        eco: '#2d7d46',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ================================
+           UNIFORM DESIGN SYSTEM
+           ================================ */
+        
+        :root {
+            /* Core Colors */
+            --color-primary: #1a1a1a;
+            --color-secondary: #4a4a4a;
+            --color-accent: #c9a227;
+            --color-accent-light: #d4b54a;
+            --color-eco: #2d7d46;
+            --color-eco-light: #34d399;
+            --color-bg-light: #f8fafc;
+            --color-bg-white: #ffffff;
+            --color-text-dark: #1f2937;
+            --color-text-muted: #6b7280;
+            --color-border: #e5e7eb;
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-primary);
+        }
+        
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        .animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
+        .animate-slide-right { animation: slideInRight 0.8s ease-out forwards; }
+        .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ================================
+           NAVIGATION - Clean & Consistent
+           ================================ */
+        .navbar-scrolled {
+            background: rgba(255, 255, 255, 0.98) !important;
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* ================================
+           HERO SECTION - Unified Dark Theme
+           ================================ */
+        .hero-gradient {
+            background: #FFFFFF;
+        }
+        
+        .hero-section {
+            padding: 6rem 0 4rem;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+        }
+        
+        .hero-badge-accent {
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--color-accent);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        .hero-badge-eco {
+            background: rgba(45, 125, 70, 0.15);
+            color: var(--color-eco-light);
+            border: 1px solid rgba(45, 125, 70, 0.3);
+        }
+        
+        .hero-badge-blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .hero-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title .accent {
+            color: var(--color-accent);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: #4a4a4a;
+            margin-bottom: 2rem;
+            max-width: 36rem;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a4a4a;
+            font-size: 0.9375rem;
+        }
+        
+        .hero-feature i {
+            color: var(--color-eco-light);
+        }
+        
+        /* Hero Image Card */
+        .hero-image-container {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .hero-stat-card {
+            position: absolute;
+            background: white;
+            padding: 1.25rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .hero-stat-card.bottom-left {
+            bottom: -1.5rem;
+            left: -1.5rem;
+        }
+        
+        .hero-stat-card.top-right {
+            top: -1rem;
+            right: -1rem;
+        }
+        
+        .hero-eco-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-eco);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* ================================
+           BUTTONS - Unified Style
+           ================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--color-primary);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+        
+        .btn-accent {
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 162, 39, 0.35);
+        }
+        
+        /* ================================
+           STATS SECTION
+           ================================ */
+        .stats-section {
+            background: var(--color-primary);
+            padding: 3rem 0;
+        }
+        
+        .stat-item {
+            position: relative;
+            text-align: center;
+            padding: 1rem 2rem;
+        }
+
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 1px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .stat-item:last-child::after {
+            display: none;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.875rem;
+        }
+        
+        /* ================================
+           PRODUCT CARDS - Unified Style
+           ================================ */
+        .product-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--color-accent);
+        }
+        
+        .product-card .product-overlay {
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.375rem 0.875rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            z-index: 5;
+        }
+        
+        .product-badge-hot {
+            background: rgba(201, 162, 39, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            color: #fbbf24;
+        }
+        
+        .product-badge-natural {
+            background: rgba(45, 125, 70, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(45, 125, 70, 0.3);
+            color: #6ee7b7;
+        }
+        
+        .product-badge-premium {
+            background: rgba(26, 26, 26, 0.3);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e5e5e5;
+        }
+        
+        .product-info {
+            padding: 1.25rem;
+        }
+        
+        .product-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.375rem;
+        }
+        
+        .product-desc {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .product-tags {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+        
+        .product-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-eco);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+        
+        .product-link:hover {
+            color: var(--color-accent);
+        }
+        
+        .product-link i {
+            transition: transform var(--transition-fast);
+        }
+        
+        .product-link:hover i {
+            transform: translateX(4px);
+        }
+        
+        /* ================================
+           PRODUCT CAROUSEL - Large Image
+           ================================ */
+        .product-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+        }
+        
+        .carousel-main {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .carousel-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .carousel-main:hover img {
+            transform: scale(1.03);
+        }
+        
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 1.5rem;
+        }
+        
+        .carousel-main:hover .carousel-overlay {
+            opacity: 1;
+        }
+        
+        .carousel-overlay span {
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: rgba(0,0,0,0.6);
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-full);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.95);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all var(--transition-normal);
+            z-index: 10;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .product-carousel:hover .carousel-nav {
+            opacity: 1;
+        }
+        
+        .carousel-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-nav.prev { left: 1rem; }
+        .carousel-nav.next { right: 1rem; }
+        .carousel-nav i { color: var(--color-primary); font-size: 1rem; }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d1d5db;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            padding: 0;
+        }
+        
+        .carousel-dot.active {
+            background: var(--color-accent);
+            width: 24px;
+            border-radius: 4px;
+        }
+        
+        .carousel-dot:hover:not(.active) {
+            background: #9ca3af;
+        }
+        
+        /* ================================
+           FEATURED PRODUCTS - Unified Banners
+           ================================ */
+        .featured-banner {
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .featured-banner {
+                padding: 3rem;
+            }
+        }
+        
+        .featured-banner-metal {
+            background: rgba(26, 26, 26, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .featured-banner-resin {
+            background: rgba(45, 125, 70, 0.3); backdrop-filter: blur(12px); border: 1px solid rgba(45, 125, 70, 0.2);
+        }
+        
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+        
+        .featured-badge-white {
+            background: white;
+            color: var(--color-primary);
+        }
+        
+        .featured-badge-transparent {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        .featured-title {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-desc {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .featured-stat-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .featured-stat-card i {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .featured-stat-card h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .featured-stat-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+        }
+        
+        .featured-info-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .featured-info-card h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .featured-info-card h4 i {
+            color: var(--color-accent);
+        }
+        
+        .featured-info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .featured-info-card li {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+            padding: 0.25rem 0;
+        }
+        
+        .featured-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.875rem;
+            transition: all var(--transition-normal);
+        }
+        
+        .featured-tag:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* ================================
+           SECTIONS - Unified Style
+           ================================ */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                padding: 6rem 0;
+            }
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(201, 162, 39, 0.1);
+            color: var(--color-accent);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-desc {
+            color: var(--color-text-muted);
+            font-size: 1.0625rem;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        
+        .section-divider {
+            width: 4rem;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+            border-radius: var(--radius-full);
+            margin: 1.5rem auto 0;
+        }
+        
+        /* ================================
+           FORMS - Unified Style
+           ================================ */
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+            background: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ================================
+           FOOTER - Unified Style
+           ================================ */
+        .footer {
+            background: var(--color-primary);
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer a:hover {
+            color: var(--color-accent);
+        }
+        
+        .footer-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+        
+        .footer-link {
+            display: block;
+            padding: 0.375rem 0;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9375rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--color-accent);
+            padding-left: 0.25rem;
+        }
+        
+        /* ================================
+           LIGHTBOX - Unified Style
+           ================================ */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .lightbox-close:hover { opacity: 1; }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity var(--transition-normal);
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+        }
+        
+        .lightbox-nav:hover { opacity: 1; }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
+        
+        .lightbox-counter {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+            .stat-item { padding: 0.5rem 1rem; }
+            .stat-number { font-size: 2rem; }
+        }
+        
+        /* ================================
+           CERTIFICATIONS - Unified
+           ================================ */
+        .certification-badge {
+            transition: all var(--transition-normal);
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .certification-badge:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* ================================
+           PARTNERS - Unified
+           ================================ */
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: all var(--transition-normal);
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* ================================
+           PROCESS STEPS - Unified
+           ================================ */
+        .process-step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: calc(50% + 2rem);
+            width: calc(100% - 4rem);
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-border) 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+        
+        .process-icon {
+            width: 5rem;
+            height: 5rem;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .process-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* ================================
+           MOBILE MENU - Unified
+           ================================ */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform var(--transition-normal);
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* ================================
+           UTILITIES
+           ================================ */
+        .text-accent { color: var(--color-accent); }
+        .text-eco { color: var(--color-eco); }
+        .bg-accent { background-color: var(--color-accent); }
+        .bg-eco { background-color: var(--color-eco); }
+        .border-accent { border-color: var(--color-accent); }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .btn-primary {
+                min-height: 48px;
+                font-size: 16px;
+            }
+            input, select, textarea {
+                min-height: 44px;
+                font-size: 16px;
+            }
+            h1 { font-size: 2rem !important; }
+            h2 { font-size: 1.75rem !important; }
+            h3 { font-size: 1.25rem !important; }
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+        /* Prevent zoom on input focus on iOS */
+        input[type="text"], input[type="email"], input[type="tel"], 
+        select, textarea {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-20 w-auto object-contain">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-accent font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-accent font-medium transition-colors">About</a>
+                    <a href="#products" class="text-gray-700 hover:text-accent font-medium transition-colors">Products</a>
+                    <a href="#strength" class="text-gray-700 hover:text-accent font-medium transition-colors">Certifications</a>
+                    <a href="#why-us" class="text-gray-700 hover:text-accent font-medium transition-colors">Why Us</a>
+                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full font-medium">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl lg:hidden z-50">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-primary">Menu</span>
+                    <button id="close-menu" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-times text-2xl text-gray-700"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
+                    <a href="#about" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">About</a>
+                    <a href="#products" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Products</a>
+                    <a href="#strength" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Certifications</a>
+                    <a href="#why-us" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Why Us</a>
+                    <a href="#contact" class="mobile-link btn-primary py-3 px-4 text-lg font-medium text-white rounded-lg text-center mt-4">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 animate-fade-in-up delay-100">
+                        Premium Buttons for<br>
+                        <span class="text-accent">Fashion Brands.</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg md:text-xl mb-8 max-w-xl animate-fade-in-up delay-200">
+                        Leading manufacturer of metal buttons and resin buttons. 
+                        Two decades of factory expertise serving garment factories, brands, and SOHO buyers worldwide.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-8 animate-fade-in-up delay-200">
+                        <div class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check-circle text-eco"></i>
+                            <span class="text-sm">Free Samples Available</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check-circle text-eco"></i>
+                            <span class="text-sm">Small Batch Support</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check-circle text-eco"></i>
+                            <span class="text-sm">OEM/ODM Custom</span>
+                        </div>
+                    </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 animate-fade-in-up delay-200">
+                            <div class="flex items-center gap-2 text-gray-600 bg-white/80 px-4 py-2 rounded-lg">
+                                <i class="fas fa-bolt text-accent"></i>
+                                <span class="text-sm">24h Fast Response</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600 bg-white/80 px-4 py-2 rounded-lg">
+                                <i class="fas fa-sliders-h text-accent"></i>
+                                <span class="text-sm">Low MOQ Flexible</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600 bg-white/80 px-4 py-2 rounded-lg">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="text-sm">Quality Guaranteed</span>
+                            </div>
+                        </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300">
+                        <a href="#products" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center justify-center gap-2">
+                            <span>Explore Products</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="px-8 py-4 rounded-full font-semibold text-lg border-2 border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all inline-flex items-center justify-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>Get Quote</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative animate-fade-in delay-400">
+                    <img src="images/banner.jpg" 
+                         alt="Yenjor Quality Button Products" 
+                         class="rounded-2xl shadow-2xl w-full"
+                         style="aspect-ratio: 16/9; object-fit: cover;">
+                    <div class="absolute -bottom-6 -left-6 bg-white/15 backdrop-blur-xl p-6 rounded-xl shadow-2xl border border-white/20 ring-1 ring-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-amber-500/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-accent text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-white">20+</p>
+                                <p class="text-gray-300 text-sm">Years Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <img src="images/factory.jpg" 
+                         alt="Global Shipping Port" 
+                         class="rounded-2xl shadow-xl w-full"
+                         style="aspect-ratio: 6/5;">
+                    <div class="absolute -bottom-8 -right-8 bg-white/10 backdrop-blur-xl text-white p-8 rounded-2xl shadow-2xl hidden md:block border border-white/20 ring-1 ring-amber-400/20">
+                        <p class="text-5xl font-bold text-amber-500">50+</p>
+                        <p class="text-sm text-gray-300">Countries Shipped</p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                        ABOUT YENJOR
+                    </span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+                        Your Trusted Partner for<br>
+                        <span class="text-accent">Quality Button Solutions</span>
+                    </h2>
+                    <div class="section-divider mb-8"></div>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        <strong>Established in 2003 with two decades of manufacturing expertise</strong>, we specialize in 
+                        <strong>metal buttons</strong>, <strong>resin buttons</strong>, and garment accessories. 
+                        Located in the Yangtze River Delta near Shanghai, with convenient access to Shanghai and 
+                        Ningbo ports for global shipping.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Our products are trusted by garment factories, fashion brands, and wholesalers across 
+                        <strong>Southeast Asia</strong> (Bangladesh, Vietnam), <strong>Europe</strong>, 
+                        and <strong>America</strong> — 50+ countries worldwide.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Small Batch Support</h4>
+                                <p class="text-gray-500 text-sm">Perfect for SOHO buyers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-globe text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Global Reach</h4>
+                                <p class="text-gray-500 text-sm">50+ countries served</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bolt text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">Fast Sample</h4>
+                                <p class="text-gray-500 text-sm">7 days sample lead time</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary">OEM/ODM Service</h4>
+                                <p class="text-gray-500 text-sm">Custom design available</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section - Main Product Lines -->
+    <section id="products" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-star mr-1"></i> STAR PRODUCTS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Our Core Product Lines
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Specializing in natural shell buttons and superior craftsmanship metal buttons — where quality meets style for discerning brands worldwide.
+                </p>
+            </div>
+            
+            <!-- Product 1: Natural Buttons Collection -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12 mb-12 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Flagship</span>
+                            <span class="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-semibold">100% Natural</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Natural Buttons Collection
+                        </h3>
+                        <p class="text-gray-300 text-lg mb-6">
+                            Expertly crafted from Mother of Pearl, Coconut Shell, Horn, and Wood. 
+                            Each piece showcases unique natural textures, organic grain patterns, and exceptional finish — 
+                            perfect for fashion brands seeking authentic, superior craftsmanship quality accessories.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-accent font-semibold text-sm">✓ Unique Natural Patterns</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-accent font-semibold text-sm">✓ Superior Craftsmanship</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-accent font-semibold text-sm">✓ Low MOQ 100pcs</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-accent font-semibold text-sm">✓ Custom Dyeing Available</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-carousel" id="carousel-shell">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shell')">
+                            <img src="images/shell-button-1.jpg" alt="Natural Shell Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shell')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shell')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shell', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 6)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2: Resin Buttons Collection -->
+            <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl p-8 lg:p-12 mb-12 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-white text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">Superior Craftsmanship</span>
+                            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">Low-Impact Materials</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Resin Buttons Collection
+                        </h3>
+                        <p class="text-white/90 text-lg mb-6">
+                            High-quality buttons crafted from durable resin materials. 
+                            Excellent color consistency and wear resistance. 
+                            Perfect for all types of garments from casual to formal wear.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Superior Durability</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Excellent Color Fastness</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Wide Color Range</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Custom Shapes Available</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3 col-span-2">
+                                <div class="text-white font-semibold text-sm">✓ Consistent Quality</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-carousel" id="carousel-resin">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('resin')">
+                            <img src="images/resin-button-1.jpg" alt="Quality Resin Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('resin')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('resin')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('resin', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 7)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 8)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 9)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3: Custom Metal Buttons -->
+            <div class="bg-gradient-to-r from-amber-600 to-orange-700 rounded-3xl p-8 lg:p-12 mb-16 reveal">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="bg-white text-orange-700 px-4 py-1 rounded-full text-sm font-semibold">Exceptional Finish</span>
+                            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">Customizable</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Custom Metal Buttons
+                        </h3>
+                        <p class="text-white/90 text-lg mb-6">
+                            Superior craftsmanship metal buttons crafted from zinc alloy, brass, and stainless steel. 
+                            Available in diverse plating finishes with 3D embossment and laser engraving options 
+                            for brand differentiation. Ideal for outerwear, denim, and luxury accessories.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mb-6">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Custom Designs</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Multiple Plating Options</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ Brand Logo Engraving</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-white font-semibold text-sm">✓ 0.05mm Precision</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3 col-span-2">
+                                <div class="text-white font-semibold text-sm">✓ Low MOQ 500pcs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-carousel" id="carousel-shankMetal">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shankMetal')">
+                            <img src="images/shank-metal-button-1.jpg" alt="Custom Metal Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shankMetal')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shankMetal')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shankMetal', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 6)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- All Products Grid -->
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    ALL PRODUCTS
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Complete Button Collection
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Explore our full range of buttons and garment accessories for every application.
+                </p>
+            </div>
+            
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Coconut Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-coconut">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('coconut')">
+                            <img src="images/coconut-button-1.jpg" alt="Coconut Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('coconut')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('coconut')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('coconut', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('coconut', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('coconut', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('coconut', 3)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Coconut Button</h3>
+                        <p class="text-gray-600 text-sm mb-3">100% natural coconut shell, unique texture and exceptional finish</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Casual Wear</span>
+                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Resort Collection</span>
+                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Fashion Brands</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Horn Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-horn">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('horn')">
+                            <img src="images/horn-button-1.jpg" alt="Horn Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('horn')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('horn')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('horn', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('horn', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('horn', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Horn Button</h3>
+                        <p class="text-gray-600 text-sm mb-3">Genuine horn material, rich natural grain patterns</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Suits</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Coats</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">High-end Outerwear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wooden Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-wooden">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('wooden')">
+                            <img src="images/wooden-button-1.jpg" alt="Wooden Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('wooden')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('wooden')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('wooden', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Wooden Button</h3>
+                        <p class="text-gray-600 text-sm mb-3">Natural wood texture, warm organic feel with superior craftsmanship</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Knits</span>
+                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Cardigans</span>
+                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Children's Wear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jeans Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-jeans">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('jeans')">
+                            <img src="images/jeans-button-1.jpg" alt="Jeans Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('jeans')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('jeans')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('jeans', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Jeans Button</h3>
+                        <p class="text-gray-600 text-sm mb-3">Denim buttons + rivets, complete jeans solution</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Denim</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Jeans</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Workwear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Snap Button -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-snap">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('snap')">
+                            <img src="images/snap-button-1.jpg" alt="Snap Button" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('snap')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('snap')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('snap', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Snap Button</h3>
+                        <p class="text-gray-600 text-sm mb-3">Snap buttons, eyelets, metal ends, stoppers, buckles</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sportswear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Outerwear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rivet -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-rivet">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('rivet')">
+                            <img src="images/rivet-1.jpg" alt="Rivet" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('rivet')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('rivet')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('rivet', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Rivet</h3>
+                        <p class="text-gray-600 text-sm mb-3">Superior craftsmanship double-cap rivets for permanent fastening</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Denim</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Leather</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Eyelet -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-eyelet">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('eyelet')">
+                            <img src="images/eyelet-1.jpg" alt="Eyelet" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('eyelet')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('eyelet')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('eyelet', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Eyelet</h3>
+                        <p class="text-gray-600 text-sm mb-3">Reinforced eyelets for durability in high-stress areas</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Footwear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sportswear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Metal Buckle -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-metalBuckle">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('metalBuckle')">
+                            <img src="images/metal-buckle-1.jpg" alt="Metal Buckle" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('metalBuckle')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('metalBuckle')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Metal Buckle</h3>
+                        <p class="text-gray-600 text-sm mb-3">Pin buckles, side-release buckles for belts and straps</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Belts</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Outdoor</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Metal End -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-metalEnd">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('metalEnd')">
+                            <img src="images/metal-end-1.jpg" alt="Metal End" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('metalEnd')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('metalEnd')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('metalEnd', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalEnd', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalEnd', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalEnd', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalEnd', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Metal End</h3>
+                        <p class="text-gray-600 text-sm mb-3">Aglets and cord ends for clean drawstring finishing</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Hoodies</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sportswear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Footwear</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stopper -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-stopper">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('stopper')">
+                            <img src="images/stopper-1.jpg" alt="Stopper" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('stopper')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('stopper')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('stopper', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 4)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Stopper</h3>
+                        <p class="text-gray-600 text-sm mb-3">Spring-loaded cord locks for adjustable fit</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Outerwear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sportswear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                    <span>Request Full Catalog</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Strength Section -->
+    <section id="strength" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-shield-alt mr-1"></i> OUR STRENGTH
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Our Certifications
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Two decades of button manufacturing expertise with globally recognized quality certifications.
+                </p>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="grid md:grid-cols-6 gap-4 mb-12">
+                <!-- OEKO-TEX -->
+                <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                    <img src="images/cert-oeko-tex.png" alt="OEKO-TEX" class="w-12 h-12 object-contain mb-2">
+                    <h4 class="text-sm font-bold text-primary text-center">OEKO-TEX</h4>
+                </div>
+                
+                <!-- ISO 9001 -->
+                <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                    <img src="images/cert-sgs.png" alt="ISO 9001" class="w-12 h-12 object-contain mb-2">
+                    <h4 class="text-sm font-bold text-primary text-center">ISO 9001</h4>
+                </div>
+                
+                <!-- GRS -->
+                <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                    <img src="images/cert-grs.png" alt="GRS" class="w-12 h-12 object-contain mb-2">
+                    <h4 class="text-sm font-bold text-primary text-center">GRS-accredited</h4>
+                </div>
+                
+                <!-- BSCI -->
+                <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                    <img src="images/cert-bsci.png" alt="BSCI" class="w-12 h-12 object-contain mb-2">
+                    <h4 class="text-sm font-bold text-primary text-center">BSCI</h4>
+                </div>
+                
+                <!-- GOTS -->
+                <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                    <img src="images/cert-gots.png" alt="GOTS" class="w-12 h-12 object-contain mb-2">
+                    <h4 class="text-sm font-bold text-primary text-center">GOTS</h4>
+                </div>
+                
+                <!-- Recycled 100 -->
+                <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                    <img src="images/cert-recycled-100.png" alt="Recycled 100" class="w-12 h-12 object-contain mb-2">
+                    <h4 class="text-sm font-bold text-primary text-center">Recycled 100</h4>
+                </div>
+            </div>
+            
+            <!-- Environmental Commitment -->
+            <div class="bg-gradient-to-r from-emerald-600 to-green-700 rounded-3xl p-8 lg:p-10 shadow-xl reveal text-center">
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+                    <i class="fas fa-leaf mr-2"></i>Our Planet-Friendly Commitment
+                </h3>
+                <p class="text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    As a responsible manufacturer, we are committed to planet-friendly production practices. 
+                    Our GRS-accredited facilities ensure that every button we produce meets the highest 
+                    standards of environmental responsibility, from raw material sourcing through manufacturing 
+                    processes to final delivery. We continuously invest in sustainable technologies and practices 
+                    to minimize our environmental footprint while delivering exceptional quality products.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section id="trusted" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-heart mr-1"></i> TRUSTED BY
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Global Client Trust
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Serving garment factories, wholesalers, and fashion brands across 50+ countries.
+                </p>
+            </div>
+            
+            <!-- Who We Serve -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center reveal">
+                    Who We Serve
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Garment Factory -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center reveal border border-blue-100">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-industry text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Garment Factories</h4>
+                        <p class="text-gray-600 text-sm mb-4">Bulk orders with consistent quality and technical specifications support.</p>
+                        <div class="text-xs text-blue-600 font-medium">MOQ: 5,000 pcs+ | Lead time: 15-30 days</div>
+                    </div>
+                    
+                    <!-- Wholesaler -->
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 text-center reveal border border-amber-100">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-warehouse text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Wholesalers</h4>
+                        <p class="text-gray-600 text-sm mb-4">Wide product range with competitive pricing and fast reorder processing.</p>
+                        <div class="text-xs text-accent font-medium">MOQ: 1,000 pcs+ | Stock programs available</div>
+                    </div>
+                    
+                    <!-- Fashion Brand -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 text-center reveal border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tshirt text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Fashion Brands</h4>
+                        <p class="text-gray-600 text-sm mb-4">Custom logo design, OEKO-TEX compliant products, exclusive development partnership.</p>
+                        <div class="text-xs text-purple-600 font-medium">MOQ: 500 pcs+ | Custom branding</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brand Partners -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center reveal">
+                    Global Brand Partners
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto reveal">
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-nike-v2.png" alt="Nike" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-adidas-v2.png" alt="Adidas" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-zara-v2.png" alt="Zara" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-hm-v2.png" alt="H&M" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-uniqlo-v2.png" alt="UNIQLO" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-kappa-v2.png" alt="Kappa" class="max-h-9 w-auto object-contain">
+                    </div>
+    </section>
+
+    <!-- Why Choose Us + Process Section -->
+    <section id="why-us" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    WHY PARTNER WITH YENJOR
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Simple & Reliable Cooperation
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Two decades of manufacturing expertise with transparent 4-step process.
+                </p>
+            </div>
+            
+            <!-- 4 Key Advantages -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-industry text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Factory Direct</h3>
+                    <p class="text-gray-600 text-xs">In-house production, competitive pricing</p>
+                </div>
+                
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-bolt text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Fast Sample</h3>
+                    <p class="text-gray-600 text-xs">7 days standard, 10-15 days custom</p>
+                </div>
+                
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-box-open text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Flexible MOQ</h3>
+                    <p class="text-gray-600 text-xs">100-500 pcs minimum, mixed styles</p>
+                </div>
+                
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-shipping-fast text-amber-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Global Shipping</h3>
+                    <p class="text-gray-600 text-xs">50+ countries, fast transit</p>
+                </div>
+            </div>
+            
+            <!-- 4-Step Process -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Response: 24h
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">1. Inquiry</h3>
+                    <p class="text-gray-600 text-sm">
+                        Get professional advice and preliminary quote within 24 hours.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Sample: 7-15 Days
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">2. Sample Confirm</h3>
+                    <p class="text-gray-600 text-sm">
+                        Receive free samples for quality verification before production.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Production: 15-30 Days
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">3. Production & QC</h3>
+                    <p class="text-gray-600 text-sm">
+                        Bulk production with 3-stage quality control. Regular updates.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Delivery: 7-14 Days
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">4. Shipping</h3>
+                    <p class="text-gray-600 text-sm">
+                        Final inspection, secure packaging, worldwide shipping.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 lg:py-24 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="reveal">
+                    <span class="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-4">
+                        CONTACT US
+                    </span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                        Let's Start Your Project
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8">
+                        Ready to discuss your button and garment accessory needs? 
+                        Get in touch for a free consultation and quotation. We respond within 24 hours.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-building text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Company</h4>
+                                <p class="text-gray-400">Yenjor Co., Ltd.</p>
+                                <p class="text-gray-600 text-sm">Superior Craftsmanship Button Manufacturer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Address</h4>
+                                <p class="text-gray-400">Jiashan County, Jiaxing City</p>
+                                <p class="text-gray-400">Zhejiang Province, China</p>
+                                <p class="text-gray-600 text-sm">(Near Shanghai, Hangzhou, Suzhou, Ningbo)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-gray-400">sales@yenjor.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone / WhatsApp</h4>
+                                <p class="text-gray-400"><a href="https://wa.me/8615257397811" target="_blank" class="text-accent hover:text-white transition-colors font-medium">+86 152-XXX-7811  <i class="fab fa-whatsapp ml-1"></i> (Click to WhatsApp)</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-accent text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Working Hours</h4>
+                                <p class="text-gray-400">Mon - Sat: 8:00 AM - 6:00 PM (GMT+8)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Benefits -->
+                    <div class="mt-8 p-6 bg-white/5 rounded-xl">
+                        <h4 class="font-semibold mb-4 text-white">
+                            <i class="fas fa-bolt text-accent mr-2"></i>Why Contact Us?
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>Free samples available</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>7-day sample lead time</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>Small MOQ supported</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-gray-600">
+                                <i class="fas fa-check text-eco"></i>
+                                <span>Custom design service</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 lg:p-8 text-gray-800 reveal">
+                    <h3 class="text-xl font-bold text-primary mb-6">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                            <input type="text" name="name" required 
+                                   class="form-input w-full px-4 py-2.5 rounded-lg focus:outline-none" 
+                                   placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" name="email" required 
+                                   class="form-input w-full px-4 py-2.5 rounded-lg focus:outline-none" 
+                                   placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Product Interest *</label>
+                            <select name="product" required class="form-input w-full px-4 py-2.5 rounded-lg focus:outline-none">
+                                <option value="">Select a product category</option>
+                                <option value="shell-button">Shell Button</option>
+                                <option value="metal-button">Metal Button</option>
+                                <option value="snap-button">Snap Button</option>
+                                <option value="jeans-button">Jeans Button</option>
+                                <option value="horn-button">Horn Button</option>
+                                <option value="resin-button">Resin Button</option>
+                                <option value="custom">Custom / OEM / ODM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea name="message" rows="3" required 
+                                      class="form-input w-full px-4 py-2.5 rounded-lg focus:outline-none resize-none" 
+                                      placeholder="Please describe your requirements, quantity, standards needed (OEKO-TEX, GRS), delivery timeline, etc."></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full btn-primary py-3.5 rounded-lg font-semibold flex items-center justify-center gap-2">
+                            <span>Send Inquiry</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="text-center text-gray-500 text-sm mt-4">
+                        <i class="fas fa-lock mr-1"></i>
+                        Your information is secure and will never be shared.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="mb-6">
+                        <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-12 w-auto object-contain">
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Leading manufacturer of quality buttons and garment accessories since 2003. 
+                        GRS-accredited supplier for garment factories and fashion brands worldwide.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
+                            <img src="images/cert-oeko-tex-small.png" alt="OEKO-TEX" class="w-4 h-4 mr-1">OEKO-TEX
+                        </span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
+                            <img src="images/cert-grs-small.png" alt="GRS" class="w-4 h-4 mr-1">GRS
+                        </span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
+                            <img src="images/cert-iso-small.png" alt="ISO 9001" class="w-4 h-4 mr-1">ISO 9001
+                        </span>
+                    </div>
+                    <div class="flex gap-3 mt-6">
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-facebook-f text-gray-700"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-linkedin-in text-gray-700"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-instagram text-gray-700"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-whatsapp text-gray-700"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-gray-900 font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-600 hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-600 hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-accent transition-colors">Products</a></li>
+                        <li><a href="#strength" class="text-gray-600 hover:text-accent transition-colors">Certifications</a></li>
+                        <li><a href="#why-us" class="text-gray-600 hover:text-accent transition-colors">Why Choose Us</a></li>
+                        <li><a href="#contact" class="text-gray-600 hover:text-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-gray-900 font-semibold mb-6">Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#products" class="text-gray-600 hover:text-accent transition-colors">Shell Buttons</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-accent transition-colors">Metal Button</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-accent transition-colors">Snap Button</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-accent transition-colors">Jeans Button</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-accent transition-colors">Horn Button</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-accent transition-colors">Coconut Button</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-gray-900 font-semibold mb-6">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                            <span class="text-gray-600">Jiashan, Zhejiang, China</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope text-accent mt-1"></i>
+                            <span class="text-gray-600">sales@yenjor.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fab fa-whatsapp text-accent mt-1"></i>
+                            <span class="text-gray-600">+86 152-XXX-7811</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-clock text-accent mt-1"></i>
+                            <span class="text-gray-600">Mon-Sat: 8:00-18:00 (GMT+8)</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 p-4 bg-gray-100 rounded-lg">
+                        <p class="text-gray-600 text-sm">
+                            <i class="fas fa-truck text-accent mr-2"></i>
+                            Worldwide shipping available
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-500 text-sm text-center md:text-left">
+                        © 2024 Yenjor Co., Ltd. All rights reserved. | 20+ Years of Button Manufacturing Excellence
+                    </p>
+                    <div class="flex gap-6 text-sm">
+                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-accent text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all hover:bg-primary z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let counted = false;
+
+        const animateCounters = () => {
+            if (counted) return;
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+            
+            counted = true;
+        };
+
+        // Form Submission (Demo)
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i> Sent Successfully!';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.classList.remove('bg-green-500');
+                    btn.classList.add('bg-primary');
+                    contactForm.reset();
+                }, 3000);
+            }, 2000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Product Carousel Functions
+        const carouselState = {};
+        
+        function goToCarousel(category, index) {
+            const carousel = document.getElementById('carousel-' + category);
+            if (!carousel) return;
+            
+            const images = galleryImages[category] || [];
+            if (images.length === 0) return;
+            
+            carouselState[category] = index;
+            
+            const img = carousel.querySelector('.carousel-img');
+            if (img) {
+                img.src = images[index];
+            }
+            
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextCarousel(category) {
+            const images = galleryImages[category] || [];
+            if (images.length === 0) return;
+            
+            const current = carouselState[category] || 0;
+            const next = (current + 1) % images.length;
+            goToCarousel(category, next);
+        }
+        
+        function prevCarousel(category) {
+            const images = galleryImages[category] || [];
+            if (images.length === 0) return;
+            
+            const current = carouselState[category] || 0;
+            const prev = (current - 1 + images.length) % images.length;
+            goToCarousel(category, prev);
+        }
+        
+        function openLightboxFromCarousel(category) {
+            const current = carouselState[category] || 0;
+            openLightbox(current, category);
+        }
+
+        // Product Gallery Lightbox
+        const galleryImages = {
+            shell: ['images/shell-button-1.jpg', 'images/shell-button-2.jpg', 'images/shell-button-3.jpg', 'images/shell-button-4.jpg', 'images/shell-button-5.jpg', 'images/shell-button-6.jpg', 'images/shell-button-7.jpg'],
+            coconut: ['images/coconut-button-1.jpg', 'images/coconut-button-2.jpg', 'images/coconut-button-3.jpg', 'images/coconut-button-4.jpg'],
+            horn: ['images/horn-button-1.jpg', 'images/horn-button-2.jpg', 'images/horn-button-3.jpg'],
+            wooden: ['images/wooden-button-1.jpg', 'images/wooden-button-2.jpg', 'images/wooden-button-3.jpg', 'images/wooden-button-4.jpg', 'images/wooden-button-5.jpg'],
+            resin: ['images/resin-button-1.jpg', 'images/resin-button-2.jpg', 'images/resin-button-3.jpg', 'images/resin-button-4.jpg', 'images/resin-button-5.jpg', 'images/resin-button-6.jpg', 'images/resin-button-7.jpg', 'images/resin-button-8.jpg', 'images/resin-button-9.jpg', 'images/resin-button-10.jpg'],
+            shankMetal: ['images/shank-metal-button-1.jpg', 'images/shank-metal-button-2.jpg', 'images/shank-metal-button-3.jpg', 'images/shank-metal-button-4.jpg', 'images/shank-metal-button-5.jpg', 'images/shank-metal-button-6.jpg', 'images/shank-metal-button-7.jpg'],
+            jeans: ['images/jeans-button-1.jpg', 'images/jeans-button-2.jpg', 'images/jeans-button-3.jpg', 'images/jeans-button-4.jpg', 'images/jeans-button-5.jpg'],
+            rivet: ['images/rivet-1.jpg', 'images/rivet-2.jpg', 'images/rivet-3.jpg', 'images/rivet-4.jpg', 'images/rivet-5.jpg'],
+            snap: ['images/snap-button-1.jpg', 'images/snap-button-2.jpg', 'images/snap-button-3.jpg', 'images/snap-button-4.jpg', 'images/snap-button-5.jpg'],
+            eyelet: ['images/eyelet-1.jpg', 'images/eyelet-2.jpg', 'images/eyelet-3.jpg', 'images/eyelet-4.jpg', 'images/eyelet-5.jpg'],
+            metalBuckle: ['images/metal-buckle-1.jpg', 'images/metal-buckle-2.jpg', 'images/metal-buckle-3.jpg', 'images/metal-buckle-4.jpg', 'images/metal-buckle-5.jpg'],
+            metalEnd: ['images/metal-end-1.jpg', 'images/metal-end-2.jpg', 'images/metal-end-3.jpg', 'images/metal-end-4.jpg', 'images/metal-end-5.jpg'],
+            stopper: ['images/stopper-1.jpg', 'images/stopper-2.jpg', 'images/stopper-3.jpg', 'images/stopper-4.jpg', 'images/stopper-5.jpg']
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+        let currentCategory = '';
+
+        function openLightbox(index, category) {
+            currentGallery = galleryImages[category] || [];
+            currentIndex = index;
+            currentCategory = category;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const img = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
+            if (img && currentGallery[currentIndex]) {
+                img.src = currentGallery[currentIndex];
+            }
+            if (counter) {
+                counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+            }
+        }
+
+        function nextImage() {
+            if (currentGallery.length > 0) {
+                currentIndex = (currentIndex + 1) % currentGallery.length;
+                updateLightboxImage();
+            }
+        }
+
+        function prevImage() {
+            if (currentGallery.length > 0) {
+                currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+                updateLightboxImage();
+            }
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+            if (e.key === 'ArrowRight') {
+                nextImage();
+            }
+            if (e.key === 'ArrowLeft') {
+                prevImage();
+            }
+        });
+    </script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="if(event.target === this) closeLightbox()">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+            <span class="lightbox-nav lightbox-prev" onclick="prevImage()"><i class="fas fa-chevron-left"></i></span>
+            <img id="lightbox-img" src="" alt="Product Image">
+            <span class="lightbox-nav lightbox-next" onclick="nextImage()"><i class="fas fa-chevron-right"></i></span>
+            <div id="lightbox-counter" class="lightbox-counter"></div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- Force rebuild -->
