@@ -243,6 +243,19 @@
         .hero-feature i {
             color: var(--color-eco-light);
         }
+
+        /* Hero Feature Tags - Mobile Optimization */
+        .hero-feature-tag {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            .hero-feature-tag {
+                background: rgba(255, 255, 255, 0.98) !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                border-color: rgba(0, 0, 0, 0.08) !important;
+            }
+        }
         
         /* Hero Image Card */
         .hero-image-container {
@@ -1107,27 +1120,27 @@
                         Yenjor — China's trusted button factory. 20 years making metal & resin buttons for garment factories and brands worldwide.
                     </p>
                     <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 animate-fade-in-up delay-200">
-                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                        <div class="flex items-center gap-2 text-gray-600 hero-feature-tag bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
                             <i class="fas fa-gift text-accent"></i>
                             <span class="text-sm font-medium">Free Samples</span>
                         </div>
-                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                        <div class="flex items-center gap-2 text-gray-600 hero-feature-tag bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
                             <i class="fas fa-file-invoice-dollar text-accent"></i>
                             <span class="text-sm font-medium">Fast Quotes</span>
                         </div>
-                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                        <div class="flex items-center gap-2 text-gray-600 hero-feature-tag bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
                             <i class="fas fa-boxes text-accent"></i>
                             <span class="text-sm font-medium">Low MOQ</span>
                         </div>
-                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                        <div class="flex items-center gap-2 text-gray-600 hero-feature-tag bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
                             <i class="fas fa-clock text-accent"></i>
                             <span class="text-sm font-medium">24hr Reply</span>
                         </div>
-                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                        <div class="flex items-center gap-2 text-gray-600 hero-feature-tag bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
                             <i class="fas fa-tags text-accent"></i>
                             <span class="text-sm font-medium">Good Prices</span>
                         </div>
-                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                        <div class="flex items-center gap-2 text-gray-600 hero-feature-tag bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
                             <i class="fas fa-shipping-fast text-accent"></i>
                             <span class="text-sm font-medium">Ship Worldwide</span>
                         </div>
