@@ -846,6 +846,11 @@
             padding-left: 0.25rem;
         }
         
+        /* Footer social icon hover color fix */
+        footer a:hover i {
+            color: white !important;
+        }
+        
         /* ================================
            LIGHTBOX - Unified Style
            ================================ */
@@ -2054,92 +2059,55 @@
 
 
     <!-- Footer -->
-    <footer class="bg-gray-50 py-12 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="mb-6">
-                        <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-12 w-auto object-contain">
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        Leading manufacturer of quality buttons and garment accessories since 2003. 
-                        GRS-accredited supplier for garment factories and fashion brands worldwide.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
-                            <img src="images/cert-oeko-tex-small.png" alt="OEKO-TEX" class="w-4 h-4 mr-1">OEKO-TEX
-                        </span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
-                            <img src="images/cert-grs-small.png" alt="GRS" class="w-4 h-4 mr-1">GRS
-                        </span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
-                            <img src="images/cert-iso-small.png" alt="ISO 9001" class="w-4 h-4 mr-1">ISO 9001
-                        </span>
-                    </div>
-                    <div class="flex gap-3 mt-6">
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-facebook-f text-gray-700"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-linkedin-in text-gray-700"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-instagram text-gray-700"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-whatsapp text-gray-700"></i>
-                        </a>
-                    </div>
+    <footer class="bg-gray-50 py-10 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Logo -->
+                <div class="mb-6">
+                    <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-10 w-auto object-contain mx-auto">
                 </div>
                 
-                <div>
-                    <h4 class="text-gray-900 font-semibold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-600 hover:text-accent transition-colors">Home</a></li>
-                        <li><a href="#about" class="text-gray-600 hover:text-accent transition-colors">About Us</a></li>
-                        <li><a href="#strength" class="text-gray-600 hover:text-accent transition-colors">Certifications</a></li>
-                        <li><a href="#why-us" class="text-gray-600 hover:text-accent transition-colors">Why Choose Us</a></li>
-                        <li><a href="#contact" class="text-gray-600 hover:text-accent transition-colors">Contact</a></li>
-                    </ul>
+                <!-- Short Description -->
+                <p class="text-gray-600 mb-6 max-w-xl mx-auto text-sm leading-relaxed">
+                    Leading manufacturer of quality buttons and garment accessories since 2003. 
+                    GRS-accredited supplier for garment factories and fashion brands worldwide.
+                </p>
+                
+                <!-- Certification Badges -->
+                <div class="flex justify-center gap-3 flex-wrap mb-6">
+                    <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-full text-xs text-gray-600 flex items-center shadow-sm">
+                        <img src="images/cert-oeko-tex-small.png" alt="OEKO-TEX" class="w-4 h-4 mr-1.5">OEKO-TEX
+                    </span>
+                    <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-full text-xs text-gray-600 flex items-center shadow-sm">
+                        <img src="images/cert-grs-small.png" alt="GRS" class="w-4 h-4 mr-1.5">GRS
+                    </span>
+                    <span class="bg-white border border-gray-200 px-3 py-1.5 rounded-full text-xs text-gray-600 flex items-center shadow-sm">
+                        <img src="images/cert-iso-small.png" alt="ISO 9001" class="w-4 h-4 mr-1.5">ISO 9001
+                    </span>
                 </div>
                 
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
-                            <span class="text-gray-600">Jiashan, Zhejiang, China</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-envelope text-accent mt-1"></i>
-                            <span class="text-gray-600">sales@yenjor.com</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fab fa-whatsapp text-accent mt-1"></i>
-                            <span class="text-gray-600">+86 152-XXX-7811</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-clock text-accent mt-1"></i>
-                            <span class="text-gray-600">Mon-Sat: 8:00-18:00 (GMT+8)</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 p-4 bg-gray-100 rounded-lg">
-                        <p class="text-gray-600 text-sm">
-                            <i class="fas fa-truck text-accent mr-2"></i>
-                            Worldwide shipping available
-                        </p>
-                    </div>
+                <!-- Social Icons -->
+                <div class="flex justify-center gap-3 mb-8">
+                    <a href="#" class="w-9 h-9 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-facebook-f text-gray-600 text-sm"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-linkedin-in text-gray-600 text-sm"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-instagram text-gray-600 text-sm"></i>
+                    </a>
+                    <a href="#" class="w-9 h-9 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-whatsapp text-gray-600 text-sm"></i>
+                    </a>
                 </div>
-            </div>
-            
-            <div class="border-t border-gray-200 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-gray-500 text-sm text-center md:text-left">
-                        © 2024 Yenjor Co., Ltd. All rights reserved. | 20+ Years of Button Manufacturing Excellence
+                
+                <!-- Divider -->
+                <div class="border-t border-gray-200 pt-6">
+                    <!-- Copyright -->
+                    <p class="text-gray-500 text-xs">
+                        © 2024 Yenjor Co., Ltd. All rights reserved.
                     </p>
-                    <div class="flex gap-6 text-sm">
-                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Terms of Service</a>
-                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Sitemap</a>
-                    </div>
                 </div>
             </div>
         </div>
