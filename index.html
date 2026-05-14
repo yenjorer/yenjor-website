@@ -2259,6 +2259,23 @@
         
         // Product Carousel Functions
         const carouselState = {};
+
+        const galleryImages = {
+            shell: ['images/shell-button-1.jpg', 'images/shell-button-2.jpg', 'images/shell-button-3.jpg', 'images/shell-button-4.jpg', 'images/shell-button-5.jpg', 'images/shell-button-6.jpg', 'images/shell-button-7.jpg'],
+            coconut: ['images/coconut-button-1.jpg', 'images/coconut-button-2.jpg', 'images/coconut-button-3.jpg', 'images/coconut-button-4.jpg'],
+            horn: ['images/horn-button-1.jpg', 'images/horn-button-2.jpg', 'images/horn-button-3.jpg'],
+            wooden: ['images/wooden-button-1.jpg', 'images/wooden-button-2.jpg', 'images/wooden-button-3.jpg', 'images/wooden-button-4.jpg', 'images/wooden-button-5.jpg', 'images/wooden-button-6.jpg', 'images/wooden-button-7.jpg', 'images/wooden-button-8.jpg'],
+            resin: ['images/resin-button-1.jpg', 'images/resin-button-2.jpg', 'images/resin-button-3.jpg', 'images/resin-button-4.jpg', 'images/resin-button-5.jpg', 'images/resin-button-6.jpg', 'images/resin-button-7.jpg', 'images/resin-button-8.jpg', 'images/resin-button-9.jpg', 'images/resin-button-10.jpg'],
+            shankMetal: ['images/shank-metal-button-1.jpg', 'images/shank-metal-button-2.jpg', 'images/shank-metal-button-3.jpg', 'images/shank-metal-button-4.jpg', 'images/shank-metal-button-5.jpg', 'images/shank-metal-button-6.jpg', 'images/shank-metal-button-7.jpg'],
+            jeans: ['images/jeans-button-1.jpg', 'images/jeans-button-2.jpg', 'images/jeans-button-3.jpg', 'images/jeans-button-4.jpg', 'images/jeans-button-5.jpg', 'images/jeans-button-6.jpg', 'images/jeans-button-7.jpg', 'images/jeans-button-8.jpg', 'images/jeans-button-9.jpg', 'images/jeans-button-10.jpg', 'images/jeans-button-11.jpg'],
+            rivet: ['images/rivet-1.jpg', 'images/rivet-2.jpg', 'images/rivet-3.jpg', 'images/rivet-4.jpg', 'images/rivet-5.jpg', 'images/rivet-6.jpg', 'images/rivet-7.jpg', 'images/rivet-8.jpg', 'images/rivet-9.jpg', 'images/rivet-10.jpg', 'images/rivet-11.jpg'],
+            snap: ['images/snap-button-1.jpg', 'images/snap-button-2.jpg', 'images/snap-button-3.jpg', 'images/snap-button-4.jpg', 'images/snap-button-5.jpg', 'images/snap-button-6.jpg'],
+            eyelet: ['images/eyelet-1.jpg', 'images/eyelet-2.jpg', 'images/eyelet-3.jpg', 'images/eyelet-4.jpg', 'images/eyelet-5.jpg', 'images/eyelet-6.jpg'],
+            metalBuckle: ['images/metal-buckle-1.jpg', 'images/metal-buckle-2.jpg', 'images/metal-buckle-3.jpg', 'images/metal-buckle-4.jpg', 'images/metal-buckle-5.jpg', 'images/metal-buckle-6.jpg'],
+            metalEnd: ['images/metal-end-1.jpg', 'images/metal-end-2.jpg', 'images/metal-end-3.jpg', 'images/metal-end-4.jpg', 'images/metal-end-5.jpg', 'images/metal-end-6.jpg'],
+            stopper: ['images/stopper-1.jpg', 'images/stopper-2.jpg', 'images/stopper-3.jpg', 'images/stopper-4.jpg', 'images/stopper-5.jpg', 'images/stopper-6.jpg']
+        };
+
         
         function goToCarousel(category, index) {
             const carousel = document.getElementById('carousel-' + category);
@@ -2304,21 +2321,7 @@
         }
 
         // Product Gallery Lightbox
-        const galleryImages = {
-            shell: ['images/shell-button-1.jpg', 'images/shell-button-2.jpg', 'images/shell-button-3.jpg', 'images/shell-button-4.jpg', 'images/shell-button-5.jpg', 'images/shell-button-6.jpg', 'images/shell-button-7.jpg'],
-            coconut: ['images/coconut-button-1.jpg', 'images/coconut-button-2.jpg', 'images/coconut-button-3.jpg', 'images/coconut-button-4.jpg'],
-            horn: ['images/horn-button-1.jpg', 'images/horn-button-2.jpg', 'images/horn-button-3.jpg'],
-            wooden: ['images/wooden-button-1.jpg', 'images/wooden-button-2.jpg', 'images/wooden-button-3.jpg', 'images/wooden-button-4.jpg', 'images/wooden-button-5.jpg', 'images/wooden-button-6.jpg', 'images/wooden-button-7.jpg', 'images/wooden-button-8.jpg'],
-            resin: ['images/resin-button-1.jpg', 'images/resin-button-2.jpg', 'images/resin-button-3.jpg', 'images/resin-button-4.jpg', 'images/resin-button-5.jpg', 'images/resin-button-6.jpg', 'images/resin-button-7.jpg', 'images/resin-button-8.jpg', 'images/resin-button-9.jpg', 'images/resin-button-10.jpg'],
-            shankMetal: ['images/shank-metal-button-1.jpg', 'images/shank-metal-button-2.jpg', 'images/shank-metal-button-3.jpg', 'images/shank-metal-button-4.jpg', 'images/shank-metal-button-5.jpg', 'images/shank-metal-button-6.jpg', 'images/shank-metal-button-7.jpg'],
-            jeans: ['images/jeans-button-1.jpg', 'images/jeans-button-2.jpg', 'images/jeans-button-3.jpg', 'images/jeans-button-4.jpg', 'images/jeans-button-5.jpg', 'images/jeans-button-6.jpg', 'images/jeans-button-7.jpg', 'images/jeans-button-8.jpg', 'images/jeans-button-9.jpg', 'images/jeans-button-10.jpg', 'images/jeans-button-11.jpg'],
-            rivet: ['images/rivet-1.jpg', 'images/rivet-2.jpg', 'images/rivet-3.jpg', 'images/rivet-4.jpg', 'images/rivet-5.jpg', 'images/rivet-6.jpg', 'images/rivet-7.jpg', 'images/rivet-8.jpg', 'images/rivet-9.jpg', 'images/rivet-10.jpg', 'images/rivet-11.jpg'],
-            snap: ['images/snap-button-1.jpg', 'images/snap-button-2.jpg', 'images/snap-button-3.jpg', 'images/snap-button-4.jpg', 'images/snap-button-5.jpg', 'images/snap-button-6.jpg'],
-            eyelet: ['images/eyelet-1.jpg', 'images/eyelet-2.jpg', 'images/eyelet-3.jpg', 'images/eyelet-4.jpg', 'images/eyelet-5.jpg', 'images/eyelet-6.jpg'],
-            metalBuckle: ['images/metal-buckle-1.jpg', 'images/metal-buckle-2.jpg', 'images/metal-buckle-3.jpg', 'images/metal-buckle-4.jpg', 'images/metal-buckle-5.jpg', 'images/metal-buckle-6.jpg'],
-            metalEnd: ['images/metal-end-1.jpg', 'images/metal-end-2.jpg', 'images/metal-end-3.jpg', 'images/metal-end-4.jpg', 'images/metal-end-5.jpg', 'images/metal-end-6.jpg'],
-            stopper: ['images/stopper-1.jpg', 'images/stopper-2.jpg', 'images/stopper-3.jpg', 'images/stopper-4.jpg', 'images/stopper-5.jpg', 'images/stopper-6.jpg']
-        };
+        
 
         let currentGallery = [];
         let currentIndex = 0;
