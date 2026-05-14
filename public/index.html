@@ -1300,6 +1300,7 @@
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 4)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 5)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 7)"></button>
                         </div>
                     </div>
                 </div>
@@ -1616,6 +1617,131 @@
                             <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('snap', 0)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 1)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 2)"></button>
+                <!-- Rivets -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-rivet">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('rivet')">
+                            <img src="images/rivet-1.jpg" alt="Rivets" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('rivet')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('rivet')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('rivet', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Rivets</h4>
+                        <p class="text-gray-600 text-sm mb-3">Durable metal rivets for denim and leather products</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Denim</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Leather</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Jeans</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Eyelets -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
+                    <div class="product-carousel" id="carousel-eyelet">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('eyelet')">
+                            <img src="images/eyelet-1.jpg" alt="Eyelets" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('eyelet')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('eyelet')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('eyelet', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Eyelets</h4>
+                        <p class="text-gray-600 text-sm mb-3">Metal grommets and eyelets for footwear and apparel</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Footwear</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Bags</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Apparel</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Metal Buckles -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-metalBuckle">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('metalBuckle')">
+                            <img src="images/metal-buckle-1.jpg" alt="Metal Buckles" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('metalBuckle')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('metalBuckle')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Metal Buckles</h4>
+                        <p class="text-gray-600 text-sm mb-3">Various metal buckles for belts, bags, and footwear</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Belts</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Footwear</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Metal Ends -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
+                    <div class="product-carousel" id="carousel-metalEnd">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('metalEnd')">
+                            <img src="images/metal-end-1.jpg" alt="Metal Ends" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('metalEnd')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('metalEnd')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('metalEnd', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalEnd', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalEnd', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Metal Ends</h4>
+                        <p class="text-gray-600 text-sm mb-3">Cord ends and aglets for drawstrings and laces</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Hoodies</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Footwear</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Sportswear</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stoppers -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-stopper">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('stopper')">
+                            <img src="images/stopper-1.jpg" alt="Stoppers" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('stopper')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('stopper')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('stopper', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('stopper', 2)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Stoppers</h4>
+                        <p class="text-gray-600 text-sm mb-3">Cord locks and stoppers for adjustable drawstrings</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Outerwear</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sportswear</span>
+                        </div>
+                    </div>
+                </div>
                         </div>
                     </div>
                     <div class="p-6">
@@ -1632,7 +1758,6 @@
         </div>
     </section>
 
-    </section>
 
 
     <!-- Our Strength Section -->
@@ -2259,7 +2384,7 @@
         const carouselState = {};
 
         const galleryImages = {
-            shell: ['images/shell-button-1.jpg', 'images/shell-button-2.jpg', 'images/shell-button-3.jpg', 'images/shell-button-4.jpg', 'images/shell-button-5.jpg', 'images/shell-button-6.jpg', 'images/shell-button-7.jpg'],
+            shell: ['images/shell-button-1.jpg', 'images/shell-button-2.jpg', 'images/shell-button-3.jpg', 'images/shell-button-4.jpg', 'images/shell-button-5.jpg', 'images/shell-button-6.jpg', 'images/shell-button-7.jpg', 'images/shell-button-8.jpg'],
             coconut: ['images/coconut-button-1.jpg', 'images/coconut-button-2.jpg', 'images/coconut-button-3.jpg', 'images/coconut-button-4.jpg'],
             horn: ['images/horn-button-1.jpg', 'images/horn-button-2.jpg', 'images/horn-button-3.jpg'],
             wooden: ['images/wooden-button-1.jpg', 'images/wooden-button-2.jpg', 'images/wooden-button-3.jpg', 'images/wooden-button-4.jpg', 'images/wooden-button-5.jpg', 'images/wooden-button-6.jpg', 'images/wooden-button-7.jpg', 'images/wooden-button-8.jpg'],
@@ -2267,7 +2392,7 @@
             shankMetal: ['images/shank-metal-button-1.jpg', 'images/shank-metal-button-2.jpg', 'images/shank-metal-button-3.jpg', 'images/shank-metal-button-4.jpg', 'images/shank-metal-button-5.jpg', 'images/shank-metal-button-6.jpg', 'images/shank-metal-button-7.jpg'],
             jeans: ['images/jeans-button-1.jpg', 'images/jeans-button-2.jpg', 'images/jeans-button-3.jpg', 'images/jeans-button-4.jpg', 'images/jeans-button-5.jpg', 'images/jeans-button-6.jpg', 'images/jeans-button-7.jpg', 'images/jeans-button-8.jpg', 'images/jeans-button-9.jpg', 'images/jeans-button-10.jpg', 'images/jeans-button-11.jpg'],
             rivet: ['images/rivet-1.jpg', 'images/rivet-2.jpg', 'images/rivet-3.jpg', 'images/rivet-4.jpg', 'images/rivet-5.jpg', 'images/rivet-6.jpg', 'images/rivet-7.jpg', 'images/rivet-8.jpg', 'images/rivet-9.jpg', 'images/rivet-10.jpg', 'images/rivet-11.jpg'],
-            snap: ['images/snap-button-1.jpg', 'images/snap-button-2.jpg', 'images/snap-button-3.jpg', 'images/snap-button-4.jpg', 'images/snap-button-5.jpg', 'images/snap-button-6.jpg'],
+            snap: ['images/snap-button-1.jpg', 'images/snap-button-2.jpg', 'images/snap-button-3.jpg', 'images/snap-button-4.jpg', 'images/snap-button-5.jpg', 'images/snap-button-6.jpg', 'images/snap-button-7.jpg'],
             eyelet: ['images/eyelet-1.jpg', 'images/eyelet-2.jpg', 'images/eyelet-3.jpg', 'images/eyelet-4.jpg', 'images/eyelet-5.jpg', 'images/eyelet-6.jpg'],
             metalBuckle: ['images/metal-buckle-1.jpg', 'images/metal-buckle-2.jpg', 'images/metal-buckle-3.jpg', 'images/metal-buckle-4.jpg', 'images/metal-buckle-5.jpg', 'images/metal-buckle-6.jpg'],
             metalEnd: ['images/metal-end-1.jpg', 'images/metal-end-2.jpg', 'images/metal-end-3.jpg', 'images/metal-end-4.jpg', 'images/metal-end-5.jpg', 'images/metal-end-6.jpg'],
