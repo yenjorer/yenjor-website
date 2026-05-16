@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64x64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yenjor Co., Ltd. - Superior Craftsmanship Button & Garment Accessories Manufacturer</title>
@@ -145,8 +150,8 @@
         
         /* Scroll reveal */
         .reveal {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 1;
+            transform: translateY(0);
             transition: all 0.8s ease-out;
         }
         
@@ -383,11 +388,9 @@
             font-size: 0.875rem;
         }
         
-        
-
-    /* ================================
-       PRODUCT CARDS - Unified Style
-       ================================ */
+        /* ================================
+           PRODUCT CARDS - Unified Style
+           ================================ */
         .product-card {
             background: white;
             border-radius: var(--radius-xl);
@@ -398,195 +401,506 @@
         }
         
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
             border-color: var(--color-accent);
         }
         
-        .product-image {
-            height: 250px;
-            background: #f9fafb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .product-card .product-overlay {
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.375rem 0.875rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            z-index: 5;
+        }
+        
+        .product-badge-hot {
+            background: rgba(201, 162, 39, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            color: #fbbf24;
+        }
+        
+        .product-badge-natural {
+            background: rgba(45, 125, 70, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(45, 125, 70, 0.3);
+            color: #6ee7b7;
+        }
+        
+        .product-badge-premium {
+            background: rgba(26, 26, 26, 0.3);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e5e5e5;
         }
         
         .product-info {
-            padding: 1.5rem;
+            padding: 1.25rem;
         }
         
-        /* Section Title */
-        .section-title {
-            font-size: 2.5rem;
+        .product-title {
+            font-size: 1.125rem;
             font-weight: 700;
-            text-align: center;
+            color: var(--color-primary);
+            margin-bottom: 0.375rem;
+        }
+        
+        .product-desc {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .product-tags {
+            font-size: 0.75rem;
+            color: #9ca3af;
             margin-bottom: 1rem;
         }
         
-        .section-subtitle {
-            color: #6b7280;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-        
-        /* Why Us Cards */
-        .why-us-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #f3f4f6;
-        }
-        
-        .why-us-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .why-us-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-            border-radius: 50%;
+        .product-link {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
+            gap: 0.5rem;
+            color: var(--color-eco);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition-fast);
         }
         
-        .why-us-icon i {
-            font-size: 1.5rem;
+        .product-link:hover {
             color: var(--color-accent);
         }
         
-        /* Process Section */
-        .process-step {
-            position: relative;
-            text-align: center;
-            padding: 2rem;
+        .product-link i {
+            transition: transform var(--transition-fast);
         }
         
-        .process-number {
-            width: 48px;
-            height: 48px;
-            background: var(--color-accent);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin: 0 auto 1rem;
+        .product-link:hover i {
+            transform: translateX(4px);
         }
         
-        /* Product Carousel */
+        /* ================================
+           PRODUCT CAROUSEL - Large Image
+           ================================ */
         .product-carousel {
             position: relative;
             width: 100%;
-            overflow: hidden;
-            border-radius: 1rem;
+            overflow: visible !important;
+            border-radius: var(--radius-lg);
         }
         
         .carousel-main {
             position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
             cursor: pointer;
         }
         
-        .carousel-img {
+        .carousel-main img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
-            display: block;
+            transition: transform var(--transition-slow);
+        }
+        
+        .carousel-main:hover img {
+            transform: scale(1.03);
         }
         
         .carousel-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 0.75rem;
-            text-align: center;
-            font-size: 0.875rem;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity var(--transition-normal);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 1.5rem;
         }
         
         .carousel-main:hover .carousel-overlay {
             opacity: 1;
         }
         
+        .carousel-overlay span {
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: rgba(0,0,0,0.6);
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-full);
+        }
+        
         .carousel-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.9);
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.95);
             border: none;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            transition: all 0.2s ease;
+            opacity: 0;
+            transition: all var(--transition-normal);
             z-index: 10;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .product-carousel:hover .carousel-nav {
+            opacity: 1;
         }
         
         .carousel-nav:hover {
-            background: var(--color-accent);
-            color: white;
+            background: white;
+            transform: translateY(-50%) scale(1.1);
         }
         
-        .carousel-nav.prev {
-            left: 0.5rem;
-        }
-        
-        .carousel-nav.next {
-            right: 0.5rem;
-        }
+        .carousel-nav.prev { left: 1rem; }
+        .carousel-nav.next { right: 1rem; }
+        .carousel-nav i { color: var(--color-primary); font-size: 1rem; }
         
         .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.375rem;
-            padding: 0.75rem;
-            background: #f9fafb;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 10px !important;
+            margin-top: 20px !important;
+            margin-bottom: 0 !important;
+            padding: 12px 0 !important;
+            position: relative !important;
+            z-index: 99999 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            overflow: visible !important;
+            height: auto !important;
+            min-height: 36px !important;
+            background: rgba(255,255,255,0.03) !important;
+            border-radius: 18px !important;
         }
         
         .carousel-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #d1d5db;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            width: 10px !important;
+            height: 10px !important;
+            min-width: 10px !important;
+            min-height: 10px !important;
+            border-radius: 50% !important;
+            background: rgba(0,0,0,0.3) !important;
+            border: 2px solid rgba(255,255,255,0.8) !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            padding: 0 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: inline-block !important;
+            position: relative !important;
+            z-index: 99999 !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25), inset 0 1px 2px rgba(255,255,255,0.3) !important;
+            float: none !important;
+            clear: none !important;
+            flex-shrink: 0 !important;
         }
         
         .carousel-dot.active {
-            background: var(--color-accent);
-            width: 24px;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #c9a227 0%, #d4b54a 100%) !important;
+            width: 32px !important;
+            min-width: 32px !important;
+            height: 10px !important;
+            border-radius: 5px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: inline-block !important;
+            z-index: 99999 !important;
+            box-shadow: 0 2px 12px rgba(201, 162, 39, 0.5), inset 0 1px 2px rgba(255,255,255,0.4) !important;
         }
         
-        /* Lightbox */
+        .carousel-dot:hover:not(.active) {
+            background: rgba(0,0,0,0.5) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: scale(1.2) !important;
+        }
+        
+        /* ================================
+           FEATURED PRODUCTS - Unified Banners
+           ================================ */
+        .featured-banner {
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .featured-banner {
+                padding: 3rem;
+            }
+        }
+        
+        .featured-banner-metal {
+            background: rgba(26, 26, 26, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .featured-banner-resin {
+            background: rgba(45, 125, 70, 0.3); backdrop-filter: blur(12px); border: 1px solid rgba(45, 125, 70, 0.2);
+        }
+        
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+        
+        .featured-badge-white {
+            background: white;
+            color: var(--color-primary);
+        }
+        
+        .featured-badge-transparent {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        .featured-title {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-desc {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .featured-stat-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .featured-stat-card i {
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .featured-stat-card h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .featured-stat-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
+        }
+        
+        .featured-info-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .featured-info-card h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .featured-info-card h4 i {
+            color: var(--color-accent);
+        }
+        
+        .featured-info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .featured-info-card li {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+            padding: 0.25rem 0;
+        }
+        
+        .featured-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.875rem;
+            transition: all var(--transition-normal);
+        }
+        
+        .featured-tag:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* ================================
+           SECTIONS - Unified Style
+           ================================ */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                padding: 6rem 0;
+            }
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(201, 162, 39, 0.1);
+            color: var(--color-accent);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-desc {
+            color: var(--color-text-muted);
+            font-size: 1.0625rem;
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        
+        .section-divider {
+            width: 4rem;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-primary) 100%);
+            border-radius: var(--radius-full);
+            margin: 1.5rem auto 0;
+        }
+        
+        /* ================================
+           FORMS - Unified Style
+           ================================ */
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+            background: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ================================
+           FOOTER - Unified Style
+           ================================ */
+        .footer {
+            background: var(--color-primary);
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer a:hover {
+            color: var(--color-accent);
+        }
+        
+        .footer-title {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+        
+        .footer-link {
+            display: block;
+            padding: 0.375rem 0;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9375rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--color-accent);
+            padding-left: 0.25rem;
+        }
+        
+        /* Footer social icon hover color fix */
+        footer a:hover i {
+            color: white !important;
+        }
+        
+        /* ================================
+           LIGHTBOX - Unified Style
+           ================================ */
         .lightbox {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
+            inset: 0;
             z-index: 9999;
+            background: rgba(0,0,0,0.95);
             align-items: center;
             justify-content: center;
+            padding: 1rem;
         }
         
         .lightbox.active {
@@ -595,15 +909,15 @@
         
         .lightbox-content {
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 90vw;
+            max-height: 90vh;
         }
         
         .lightbox-content img {
             max-width: 100%;
-            max-height: 80vh;
+            max-height: 85vh;
             object-fit: contain;
-            border-radius: 8px;
+            border-radius: var(--radius-md);
         }
         
         .lightbox-close {
@@ -613,19 +927,11 @@
             color: white;
             font-size: 2rem;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            transition: background 0.2s ease;
+            opacity: 0.8;
+            transition: opacity var(--transition-normal);
         }
         
-        .lightbox-close:hover {
-            background: rgba(255,255,255,0.2);
-        }
+        .lightbox-close:hover { opacity: 1; }
         
         .lightbox-nav {
             position: absolute;
@@ -634,374 +940,382 @@
             color: white;
             font-size: 2rem;
             cursor: pointer;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.1);
+            opacity: 0.6;
+            transition: opacity var(--transition-normal);
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
             border-radius: 50%;
-            transition: background 0.2s ease;
         }
         
-        .lightbox-nav:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .lightbox-prev {
-            left: -4rem;
-        }
-        
-        .lightbox-next {
-            right: -4rem;
-        }
+        .lightbox-nav:hover { opacity: 1; }
+        .lightbox-prev { left: -4rem; }
+        .lightbox-next { right: -4rem; }
         
         .lightbox-counter {
-            position: absolute;
-            bottom: -2.5rem;
-            left: 50%;
-            transform: translateX(-50%);
             color: white;
-            font-size: 1rem;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            opacity: 0.8;
         }
         
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 320px;
-            height: 100vh;
-            background: white;
-            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
-            transition: right 0.3s ease;
-            z-index: 1000;
-            padding: 2rem;
-        }
-        
-        .mobile-menu.active {
-            right: 0;
-        }
-        
-        /* Form Inputs */
-        .form-input {
-            border: 1px solid #e5e7eb;
-            transition: all 0.2s ease;
-        }
-        
-        .form-input:focus {
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
-        }
-        
-        /* Back to Top */
-        #back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero-stat-card.bottom-left {
-                bottom: -0.5rem;
-                left: 0.5rem;
-            }
-            
-            .hero-stat-card.top-right {
-                top: 0.5rem;
-                right: 0.5rem;
-            }
-            
-            .lightbox-prev {
-                left: 0.5rem;
-            }
-            
-            .lightbox-next {
-                right: 0.5rem;
-            }
-            
-            .stat-item::after {
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+            .stat-item { padding: 0.5rem 1rem; }
+            .stat-number { font-size: 2rem; }
+        }
+        
+        /* ================================
+           CERTIFICATIONS - Unified
+           ================================ */
+        .certification-badge {
+            transition: all var(--transition-normal);
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .certification-badge:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* ================================
+           PARTNERS - Unified
+           ================================ */
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: all var(--transition-normal);
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* ================================
+           PROCESS STEPS - Unified
+           ================================ */
+        .process-step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            left: calc(50% + 2rem);
+            width: calc(100% - 4rem);
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-border) 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .process-step:not(:last-child)::after {
                 display: none;
             }
         }
+        
+        .process-icon {
+            width: 5rem;
+            height: 5rem;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .process-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* ================================
+           MOBILE MENU - Unified
+           ================================ */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform var(--transition-normal);
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* ================================
+           UTILITIES
+           ================================ */
+        .text-accent { color: var(--color-accent); }
+        .text-eco { color: var(--color-eco); }
+        .bg-accent { background-color: var(--color-accent); }
+        .bg-eco { background-color: var(--color-eco); }
+        .border-accent { border-color: var(--color-accent); }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .btn-primary {
+                min-height: 48px;
+                font-size: 16px;
+            }
+            input, select, textarea {
+                min-height: 44px;
+                font-size: 16px;
+            }
+            h1 { font-size: 2rem !important; }
+            h2 { font-size: 1.75rem !important; }
+            h3 { font-size: 1.25rem !important; }
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+        /* Prevent zoom on input focus on iOS */
+        input[type="text"], input[type="email"], input[type="tel"], 
+        select, textarea {
+            font-size: 16px;
+        }
+        
+        /* ============================================
+           FORCED CAROUSEL DOTS VISIBILITY - CRITICAL
+           ============================================ */
+        div.carousel-dots {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            overflow: visible !important;
+            position: relative !important;
+            z-index: 999999 !important;
+        }
+        
+        button.carousel-dot {
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 999999 !important;
+            appearance: none !important;
+            -webkit-appearance: none !important;
+        }
+        
+        div.product-carousel {
+            overflow: visible !important;
+            padding-bottom: 5px !important;
+        }
+        
+        div.product-carousel > * {
+            position: relative !important;
+            z-index: auto !important;
+        }
+        
+        div.product-carousel > .carousel-dots {
+            z-index: 999999 !important;
+        }
     </style>
 </head>
-<body class="bg-white">
+<body class="font-sans antialiased text-gray-800 bg-white">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="#home" class="flex items-center">
-                        <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-10 w-auto object-contain">
-                    </a>
-                </div>
+                <a href="#" class="flex items-center">
+                    <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-20 w-auto object-contain">
+                </a>
                 
-                <!-- Desktop Menu -->
+                <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-accent transition-colors font-medium">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-accent transition-colors font-medium">About</a>
-                    <a href="#products" class="text-gray-700 hover:text-accent transition-colors font-medium">Products</a>
-                    <a href="#strength" class="text-gray-700 hover:text-accent transition-colors font-medium">Certifications</a>
-                    <a href="#why-us" class="text-gray-700 hover:text-accent transition-colors font-medium">Why Us</a>
-                    <a href="#contact" class="btn-primary text-sm px-5 py-2.5">Contact Us</a>
+                    <a href="#home" class="text-gray-700 hover:text-accent font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-accent font-medium transition-colors">About Us</a>
+                    <a href="#products" class="text-gray-700 hover:text-accent font-medium transition-colors">Collection</a>
+                    <a href="#why-us" class="text-gray-700 hover:text-accent font-medium transition-colors">Why Us</a>
+                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full font-medium">Contact Us</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700">
-                    <i class="fas fa-bars text-xl"></i>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
                 </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-white shadow-2xl lg:hidden z-50">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold text-primary">Menu</span>
+                    <button id="close-menu" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-times text-2xl text-gray-700"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
+                    <a href="#about" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">About Us</a>
+                    <a href="#products" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Collection</a>
+                    <a href="#why-us" class="mobile-link py-3 px-4 text-lg font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Why Us</a>
+                    <a href="#contact" class="mobile-link btn-primary py-3 px-4 text-lg font-medium text-white rounded-lg text-center mt-4">Contact Us</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu">
-        <div class="flex justify-between items-center mb-8">
-            <span class="text-xl font-bold text-primary">Menu</span>
-            <button id="close-menu" class="p-2 text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-        </div>
-        <div class="flex flex-col space-y-4">
-            <a href="#home" class="mobile-link text-gray-700 hover:text-accent py-2 font-medium border-b border-gray-100">Home</a>
-            <a href="#about" class="mobile-link text-gray-700 hover:text-accent py-2 font-medium border-b border-gray-100">About</a>
-            <a href="#products" class="mobile-link text-gray-700 hover:text-accent py-2 font-medium border-b border-gray-100">Products</a>
-            <a href="#strength" class="mobile-link text-gray-700 hover:text-accent py-2 font-medium border-b border-gray-100">Certifications</a>
-            <a href="#why-us" class="mobile-link text-gray-700 hover:text-accent py-2 font-medium border-b border-gray-100">Why Us</a>
-            <a href="#contact" class="mobile-link btn-primary text-center mt-4">Contact Us</a>
-        </div>
-    </div>
-
     <!-- Hero Section -->
-    <section id="home" class="hero-section hero-gradient pt-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
-                    <div class="flex gap-3 mb-6">
-                        <span class="hero-badge hero-badge-accent">
-                            <i class="fas fa-medal"></i>
-                            Since 2003
-                        </span>
-                        <span class="hero-badge hero-badge-eco">
-                            <i class="fas fa-leaf"></i>
-                            GRS Certified
-                        </span>
-                        <span class="hero-badge hero-badge-blue">
-                            <i class="fas fa-award"></i>
-                            OEKO-TEX
-                        </span>
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        Superior Craftsmanship 
-                        <span class="accent">Button</span> 
-                        Manufacturer
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 animate-fade-in-up delay-100 text-center lg:text-left">
+                        Premium Buttons<br>
+                        for<br>
+                        <span class="text-accent">Fashion Brands.</span>
                     </h1>
-                    
-                    <p class="hero-subtitle">
-                        Two decades of expertise in manufacturing premium buttons and garment accessories. 
-                        Trusted supplier for garment factories and fashion brands worldwide.
+                    <p class="text-gray-600 text-lg md:text-xl mb-8 max-w-xl animate-fade-in-up delay-200 text-center lg:text-left mx-auto lg:mx-0" style="text-align: justify;">
+                        Leading manufacturer of metal buttons and resin buttons. Two decades of factory expertise serving garment factories, brands, and SOHO buyers worldwide.
                     </p>
-                    
-                    <div class="flex flex-wrap gap-4 mb-8">
-                        <a href="#contact" class="btn btn-primary">
-                            <span>Get Free Quote</span>
-                            <i class="fas fa-arrow-right"></i>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 animate-fade-in-up delay-200">
+                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                            <i class="fas fa-gift text-accent"></i>
+                            <span class="text-sm font-medium">Free Samples</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                            <i class="fas fa-file-invoice-dollar text-accent"></i>
+                            <span class="text-sm font-medium">Fast Quotes</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                            <i class="fas fa-boxes text-accent"></i>
+                            <span class="text-sm font-medium">Low MOQ</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                            <i class="fas fa-clock text-accent"></i>
+                            <span class="text-sm font-medium">24hr Reply</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                            <i class="fas fa-tags text-accent"></i>
+                            <span class="text-sm font-medium">Good Prices</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 bg-white/90 px-4 py-2 rounded-full shadow-sm border border-gray-100">
+                            <i class="fas fa-shipping-fast text-accent"></i>
+                            <span class="text-sm font-medium">Ship Worldwide</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up delay-300">
+                        <a href="#contact" class="px-8 py-4 rounded-full font-semibold text-lg border-2 border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all inline-flex items-center justify-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>Get Quote</span>
                         </a>
-                        <a href="#products" class="btn btn-outline bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200">
-                            <span>View Products</span>
-                            <i class="fas fa-images"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="grid grid-cols-3 gap-6">
-                        <div class="hero-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Free Samples</span>
-                        </div>
-                        <div class="hero-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>7-Day Sample</span>
-                        </div>
-                        <div class="hero-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Small MOQ</span>
-                        </div>
                     </div>
                 </div>
-                
-                <div class="relative reveal">
-                    <div class="hero-image-container">
-                        <img src="images/hero-main.jpg" alt="Premium Buttons Collection" class="w-full">
-                        <div class="hero-eco-badge">
-                            <i class="fas fa-leaf"></i>
-                            Eco-Friendly
-                        </div>
-                        <div class="hero-stat-card bottom-left">
-                            <div class="text-2xl font-bold text-accent">20+</div>
-                            <div class="text-sm text-gray-500">Years Experience</div>
-                        </div>
-                        <div class="hero-stat-card top-right">
-                            <div class="text-2xl font-bold text-eco">500+</div>
-                            <div class="text-sm text-gray-500">Global Clients</div>
+                <div class="relative animate-fade-in delay-400">
+                    <img src="images/banner.jpg" 
+                         alt="Yenjor Quality Buttons" 
+                         class="rounded-2xl shadow-2xl w-full"
+                         style="aspect-ratio: 16/9; object-fit: cover;">
+                    <div class="absolute -bottom-6 -left-6 bg-white/15 backdrop-blur-xl p-6 rounded-xl shadow-2xl border border-white/20 ring-1 ring-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-amber-500/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-accent text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-white">20+</p>
+                                <p class="text-gray-300 text-sm">Years Experience</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="stat-item reveal">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Years Manufacturing</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Global Clients</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number">10K+</div>
-                    <div class="stat-label">Product SKUs</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number">100M+</div>
-                    <div class="stat-label">Annual Production</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
+    <section id="about" class="py-16 lg:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                        ABOUT US
-                    </span>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                        Two Decades of Excellence in Button Manufacturing
-                    </h2>
-                    <p class="text-gray-600 text-lg mb-6">
-                        Located in the renowned button production base - Jiashan County, Zhejiang Province, 
-                        Yenjor Co., Ltd. has been at the forefront of button manufacturing since 2003.
-                    </p>
-                    <p class="text-gray-600 mb-8">
-                        We specialize in producing a wide range of high-quality buttons including shell buttons, 
-                        metal buttons, resin buttons, coconut buttons, and more. Our commitment to quality, 
-                        innovation, and customer satisfaction has made us a trusted partner for fashion brands 
-                        and garment factories worldwide.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-accent"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-primary mb-1">GRS Certified</h4>
-                                <p class="text-sm text-gray-500">Global Recycled Standard</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-accent"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-primary mb-1">OEKO-TEX Certified</h4>
-                                <p class="text-sm text-gray-500">Safe for human use</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-accent"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-primary mb-1">ISO 9001</h4>
-                                <p class="text-sm text-gray-500">Quality Management</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check text-accent"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-primary mb-1">BSCI Audited</h4>
-                                <p class="text-sm text-gray-500">Social Compliance</p>
-                            </div>
-                        </div>
+                <div class="relative reveal">
+                    <img src="images/factory319.jpg" 
+                         alt="Global Shipping Port" 
+                         class="rounded-2xl shadow-xl w-full"
+                         style="aspect-ratio: 6/5;">
+                    <div class="absolute -bottom-8 -right-8 bg-white/10 backdrop-blur-xl text-white p-8 rounded-2xl shadow-2xl hidden md:block border border-white/20 ring-1 ring-amber-400/20">
+                        <p class="text-4xl font-bold text-amber-500">3,000㎡</p>
+                        <p class="text-sm text-gray-300">Production Facility</p>
                     </div>
                 </div>
-                
-                <div class="relative reveal">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="images/factory-1.jpg" alt="Factory Production" class="rounded-2xl shadow-lg">
-                        <img src="images/factory-2.jpg" alt="Quality Control" class="rounded-2xl shadow-lg mt-8">
-                        <img src="images/factory-3.jpg" alt="Modern Equipment" class="rounded-2xl shadow-lg">
-                        <img src="images/factory-4.jpg" alt="Packaging" class="rounded-2xl shadow-lg mt-8">
-                    </div>
+                <div class="reveal">
+                    <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                        ABOUT YENJOR
+                    </span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+                        Your Reliable Button Manufacturer
+                    </h2>
+                    <div class="section-divider mb-8"></div>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed text-justify">
+                        Established in 2004, Yenjor specializes in high-quality metal buttons, resin buttons, and garment accessories. Located in the Yangtze River Delta with easy access to Shanghai and Ningbo ports, our 3,000㎡ facility houses over 100 skilled craftsmen.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed text-justify">
+                        Our products are trusted by garment factories, fashion brands, and wholesalers across 15+ countries worldwide.
+                    </p>
+                    <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
     <!-- Products Section -->
-    <section id="products" class="py-20 bg-white">
+    <section id="products" class="py-16 lg:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                    OUR PRODUCTS
+                    <i class="fas fa-box-open mr-1"></i> OUR PRODUCTS
                 </span>
                 <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    Premium Button Collection
+                    Complete Button Collection
                 </h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    From natural shell to modern metal, discover our comprehensive range of buttons 
-                    crafted with superior craftsmanship for every fashion application.
+                    13 product categories covering all button and garment accessory needs. 
+                    Natural materials, recycled options, and custom metal solutions for every market segment.
                 </p>
             </div>
-
-            <!-- Product 1: Shell Buttons - Featured -->
-            <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-3xl p-8 lg:p-12 mb-12 reveal">
+            
+            <!-- Featured Product 1: Natural Buttons Collection -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12 mb-12 reveal">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Featured Product</span>
-                            <span class="bg-white/80 text-accent px-4 py-1 rounded-full text-sm font-semibold">Natural & Sustainable</span>
+                            <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Flagship</span>
+                            <span class="bg-eco/20 text-eco px-4 py-1 rounded-full text-sm font-semibold">100% Natural</span>
                         </div>
-                        <h3 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-                            Natural Shell Buttons
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Natural Buttons Collection
                         </h3>
-                        <p class="text-gray-600 text-lg mb-6">
-                            Premium buttons crafted from natural shell materials with unique iridescent luster. 
-                            Each button features distinct natural patterns and smooth edges,
-                            perfect for fashion brands seeking authentic, superior craftsmanship quality accessories.
+                        <p class="text-gray-300 text-lg mb-6">
+                            Sustainably crafted from Mother of Pearl, Coconut Shell, Horn, and Wood. 
+                            Each piece showcases unique natural textures, organic grain patterns, and eco-friendly properties — 
+                            perfect for sustainable fashion brands seeking authentic, zero-waste accessories.
                         </p>
                         <div class="grid grid-cols-2 gap-3 mb-6">
-                            <div class="bg-white rounded-lg p-3">
-                                <div class="text-accent font-semibold text-sm">✓ Unique Natural Patterns</div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ 100% Biodegradable</div>
                             </div>
-                            <div class="bg-white rounded-lg p-3">
-                                <div class="text-accent font-semibold text-sm">✓ Superior Craftsmanship</div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ Unique Natural Patterns</div>
                             </div>
-                            <div class="bg-white rounded-lg p-3">
-                                <div class="text-accent font-semibold text-sm">✓ Low MOQ 100pcs</div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ Low MOQ 100pcs</div>
                             </div>
-                            <div class="bg-white rounded-lg p-3">
-                                <div class="text-accent font-semibold text-sm">✓ Custom Dyeing Available</div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <div class="text-eco font-semibold text-sm">✓ Custom Dyeing Available</div>
                             </div>
                         </div>
                     </div>
                     <div class="product-carousel" id="carousel-shell">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('shell')">
-                            <img src="images/shell-button-1.jpg" alt="Natural Shell Button" class="carousel-img">
+                            <img src="images/shell-1.jpg" alt="Natural Shell Button" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shell')"><i class="fas fa-chevron-left"></i></button>
@@ -1019,43 +1333,43 @@
                 </div>
             </div>
             
-            <!-- Product 2: Resin Buttons Collection -->
-            <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl p-8 lg:p-12 mb-12 reveal">
+            <!-- Featured Product 2: GRS Certified Eco Buttons -->
+            <div class="bg-gradient-to-r from-eco to-emerald-700 rounded-3xl p-8 lg:p-12 mb-12 reveal">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-white text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">Superior Craftsmanship</span>
-                            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">Low-Impact Materials</span>
+                            <span class="bg-white text-eco px-4 py-1 rounded-full text-sm font-semibold">Eco Certified</span>
+                            <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">GRS Compliant</span>
                         </div>
                         <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Resin Buttons Collection
+                            GRS Certified Eco Buttons
                         </h3>
                         <p class="text-white/90 text-lg mb-6">
-                            High-quality buttons crafted from durable resin materials. 
-                            Excellent color consistency and wear resistance. 
-                            Perfect for all types of garments from casual to formal wear.
+                            Environmentally responsible buttons crafted from Global Recycled Standard certified materials. 
+                            Reduce your carbon footprint by 40% while meeting EU REACH and brand ESG requirements. 
+                            Full traceability documentation provided for every order.
                         </p>
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="bg-white/10 rounded-lg p-3">
-                                <div class="text-white font-semibold text-sm">✓ Superior Durability</div>
+                                <div class="text-white font-semibold text-sm">✓ GRS Certified</div>
                             </div>
                             <div class="bg-white/10 rounded-lg p-3">
-                                <div class="text-white font-semibold text-sm">✓ Excellent Color Fastness</div>
+                                <div class="text-white font-semibold text-sm">✓ Recycled Materials</div>
                             </div>
                             <div class="bg-white/10 rounded-lg p-3">
-                                <div class="text-white font-semibold text-sm">✓ Wide Color Range</div>
+                                <div class="text-white font-semibold text-sm">✓ Carbon Neutral Options</div>
                             </div>
                             <div class="bg-white/10 rounded-lg p-3">
-                                <div class="text-white font-semibold text-sm">✓ Custom Shapes Available</div>
+                                <div class="text-white font-semibold text-sm">✓ Full Supply Chain Traceability</div>
                             </div>
                             <div class="bg-white/10 rounded-lg p-3 col-span-2">
-                                <div class="text-white font-semibold text-sm">✓ Consistent Quality</div>
+                                <div class="text-white font-semibold text-sm">✓ OEKO-TEX Compliant</div>
                             </div>
                         </div>
                     </div>
                     <div class="product-carousel" id="carousel-resin">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('resin')">
-                            <img src="images/resin-button-1.jpg" alt="Quality Resin Button" class="carousel-img">
+                            <img src="images/resin-1.jpg" alt="GRS Certified Eco Button" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('resin')"><i class="fas fa-chevron-left"></i></button>
@@ -1076,19 +1390,19 @@
                 </div>
             </div>
             
-            <!-- Product 3: Custom Metal Buttons -->
+            <!-- Featured Product 3: Premium Custom Metal Buttons -->
             <div class="bg-gradient-to-r from-amber-600 to-orange-700 rounded-3xl p-8 lg:p-12 mb-16 reveal">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-white text-orange-700 px-4 py-1 rounded-full text-sm font-semibold">Exceptional Finish</span>
+                            <span class="bg-white text-orange-700 px-4 py-1 rounded-full text-sm font-semibold">Premium</span>
                             <span class="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-semibold">Customizable</span>
                         </div>
                         <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Custom Metal Buttons
+                            Premium Custom Metal Buttons
                         </h3>
                         <p class="text-white/90 text-lg mb-6">
-                            Superior craftsmanship metal buttons crafted from zinc alloy, brass, and stainless steel. 
+                            High quality hand-sewn metal buttons crafted from zinc alloy, brass, and stainless steel. 
                             Available in diverse plating finishes with 3D embossment and laser engraving options 
                             for brand differentiation. Ideal for outerwear, denim, and luxury accessories.
                         </p>
@@ -1112,7 +1426,7 @@
                     </div>
                     <div class="product-carousel" id="carousel-shankMetal">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('shankMetal')">
-                            <img src="images/shank-metal-button-1.jpg" alt="Custom Metal Button" class="carousel-img">
+                            <img src="images/shankMetal-1.jpg" alt="Premium Metal Button" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shankMetal')"><i class="fas fa-chevron-left"></i></button>
@@ -1125,30 +1439,54 @@
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 4)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 5)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 7)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 8)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 9)"></button>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- All Products Grid -->
-            <div class="text-center mb-12 reveal">
-                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                    ALL PRODUCTS
-                </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    Complete Button Collection
-                </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Explore our full range of buttons and garment accessories for every application.
-                </p>
-            </div>
-            
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Coconut Buttons -->
+            <!-- Complete Product Grid -->
+            <h3 class="text-2xl font-bold text-primary mb-10 text-center reveal">
+                Full Product Range
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Shell Buttons -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-shell-card">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shell')">
+                            <img src="images/shell-1.jpg" alt="Natural Shell Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shell')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shell')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shell', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shell', 6)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Natural Shell Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">Mother of Pearl buttons with iridescent natural luster</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Shirts</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Blouses</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Luxury Apparel</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coconut Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
                     <div class="product-carousel" id="carousel-coconut">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('coconut')">
-                            <img src="images/coconut-button-1.jpg" alt="Coconut Button" class="carousel-img">
+                            <img src="images/coconut-1.jpg" alt="Coconut Shell Buttons" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('coconut')"><i class="fas fa-chevron-left"></i></button>
@@ -1161,21 +1499,21 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Coconut Button</h3>
-                        <p class="text-gray-600 text-sm mb-3">100% natural coconut shell, unique texture and exceptional finish</p>
+                        <h4 class="text-xl font-bold text-primary mb-2">Coconut Shell Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">100% natural coconut shell, eco-friendly and unique</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Casual Wear</span>
-                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Resort Collection</span>
-                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Fashion Brands</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Casual Wear</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Resort Collection</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Sustainable Brands</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Horn Button -->
+                <!-- Horn Buttons -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="product-carousel" id="carousel-horn">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('horn')">
-                            <img src="images/horn-button-1.jpg" alt="Horn Button" class="carousel-img">
+                            <img src="images/horn-1.jpg" alt="Horn Buttons" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('horn')"><i class="fas fa-chevron-left"></i></button>
@@ -1187,7 +1525,7 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Horn Button</h3>
+                        <h4 class="text-xl font-bold text-primary mb-2">Horn Buttons</h4>
                         <p class="text-gray-600 text-sm mb-3">Genuine horn material, rich natural grain patterns</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Suits</span>
@@ -1197,11 +1535,11 @@
                     </div>
                 </div>
                 
-                <!-- Wooden Button -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                <!-- Wooden Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
                     <div class="product-carousel" id="carousel-wooden">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('wooden')">
-                            <img src="images/wooden-button-1.jpg" alt="Wooden Button" class="carousel-img">
+                            <img src="images/wooden-1.jpg" alt="Wooden Buttons" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('wooden')"><i class="fas fa-chevron-left"></i></button>
@@ -1212,24 +1550,93 @@
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 2)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 3)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('wooden', 7)"></button>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Wooden Button</h3>
-                        <p class="text-gray-600 text-sm mb-3">Natural wood texture, warm organic feel with superior craftsmanship</p>
+                        <h4 class="text-xl font-bold text-primary mb-2">Wooden Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">Natural wood texture, warm and organic feel</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Knits</span>
-                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Cardigans</span>
-                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">Children's Wear</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Knits</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Cardigans</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Children's Wear</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jeans Button -->
+                <!-- Recycled Resin Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-eco">
+                    <div class="product-carousel" id="carousel-resin-card">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('resin')">
+                            <img src="images/resin-1.jpg" alt="Recycled Resin Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('resin')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('resin')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('resin', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 7)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 8)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('resin', 9)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Recycled Resin Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">GRS certified recycled resin materials</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">General Apparel</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Uniforms</span>
+                            <span class="text-xs bg-eco/10 text-eco px-2 py-1 rounded">Mass Production</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shank Metal Buttons -->
+                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
+                    <div class="product-carousel" id="carousel-shankMetal-card">
+                        <div class="carousel-main" onclick="openLightboxFromCarousel('shankMetal')">
+                            <img src="images/shankMetal-1.jpg" alt="Shank Metal Buttons" class="carousel-img">
+                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                        </div>
+                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('shankMetal')"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('shankMetal')"><i class="fas fa-chevron-right"></i></button>
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('shankMetal', 0)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 1)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 2)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 3)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 7)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 8)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('shankMetal', 9)"></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary mb-2">Shank Metal Buttons</h4>
+                        <p class="text-gray-600 text-sm mb-3">Hand-sewn metal buttons for thick fabrics</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Coats</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Jackets</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Blazers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jeans Hardware Set -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="product-carousel" id="carousel-jeans">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('jeans')">
-                            <img src="images/jeans-button-1.jpg" alt="Jeans Button" class="carousel-img">
+                            <img src="images/jeans-1.jpg" alt="Jeans Hardware Set" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('jeans')"><i class="fas fa-chevron-left"></i></button>
@@ -1240,10 +1647,15 @@
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 2)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 3)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 7)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 8)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('jeans', 9)"></button>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Jeans Button</h3>
+                        <h4 class="text-xl font-bold text-primary mb-2">Jeans Hardware Set</h4>
                         <p class="text-gray-600 text-sm mb-3">Denim buttons + rivets, complete jeans solution</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Denim</span>
@@ -1253,11 +1665,11 @@
                     </div>
                 </div>
                 
-                <!-- Snap Button -->
+                <!-- Metal Fasteners Collection -->
                 <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
                     <div class="product-carousel" id="carousel-snap">
                         <div class="carousel-main" onclick="openLightboxFromCarousel('snap')">
-                            <img src="images/snap-button-1.jpg" alt="Snap Button" class="carousel-img">
+                            <img src="images/snap-1.jpg" alt="Metal Fasteners Collection" class="carousel-img">
                             <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
                         </div>
                         <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('snap')"><i class="fas fa-chevron-left"></i></button>
@@ -1268,10 +1680,13 @@
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 2)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 3)"></button>
                             <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 4)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 5)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 6)"></button>
+                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('snap', 7)"></button>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Snap Button</h3>
+                        <h4 class="text-xl font-bold text-primary mb-2">Metal Fasteners Collection</h4>
                         <p class="text-gray-600 text-sm mb-3">Snap buttons, eyelets, metal ends, stoppers, buckles</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sportswear</span>
@@ -1280,238 +1695,269 @@
                         </div>
                     </div>
                 </div>
-                <!-- Rivet -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-carousel" id="carousel-rivet">
-                        <div class="carousel-main" onclick="openLightboxFromCarousel('rivet')">
-                            <img src="images/rivet-1.jpg" alt="Rivet" class="carousel-img">
-                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Trusted By Section -->
+    <section id="trusted" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    <i class="fas fa-heart mr-1"></i> TRUSTED BY
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Global Client Trust
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Serving garment factories, wholesalers, and fashion brands across 50+ countries.
+                </p>
+            </div>
+            
+            <!-- Who We Serve -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center reveal">
+                    Who We Serve
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Garment Factory -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 text-center reveal border border-blue-100">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-industry text-white text-2xl"></i>
                         </div>
-                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('rivet')"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('rivet')"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-dots">
-                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('rivet', 0)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 1)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 2)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 3)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 4)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 5)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 6)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 7)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 8)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('rivet', 9)"></button>
-                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Garment Factories</h4>
+                        <p class="text-gray-600 text-sm mb-4">Bulk orders with consistent quality and technical specifications support.</p>
+                        <div class="text-xs text-blue-600 font-medium">MOQ: 5,000 pcs+ | Lead time: 15-30 days</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Rivet</h3>
-                        <p class="text-gray-600 text-sm mb-3">Metal rivets for reinforcement and decoration</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Denim</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Jackets</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
+                    
+                    <!-- Wholesaler -->
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 text-center reveal border border-amber-100">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-warehouse text-white text-2xl"></i>
                         </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Wholesalers</h4>
+                        <p class="text-gray-600 text-sm mb-4">Wide product range with competitive pricing and fast reorder processing.</p>
+                        <div class="text-xs text-accent font-medium">MOQ: 1,000 pcs+ | Stock programs available</div>
                     </div>
-                </div>
-                <!-- Eyelet -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-carousel" id="carousel-eyelet">
-                        <div class="carousel-main" onclick="openLightboxFromCarousel('eyelet')">
-                            <img src="images/eyelet-1.jpg" alt="Eyelet" class="carousel-img">
-                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
+                    
+                    <!-- Fashion Brand -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 text-center reveal border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tshirt text-white text-2xl"></i>
                         </div>
-                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('eyelet')"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('eyelet')"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-dots">
-                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('eyelet', 0)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 1)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 2)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 3)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 4)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 5)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 6)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 7)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('eyelet', 8)"></button>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Eyelet</h3>
-                        <p class="text-gray-600 text-sm mb-3">Metal eyelets for lacing and reinforcement applications</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Footwear</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Garments</span>
-                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Fashion Brands</h4>
+                        <p class="text-gray-600 text-sm mb-4">Custom logo design, OEKO-TEX compliant products, exclusive development partnership.</p>
+                        <div class="text-xs text-purple-600 font-medium">MOQ: 500 pcs+ | Custom branding</div>
                     </div>
                 </div>
-                <!-- Metal Buckle -->
-                <div class="product-card group bg-white rounded-2xl overflow-hidden shadow-lg reveal border-2 border-transparent hover:border-accent">
-                    <div class="product-carousel" id="carousel-metalBuckle">
-                        <div class="carousel-main" onclick="openLightboxFromCarousel('metalBuckle')">
-                            <img src="images/metal-buckle-1.jpg" alt="Metal Buckle" class="carousel-img">
-                            <div class="carousel-overlay"><span><i class="fas fa-search-plus mr-1"></i> View Full</span></div>
-                        </div>
-                        <button class="carousel-nav prev" onclick="event.stopPropagation(); prevCarousel('metalBuckle')"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-nav next" onclick="event.stopPropagation(); nextCarousel('metalBuckle')"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-dots">
-                            <button class="carousel-dot active" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 0)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 1)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 2)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 3)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 4)"></button>
-                            <button class="carousel-dot" onclick="event.stopPropagation(); goToCarousel('metalBuckle', 5)"></button>
-                        </div>
+            </div>
+            
+            <!-- Brand Partners -->
+            <div>
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center reveal">
+                    Global Brand Partners
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto reveal">
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-nike-v2.png" alt="Nike" class="max-h-9 w-auto object-contain">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-primary mb-2">Metal Buckle</h3>
-                        <p class="text-gray-600 text-sm mb-3">Premium metal buckles for belts, bags, and garment accessories</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Belts</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Bags</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Outdoor Gear</span>
-                        </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-adidas-v2.png" alt="Adidas" class="max-h-9 w-auto object-contain">
                     </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-zara-v2.png" alt="Zara" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-hm-v2.png" alt="H&M" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-uniqlo-v2.png" alt="UNIQLO" class="max-h-9 w-auto object-contain">
+                    </div>
+                    <div class="flex items-center justify-center p-5 bg-white rounded-lg border border-gray-200 h-20">
+                        <img src="images/brand-kappa-v2.png" alt="Kappa" class="max-h-9 w-auto object-contain">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Why Choose Us + Process Section -->
+    <section id="why-us" class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
+                    WHY PARTNER WITH YENJOR
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+                    Quality, Certifications & Reliable Cooperation
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Two decades of manufacturing expertise with globally recognized certifications and transparent process.
+                </p>
+            </div>
+            
+            <!-- 4 Key Advantages -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-industry text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Factory Direct</h3>
+                    <p class="text-gray-600 text-xs">In-house production, competitive pricing</p>
+                </div>
+                
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-bolt text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Fast Sample</h3>
+                    <p class="text-gray-600 text-xs">7 days standard, 10-15 days custom</p>
+                </div>
+                
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-box-open text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Flexible MOQ</h3>
+                    <p class="text-gray-600 text-xs">100-500 pcs minimum, mixed styles</p>
+                </div>
+                
+                <div class="bg-white p-5 rounded-2xl shadow-lg reveal">
+                    <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-shipping-fast text-amber-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-primary mb-2">Global Shipping</h3>
+                    <p class="text-gray-600 text-xs">50+ countries, fast transit</p>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="mb-12 reveal">
+                <h3 class="text-2xl font-bold text-primary text-center mb-8">
+                    <i class="fas fa-shield-alt mr-2 text-accent"></i>Our Certifications
+                </h3>
+                <div class="grid md:grid-cols-6 gap-4">
+                    <!-- OEKO-TEX -->
+                    <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                        <img src="images/cert-oeko-tex.png" alt="OEKO-TEX" class="w-12 h-12 object-contain mb-2">
+                        <h4 class="text-sm font-bold text-primary text-center">OEKO-TEX</h4>
+                    </div>
+                    
+                    <!-- ISO 9001 -->
+                    <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                        <img src="images/cert-sgs.png" alt="ISO 9001" class="w-12 h-12 object-contain mb-2">
+                        <h4 class="text-sm font-bold text-primary text-center">ISO 9001</h4>
+                    </div>
+                    
+                    <!-- GRS -->
+                    <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                        <img src="images/cert-grs.png" alt="GRS" class="w-12 h-12 object-contain mb-2">
+                        <h4 class="text-sm font-bold text-primary text-center">GRS-accredited</h4>
+                    </div>
+                    
+                    <!-- BSCI -->
+                    <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                        <img src="images/cert-bsci.png" alt="BSCI" class="w-12 h-12 object-contain mb-2">
+                        <h4 class="text-sm font-bold text-primary text-center">BSCI</h4>
+                    </div>
+                    
+                    <!-- GOTS -->
+                    <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                        <img src="images/cert-gots.png" alt="GOTS" class="w-12 h-12 object-contain mb-2">
+                        <h4 class="text-sm font-bold text-primary text-center">GOTS</h4>
+                    </div>
+                    
+                    <!-- Recycled 100 -->
+                    <div class="bg-white rounded-xl p-4 shadow-lg reveal flex flex-col items-center justify-center">
+                        <img src="images/cert-recycled-100.png" alt="Recycled 100" class="w-12 h-12 object-contain mb-2">
+                        <h4 class="text-sm font-bold text-primary text-center">Recycled 100</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Environmental Commitment -->
+            <div class="bg-gradient-to-r from-emerald-600 to-green-700 rounded-3xl p-8 lg:p-10 shadow-xl reveal text-center mb-12">
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-4">
+                    <i class="fas fa-leaf mr-2"></i>Our Planet-Friendly Commitment
+                </h3>
+                <p class="text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    As a responsible manufacturer, we are committed to planet-friendly production practices. 
+                    Our GRS-accredited facilities ensure that every button we produce meets the highest 
+                    standards of environmental responsibility, from raw material sourcing through manufacturing 
+                    processes to final delivery. We continuously invest in sustainable technologies and practices 
+                    to minimize our environmental footprint while delivering exceptional quality products.
+                </p>
+            </div>
+            
+            <!-- 4-Step Process -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Response: 24h
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">1. Inquiry</h3>
+                    <p class="text-gray-600 text-sm">
+                        Get professional advice and preliminary quote within 24 hours.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Sample: 7-15 Days
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">2. Sample Confirm</h3>
+                    <p class="text-gray-600 text-sm">
+                        Receive free samples for quality verification before production.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Production: 15-30 Days
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">3. Production & QC</h3>
+                    <p class="text-gray-600 text-sm">
+                        Bulk production with 3-stage quality control. Regular updates.
+                    </p>
+                </div>
+                
+                <div class="process-step relative text-center reveal">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold relative z-10">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium mb-3 inline-block">
+                        Delivery: 7-14 Days
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-2">4. Shipping</h3>
+                    <p class="text-gray-600 text-sm">
+                        Final inspection, secure packaging, worldwide shipping.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications/Strength Section -->
-    <section id="strength" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                    CERTIFICATIONS
-                </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    Quality You Can Trust
-                </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Our commitment to excellence is validated by internationally recognized certifications.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-8 shadow-lg text-center reveal">
-                    <img src="images/cert-grs.png" alt="GRS Certification" class="w-24 h-24 mx-auto mb-6 object-contain">
-                    <h3 class="text-xl font-bold text-primary mb-3">GRS Certified</h3>
-                    <p class="text-gray-600">Global Recycled Standard certification ensures our products meet strict environmental and social criteria for recycled materials.</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-8 shadow-lg text-center reveal">
-                    <img src="images/cert-oeko-tex.png" alt="OEKO-TEX Certification" class="w-24 h-24 mx-auto mb-6 object-contain">
-                    <h3 class="text-xl font-bold text-primary mb-3">OEKO-TEX Certified</h3>
-                    <p class="text-gray-600">Our products are tested for harmful substances, ensuring they are safe for human use and meet strict ecological standards.</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-8 shadow-lg text-center reveal">
-                    <img src="images/cert-iso.png" alt="ISO 9001 Certification" class="w-24 h-24 mx-auto mb-6 object-contain">
-                    <h3 class="text-xl font-bold text-primary mb-3">ISO 9001:2015</h3>
-                    <p class="text-gray-600">Quality management system certification ensuring consistent quality in every product we manufacture with superior craftsmanship.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Us Section -->
-    <section id="why-us" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">
-                    WHY CHOOSE US
-                </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                    The Yenjor Advantage
-                </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    What sets us apart from other button manufacturers?
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">20+ Years Experience</h3>
-                    <p class="text-gray-600 text-sm">Two decades of expertise in button manufacturing excellence</p>
-                </div>
-                
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">R&D Innovation</h3>
-                    <p class="text-gray-600 text-sm">Continuous development of new materials and superior techniques</p>
-                </div>
-                
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">Quality Control</h3>
-                    <p class="text-gray-600 text-sm">Rigorous inspection at every production stage</p>
-                </div>
-                
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">Expert Team</h3>
-                    <p class="text-gray-600 text-sm">Skilled craftsmen and technical support team</p>
-                </div>
-                
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">Global Export</h3>
-                    <p class="text-gray-600 text-sm">Serving clients in 50+ countries worldwide</p>
-                </div>
-                
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">Custom Solutions</h3>
-                    <p class="text-gray-600 text-sm">Tailored products to meet your specific requirements</p>
-                </div>
-                
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">Eco-Friendly</h3>
-                    <p class="text-gray-600 text-sm">Sustainable materials and production processes</p>
-                </div>
-                
-                <div class="why-us-card reveal">
-                    <div class="why-us-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-primary mb-2">24/7 Support</h3>
-                    <p class="text-gray-600 text-sm">Round-the-clock customer service and technical support</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 lg:py-24 bg-gray-900 text-white">
+    <section id="contact" class="py-12 lg:py-16 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="reveal">
-                    <span class="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-4">
-                        CONTACT US
-                    </span>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        Let's Start Your Project
-                    </h2>
-                    <p class="text-gray-400 text-lg mb-8">
-                        Ready to discuss your button and garment accessory needs? 
-                        Get in touch for a free consultation and quotation. We respond within 24 hours.
-                    </p>
+            <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
+                <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8">
+                    <h3 class="text-xl font-bold mb-6 text-white">
+                        Get in Touch
+                    </h3>
                     
-                    <div class="space-y-6">
+                    <div class="space-y-4">
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-building text-accent text-xl"></i>
@@ -1551,7 +1997,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Phone / WhatsApp</h4>
-                                <p class="text-gray-400"><a href="https://wa.me/8615257397811" target="_blank" class="text-accent hover:text-white transition-colors font-medium">+86 152-XXX-7811  <i class="fab fa-whatsapp ml-1"></i> (Click to WhatsApp)</a></p>
+                                <p class="text-gray-400"><a href="https://wa.me/8615257397811" target="_blank" class="text-accent hover:text-white transition-colors font-medium">+86 152-5739-7811  <i class="fab fa-whatsapp ml-1"></i> (Click to WhatsApp)</a></p>
                             </div>
                         </div>
                         
@@ -1567,64 +2013,64 @@
                     </div>
                     
                     <!-- Quick Benefits -->
-                    <div class="mt-8 p-6 bg-white/5 rounded-xl">
-                        <h4 class="font-semibold mb-4 text-white">
+                    <div class="mt-6 p-4 bg-white/5 rounded-xl">
+                        <h4 class="font-semibold mb-3 text-white text-sm">
                             <i class="fas fa-bolt text-accent mr-2"></i>Why Contact Us?
                         </h4>
-                        <div class="grid grid-cols-2 gap-4 text-sm">
-                            <div class="flex items-center gap-2 text-gray-600">
-                                <i class="fas fa-check text-eco"></i>
-                                <span>Free samples available</span>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div class="flex items-center gap-1.5 text-gray-600">
+                                <i class="fas fa-check text-eco text-xs"></i>
+                                <span>Free samples</span>
                             </div>
-                            <div class="flex items-center gap-2 text-gray-600">
-                                <i class="fas fa-check text-eco"></i>
-                                <span>7-day sample lead time</span>
+                            <div class="flex items-center gap-1.5 text-gray-600">
+                                <i class="fas fa-check text-eco text-xs"></i>
+                                <span>7-day samples</span>
                             </div>
-                            <div class="flex items-center gap-2 text-gray-600">
-                                <i class="fas fa-check text-eco"></i>
-                                <span>Small MOQ supported</span>
+                            <div class="flex items-center gap-1.5 text-gray-600">
+                                <i class="fas fa-check text-eco text-xs"></i>
+                                <span>Small MOQ</span>
                             </div>
-                            <div class="flex items-center gap-2 text-gray-600">
-                                <i class="fas fa-check text-eco"></i>
-                                <span>Custom design service</span>
+                            <div class="flex items-center gap-1.5 text-gray-600">
+                                <i class="fas fa-check text-eco text-xs"></i>
+                                <span>Custom design</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="flex gap-4 mt-8">
-                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-facebook-f text-xl"></i>
+                    <div class="flex gap-3 mt-6">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-linkedin-in text-xl"></i>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-instagram text-xl"></i>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-whatsapp text-xl"></i>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-2xl p-6 lg:p-8 text-gray-800 reveal">
                     <h3 class="text-xl font-bold text-primary mb-6">Send Us a Message</h3>
-                    <form id="contact-form" class="space-y-5">
+                    <form id="contact-form" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
                             <input type="text" name="name" required 
-                                   class="form-input w-full px-4 py-2.5 rounded-lg focus:outline-none" 
+                                   class="form-input w-full px-4 py-2 rounded-lg focus:outline-none" 
                                    placeholder="John Doe">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
                             <input type="email" name="email" required 
-                                   class="form-input w-full px-4 py-2.5 rounded-lg focus:outline-none" 
+                                   class="form-input w-full px-4 py-2 rounded-lg focus:outline-none" 
                                    placeholder="john@example.com">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Product Interest *</label>
-                            <select name="product" required class="form-input w-full px-4 py-2.5 rounded-lg focus:outline-none">
+                            <select name="product" required class="form-input w-full px-4 py-2 rounded-lg focus:outline-none">
                                 <option value="">Select a product category</option>
                                 <option value="shell-button">Shell Button</option>
                                 <option value="metal-button">Metal Button</option>
@@ -1642,12 +2088,12 @@
                                       placeholder="Please describe your requirements, quantity, standards needed (OEKO-TEX, GRS), delivery timeline, etc."></textarea>
                         </div>
                         <button type="submit" 
-                                class="w-full btn-primary py-3.5 rounded-lg font-semibold flex items-center justify-center gap-2">
+                                class="w-full btn-primary py-3 rounded-lg font-semibold flex items-center justify-center gap-2">
                             <span>Send Inquiry</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
-                    <p class="text-center text-gray-500 text-sm mt-4">
+                    <p class="text-center text-gray-500 text-xs mt-3">
                         <i class="fas fa-lock mr-1"></i>
                         Your information is secure and will never be shared.
                     </p>
@@ -1656,93 +2102,59 @@
         </div>
     </section>
 
+    
+
+
     <!-- Footer -->
-    <footer class="bg-gray-50 py-12 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="mb-6">
-                        <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-12 w-auto object-contain">
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        Leading manufacturer of quality buttons and garment accessories since 2003. 
-                        GRS-accredited supplier for garment factories and fashion brands worldwide.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
-                            <img src="images/cert-grs-small.png" alt="GRS" class="w-4 h-4 mr-1">GRS
-                        </span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
-                            <img src="images/cert-oeko-tex-small.png" alt="OEKO-TEX" class="w-4 h-4 mr-1">OEKO-TEX
-                        </span>
-                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs text-gray-600 flex items-center">
-                            <img src="images/cert-iso-small.png" alt="ISO 9001" class="w-4 h-4 mr-1">ISO 9001
-                        </span>
-                    </div>
-                    <div class="flex gap-3 mt-6">
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-facebook-f text-gray-700"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-linkedin-in text-gray-700"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-instagram text-gray-700"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-whatsapp text-gray-700"></i>
-                        </a>
-                    </div>
+    <footer class="bg-gray-50 py-7 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Logo -->
+                <div class="mb-4">
+                    <img src="images/logo-transparent.png" alt="Yenjor Logo" class="h-16 w-auto object-contain mx-auto">
                 </div>
                 
-                <div>
-                    <h4 class="text-gray-900 font-semibold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-600 hover:text-accent transition-colors">Home</a></li>
-                        <li><a href="#about" class="text-gray-600 hover:text-accent transition-colors">About</a></li>
-                        <li><a href="#strength" class="text-gray-600 hover:text-accent transition-colors">Certifications</a></li>
-                        <li><a href="#why-us" class="text-gray-600 hover:text-accent transition-colors">Why Choose Us</a></li>
-                        <li><a href="#contact" class="text-gray-600 hover:text-accent transition-colors">Contact</a></li>
-                    </ul>
+                <!-- Short Description -->
+                <p class="text-gray-600 mb-4 max-w-xl mx-auto text-xs leading-relaxed">
+                    Leading manufacturer of quality buttons and garment accessories since 2003. 
+                    GRS-accredited supplier for garment factories and fashion brands worldwide.
+                </p>
+                
+                <!-- Certification Badges -->
+                <div class="flex justify-center gap-2 flex-wrap mb-4">
+                    <span class="bg-white border border-gray-200 px-2 py-1 rounded-full text-xs text-gray-600 flex items-center shadow-sm">
+                        <img src="images/cert-oeko-tex-small.png" alt="OEKO-TEX" class="w-3.5 h-3.5 mr-1">OEKO-TEX
+                    </span>
+                    <span class="bg-white border border-gray-200 px-2 py-1 rounded-full text-xs text-gray-600 flex items-center shadow-sm">
+                        <img src="images/cert-grs-small.png" alt="GRS" class="w-3.5 h-3.5 mr-1">GRS
+                    </span>
+                    <span class="bg-white border border-gray-200 px-2 py-1 rounded-full text-xs text-gray-600 flex items-center shadow-sm">
+                        <img src="images/cert-iso-small.png" alt="ISO 9001" class="w-3.5 h-3.5 mr-1">ISO 9001
+                    </span>
                 </div>
                 
-                    <ul class="space-y-3 text-gray-600">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
-                            <span class="text-gray-600">Jiashan, Zhejiang, China</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-envelope text-accent mt-1"></i>
-                            <span class="text-gray-600">sales@yenjor.com</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fab fa-whatsapp text-accent mt-1"></i>
-                            <span class="text-gray-600">+86 152-XXX-7811</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-clock text-accent mt-1"></i>
-                            <span class="text-gray-600">Mon-Sat: 8:00-18:00 (GMT+8)</span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 p-4 bg-gray-100 rounded-lg">
-                        <p class="text-gray-600 text-sm">
-                            <i class="fas fa-truck text-accent mr-2"></i>
-                            Worldwide shipping available
-                        </p>
-                    </div>
+                <!-- Social Icons -->
+                <div class="flex justify-center gap-2 mb-5">
+                    <a href="#" class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-facebook-f text-gray-600 text-xs"></i>
+                    </a>
+                    <a href="#" class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-linkedin-in text-gray-600 text-xs"></i>
+                    </a>
+                    <a href="#" class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-instagram text-gray-600 text-xs"></i>
+                    </a>
+                    <a href="#" class="w-7 h-7 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-whatsapp text-gray-600 text-xs"></i>
+                    </a>
                 </div>
-            </div>
-            
-            <div class="border-t border-gray-200 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-gray-500 text-sm text-center md:text-left">
-                        © 2024 Yenjor Co., Ltd. All rights reserved. | 20+ Years of Button Manufacturing Excellence
+                
+                <!-- Divider -->
+                <div class="border-t border-gray-200 pt-4">
+                    <!-- Copyright -->
+                    <p class="text-gray-500 text-xs">
+                        © 2024 Yenjor Co., Ltd. All rights reserved.
                     </p>
-                    <div class="flex gap-6 text-sm">
-                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Terms of Service</a>
-                        <a href="#" class="text-gray-500 hover:text-accent transition-colors">Sitemap</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1753,17 +2165,6 @@
             class="fixed bottom-8 right-8 w-12 h-12 bg-accent text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all hover:bg-primary z-50">
         <i class="fas fa-arrow-up"></i>
     </button>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" onclick="if(event.target === this) closeLightbox()">
-        <div class="lightbox-content">
-            <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
-            <span class="lightbox-nav lightbox-prev" onclick="prevImage()"><i class="fas fa-chevron-left"></i></span>
-            <img id="lightbox-img" src="" alt="Product Image">
-            <span class="lightbox-nav lightbox-next" onclick="nextImage()"><i class="fas fa-chevron-right"></i></span>
-            <div id="lightbox-counter" class="lightbox-counter"></div>
-        </div>
-    </div>
 
     <!-- JavaScript -->
     <script>
@@ -1800,39 +2201,36 @@
             }
         });
 
-        // Scroll Reveal Animation - FIXED: Added this missing code
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.reveal');
-            const windowHeight = window.innerHeight;
-            
-            reveals.forEach(element => {
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 150;
+                const windowHeight = window.innerHeight;
                 
-                if (elementTop < windowHeight - revealPoint) {
+                if (elementTop < windowHeight - 100) {
                     element.classList.add('active');
                 }
             });
-        }
+        };
 
-        // Initialize reveal on page load and scroll
+        // 立即执行一次确保内容显示
+        revealOnScroll();
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
-        // Run immediately to catch elements already in view
-        setTimeout(revealOnScroll, 100);
+        document.addEventListener('DOMContentLoaded', revealOnScroll);
 
         // Back to Top Button
         const backToTopBtn = document.getElementById('back-to-top');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
-                backToTopBtn.classList.add('visible');
-                backToTopBtn.style.opacity = '1';
-                backToTopBtn.style.visibility = 'visible';
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
             } else {
-                backToTopBtn.classList.remove('visible');
-                backToTopBtn.style.opacity = '0';
-                backToTopBtn.style.visibility = 'hidden';
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
             }
         });
 
@@ -1843,24 +2241,96 @@
             });
         });
 
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        let counted = false;
+
+        const animateCounters = () => {
+            if (counted) return;
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+            
+            counted = true;
+        };
+
+        // Form Submission (Demo)
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i> Sent Successfully!';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.classList.remove('bg-green-500');
+                    btn.classList.add('bg-primary');
+                    contactForm.reset();
+                }, 3000);
+            }, 2000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
         // Product Carousel Functions
         const carouselState = {};
-        
-        // Product Gallery Images - FIXED: Removed trailing commas
+
         const galleryImages = {
-            shell: ['images/shell-button-1.jpg', 'images/shell-button-2.jpg', 'images/shell-button-3.jpg', 'images/shell-button-4.jpg', 'images/shell-button-5.jpg', 'images/shell-button-6.jpg', 'images/shell-button-7.jpg'],
-            coconut: ['images/coconut-button-1.jpg', 'images/coconut-button-2.jpg', 'images/coconut-button-3.jpg', 'images/coconut-button-4.jpg'],
-            horn: ['images/horn-button-1.jpg', 'images/horn-button-2.jpg', 'images/horn-button-3.jpg'],
-            wooden: ['images/wooden-button-1.jpg', 'images/wooden-button-2.jpg', 'images/wooden-button-3.jpg', 'images/wooden-button-4.jpg', 'images/wooden-button-5.jpg', 'images/wooden-button-6.jpg', 'images/wooden-button-7.jpg', 'images/wooden-button-8.jpg'],
-            resin: ['images/resin-button-1.jpg', 'images/resin-button-2.jpg', 'images/resin-button-3.jpg', 'images/resin-button-4.jpg', 'images/resin-button-5.jpg', 'images/resin-button-6.jpg', 'images/resin-button-7.jpg', 'images/resin-button-8.jpg', 'images/resin-button-9.jpg', 'images/resin-button-10.jpg'],
-            shankMetal: ['images/shank-metal-button-1.jpg', 'images/shank-metal-button-2.jpg', 'images/shank-metal-button-3.jpg', 'images/shank-metal-button-4.jpg', 'images/shank-metal-button-5.jpg', 'images/shank-metal-button-6.jpg', 'images/shank-metal-button-7.jpg', 'images/shank-metal-button-8.jpg', 'images/shank-metal-button-9.jpg', 'images/shank-metal-button-10.jpg'],
-            jeans: ['images/jeans-button-1.jpg', 'images/jeans-button-2.jpg', 'images/jeans-button-3.jpg', 'images/jeans-button-4.jpg', 'images/jeans-button-5.jpg', 'images/jeans-button-6.jpg', 'images/jeans-button-7.jpg', 'images/jeans-button-8.jpg', 'images/jeans-button-9.jpg', 'images/jeans-button-10.jpg'],
             rivet: ['images/rivet-1.jpg', 'images/rivet-2.jpg', 'images/rivet-3.jpg', 'images/rivet-4.jpg', 'images/rivet-5.jpg', 'images/rivet-6.jpg', 'images/rivet-7.jpg', 'images/rivet-8.jpg', 'images/rivet-9.jpg', 'images/rivet-10.jpg'],
-            snap: ['images/snap-button-1.jpg', 'images/snap-button-2.jpg', 'images/snap-button-3.jpg', 'images/snap-button-4.jpg', 'images/snap-button-5.jpg', 'images/snap-button-6.jpg', 'images/snap-button-7.jpg', 'images/snap-button-8.jpg'],
+            shell: ['images/shell-1.jpg', 'images/shell-2.jpg', 'images/shell-3.jpg', 'images/shell-4.jpg', 'images/shell-5.jpg', 'images/shell-6.jpg', 'images/shell-7.jpg'],
             eyelet: ['images/eyelet-1.jpg', 'images/eyelet-2.jpg', 'images/eyelet-3.jpg', 'images/eyelet-4.jpg', 'images/eyelet-5.jpg', 'images/eyelet-6.jpg', 'images/eyelet-7.jpg', 'images/eyelet-8.jpg', 'images/eyelet-9.jpg'],
-            metalBuckle: ['images/metal-buckle-1.jpg', 'images/metal-buckle-2.jpg', 'images/metal-buckle-3.jpg', 'images/metal-buckle-4.jpg', 'images/metal-buckle-5.jpg', 'images/metal-buckle-6.jpg'],
+            coconut: ['images/coconut-1.jpg', 'images/coconut-2.jpg', 'images/coconut-3.jpg', 'images/coconut-4.jpg'],
+            shankMetal: ['images/shankMetal-1.jpg', 'images/shankMetal-2.jpg', 'images/shankMetal-3.jpg', 'images/shankMetal-4.jpg', 'images/shankMetal-5.jpg', 'images/shankMetal-6.jpg', 'images/shankMetal-7.jpg', 'images/shankMetal-8.jpg', 'images/shankMetal-9.jpg', 'images/shankMetal-10.jpg'],
+            horn: ['images/horn-1.jpg', 'images/horn-2.jpg', 'images/horn-3.jpg'],
+            metalBuckle: ['images/metalBuckle-1.jpg', 'images/metalBuckle-2.jpg', 'images/metalBuckle-3.jpg', 'images/metalBuckle-4.jpg', 'images/metalBuckle-5.jpg', 'images/metalBuckle-6.jpg'],
+            jeans: ['images/jeans-1.jpg', 'images/jeans-2.jpg', 'images/jeans-3.jpg', 'images/jeans-4.jpg', 'images/jeans-5.jpg', 'images/jeans-6.jpg', 'images/jeans-7.jpg', 'images/jeans-8.jpg', 'images/jeans-9.jpg', 'images/jeans-10.jpg'],
+            wooden: ['images/wooden-1.jpg', 'images/wooden-2.jpg', 'images/wooden-3.jpg', 'images/wooden-4.jpg', 'images/wooden-5.jpg', 'images/wooden-6.jpg', 'images/wooden-7.jpg', 'images/wooden-8.jpg'],
+            resin: ['images/resin-1.jpg', 'images/resin-2.jpg', 'images/resin-3.jpg', 'images/resin-4.jpg', 'images/resin-5.jpg', 'images/resin-6.jpg', 'images/resin-7.jpg', 'images/resin-8.jpg', 'images/resin-9.jpg', 'images/resin-10.jpg'],
             stopper: ['images/stopper-1.jpg', 'images/stopper-2.jpg', 'images/stopper-3.jpg', 'images/stopper-4.jpg', 'images/stopper-5.jpg', 'images/stopper-6.jpg', 'images/stopper-7.jpg', 'images/stopper-8.jpg'],
-            metalEnd: ['images/metal-end-1.jpg', 'images/metal-end-2.jpg', 'images/metal-end-3.jpg', 'images/metal-end-4.jpg', 'images/metal-end-5.jpg']
+            metalEnd: ['images/metalEnd-1.jpg', 'images/metalEnd-2.jpg', 'images/metalEnd-3.jpg', 'images/metalEnd-4.jpg', 'images/metalEnd-5.jpg', 'images/metalEnd-6.jpg'],
+            snap: ['images/snap-1.jpg', 'images/snap-2.jpg', 'images/snap-3.jpg', 'images/snap-4.jpg', 'images/snap-5.jpg', 'images/snap-6.jpg', 'images/snap-7.jpg', 'images/snap-8.jpg']
         };
 
         
@@ -1908,6 +2378,8 @@
         }
 
         // Product Gallery Lightbox
+        
+
         let currentGallery = [];
         let currentIndex = 0;
         let currentCategory = '';
@@ -1963,16 +2435,18 @@
                 prevImage();
             }
         });
-
-        // Contact Form Handling
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your inquiry! We will get back to you within 24 hours.');
-                contactForm.reset();
-            });
-        }
     </script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="if(event.target === this) closeLightbox()">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+            <span class="lightbox-nav lightbox-prev" onclick="prevImage()"><i class="fas fa-chevron-left"></i></span>
+            <img id="lightbox-img" src="" alt="Product Image">
+            <span class="lightbox-nav lightbox-next" onclick="nextImage()"><i class="fas fa-chevron-right"></i></span>
+            <div id="lightbox-counter" class="lightbox-counter"></div>
+        </div>
+    </div>
 </body>
 </html>
+<!-- Force rebuild -->
