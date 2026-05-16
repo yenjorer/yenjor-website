@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yenjor Catalogue - Premium Buttons & Garment Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#334155',
+                        accent: '#D4A574',
+                        gold: '#B8860B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .page {
+            min-height: 100vh;
+            page-break-after: always;
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4A574 0%, #B8860B 50%, #D4A574 100%);
+        }
+        
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        
+        @media print {
+            .page {
+                min-height: auto;
+                height: 100vh;
+                page-break-after: always;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navigation (for web view only) -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 no-print">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="images/catalogue/logo.png" alt="Yenjor" class="h-8">
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="#cover" class="text-gray-600 hover:text-accent transition-colors">Cover</a>
+                <a href="#factory" class="text-gray-600 hover:text-accent transition-colors">Factory</a>
+                <a href="#products" class="text-gray-600 hover:text-accent transition-colors">Products</a>
+                <a href="#contact" class="text-gray-600 hover:text-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== PAGE 1: COVER ========== -->
+    <section id="cover" class="page flex flex-col justify-center items-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-96 h-96 rounded-full gold-gradient"></div>
+            <div class="absolute bottom-20 right-20 w-80 h-80 rounded-full gold-gradient"></div>
+        </div>
+        
+        <div class="text-center z-10 px-6">
+            <div class="fade-in">
+                <img src="images/catalogue/logo.png" alt="Yenjor" class="h-24 mx-auto mb-12">
+            </div>
+            
+            <h1 class="fade-in stagger-1 text-5xl md:text-7xl font-light tracking-[0.3em] text-primary mb-6">
+                CATALOGUE
+            </h1>
+            
+            <div class="fade-in stagger-2 w-32 h-0.5 gold-gradient mx-auto mb-8"></div>
+            
+            <p class="fade-in stagger-3 text-xl md:text-2xl text-gray-600 font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
+                Premium Buttons & Garment Accessories
+                <br>
+                <span class="text-accent">Craftsmanship Excellence Since 2005</span>
+            </p>
+            
+            <div class="fade-in stagger-4 mt-16 flex justify-center gap-12">
+                <div class="text-center">
+                    <div class="text-3xl font-semibold text-primary">19+</div>
+                    <div class="text-sm text-gray-500 tracking-wider">YEARS EXPERIENCE</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-semibold text-primary">5000+</div>
+                    <div class="text-sm text-gray-500 tracking-wider">PRODUCT TYPES</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-semibold text-primary">80+</div>
+                    <div class="text-sm text-gray-500 tracking-wider">COUNTRIES</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 scroll-indicator no-print">
+            <i class="fas fa-chevron-down text-gray-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 2: BRAND STORY ========== -->
+    <section id="story" class="page flex items-center bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-20 w-full">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <span class="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Our Story</span>
+                    <h2 class="text-4xl font-light text-primary mt-4 mb-8">Crafting Excellence<br>Since 2005</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Founded in 2005, Yenjor has evolved from a small workshop into one of China's leading manufacturers of premium buttons and garment accessories. Our journey is defined by an unwavering commitment to quality, innovation, and customer satisfaction.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        With nearly two decades of expertise, we serve renowned brands and garment factories across 80+ countries. Our philosophy is simple: every detail matters, every button tells a story of craftsmanship.
+                    </p>
+                    <div class="flex gap-8">
+                        <div>
+                            <div class="text-accent text-2xl font-semibold">ISO 9001</div>
+                            <div class="text-gray-500 text-sm">Quality Certified</div>
+                        </div>
+                        <div>
+                            <div class="text-accent text-2xl font-semibold">GRS</div>
+                            <div class="text-gray-500 text-sm">Global Recycled</div>
+                        </div>
+                        <div>
+                            <div class="text-accent text-2xl font-semibold">OEKO-TEX</div>
+                            <div class="text-gray-500 text-sm">Eco Standard</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in stagger-2 relative">
+                    <img src="images/catalogue/factory-1.jpg" alt="Our Factory" class="w-full h-96 object-cover rounded-lg shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-accent text-white p-6 rounded-lg shadow-xl">
+                        <div class="text-4xl font-bold">19+</div>
+                        <div class="text-sm">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 3: FACTORY STRENGTH ========== -->
+    <section id="factory" class="page bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Manufacturing Excellence</span>
+                <h2 class="text-4xl font-light text-primary mt-4">Factory Strength</h2>
+                <div class="w-20 h-0.5 gold-gradient mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in">
+                    <i class="fas fa-industry text-accent text-3xl mb-4"></i>
+                    <div class="text-3xl font-semibold text-primary">50,000</div>
+                    <div class="text-gray-500 text-sm">m² Production Area</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in stagger-1">
+                    <i class="fas fa-users text-accent text-3xl mb-4"></i>
+                    <div class="text-3xl font-semibold text-primary">800+</div>
+                    <div class="text-gray-500 text-sm">Skilled Workers</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in stagger-2">
+                    <i class="fas fa-cogs text-accent text-3xl mb-4"></i>
+                    <div class="text-3xl font-semibold text-primary">300+</div>
+                    <div class="text-gray-500 text-sm">Advanced Machines</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center fade-in stagger-3">
+                    <i class="fas fa-check-circle text-accent text-3xl mb-4"></i>
+                    <div class="text-3xl font-semibold text-primary">100%</div>
+                    <div class="text-gray-500 text-sm">Quality Inspection</div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="group fade-in">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="images/catalogue/factory-2.jpg" alt="Production Line" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg text-primary">Modern Production</h3>
+                    <p class="text-gray-500 text-sm">Advanced equipment ensuring precision and efficiency</p>
+                </div>
+                <div class="group fade-in stagger-1">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="images/catalogue/factory-3.jpg" alt="Quality Control" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg text-primary">Rigorous QC</h3>
+                    <p class="text-gray-500 text-sm">Multi-stage quality inspection process</p>
+                </div>
+                <div class="group fade-in stagger-2">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="images/catalogue/factory-4.jpg" alt="R&D Center" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg text-primary">R&D Innovation</h3>
+                    <p class="text-gray-500 text-sm">Continuous development of new designs & materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 4: PRODUCTS - METAL ========== -->
+    <section id="products" class="page bg-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Our Collection</span>
+                <h2 class="text-4xl font-light text-primary mt-4">Metal Buttons</h2>
+                <div class="w-20 h-0.5 gold-gradient mx-auto mt-6"></div>
+                <p class="text-gray-500 mt-4 max-w-xl mx-auto">Premium quality metal buttons crafted from zinc alloy, brass, and stainless steel with various finishes.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="product-card bg-gray-50 rounded-2xl overflow-hidden fade-in">
+                    <img src="images/catalogue/product-1.jpg" alt="Shank Button" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Classic Shank Button</h3>
+                        <p class="text-gray-500 text-sm mt-2">Zinc Alloy | Electroplated</p>
+                        <p class="text-gray-400 text-xs mt-1">15mm-25mm | Custom Sizes</p>
+                    </div>
+                </div>
+                <div class="product-card bg-gray-50 rounded-2xl overflow-hidden fade-in stagger-1">
+                    <img src="images/catalogue/product-2.jpg" alt="Rivet" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Denim Rivet</h3>
+                        <p class="text-gray-500 text-sm mt-2">Brass | Antique Finish</p>
+                        <p class="text-gray-400 text-xs mt-1">8mm-12mm | Custom Logo</p>
+                    </div>
+                </div>
+                <div class="product-card bg-gray-50 rounded-2xl overflow-hidden fade-in stagger-2">
+                    <img src="images/catalogue/product-3.jpg" alt="Snap Button" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Snap Fastener</h3>
+                        <p class="text-gray-500 text-sm mt-2">Stainless Steel | Polished</p>
+                        <p class="text-gray-400 text-xs mt-1">10mm-20mm | Spring-Loaded</p>
+                    </div>
+                </div>
+                <div class="product-card bg-gray-50 rounded-2xl overflow-hidden fade-in stagger-3">
+                    <img src="images/catalogue/product-4.jpg" alt="Trouser Hook" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Trouser Hook</h3>
+                        <p class="text-gray-500 text-sm mt-2">Zinc Alloy | Matt Gold</p>
+                        <p class="text-gray-400 text-xs mt-1">Standard | Custom Finishes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 5: PRODUCTS - RESIN & NATURAL ========== -->
+    <section class="page bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Our Collection</span>
+                <h2 class="text-4xl font-light text-primary mt-4">Resin & Natural Buttons</h2>
+                <div class="w-20 h-0.5 gold-gradient mx-auto mt-6"></div>
+                <p class="text-gray-500 mt-4 max-w-xl mx-auto">Eco-friendly options including recycled materials and natural sources with sustainable production.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+                    <img src="images/catalogue/product-5.jpg" alt="Resin Button" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Polyester Resin</h3>
+                        <p class="text-gray-500 text-sm mt-2">UP Resin | Pearl Effect</p>
+                        <p class="text-gray-400 text-xs mt-1">Custom Colors | 4-Hole</p>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm fade-in stagger-1">
+                    <img src="images/catalogue/product-6.jpg" alt="Coconut Button" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Coconut Shell</h3>
+                        <p class="text-gray-500 text-sm mt-2">Natural Coconut | Eco-Friendly</p>
+                        <p class="text-gray-400 text-xs mt-1">Laser Engraving | Organic</p>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm fade-in stagger-2">
+                    <img src="images/catalogue/product-7.jpg" alt="Wood Button" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Natural Wood</h3>
+                        <p class="text-gray-500 text-sm mt-2">Beech/Wood | Sustainable</p>
+                        <p class="text-gray-400 text-xs mt-1">FSC Certified | Custom Shape</p>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm fade-in stagger-3">
+                    <img src="images/catalogue/product-8.jpg" alt="Recycled Button" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-primary text-lg">Recycled Eco</h3>
+                        <p class="text-gray-500 text-sm mt-2">GRS Certified | Recycled</p>
+                        <p class="text-gray-400 text-xs mt-1">Eco Friendly | Traceable</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="mt-20 bg-white rounded-2xl p-10 shadow-sm">
+                <h3 class="text-center text-xl font-light text-gray-600 mb-8">Our Certifications</h3>
+                <div class="flex justify-center items-center gap-12 flex-wrap">
+                    <img src="images/catalogue/cert-oeko-tex.png" alt="OEKO-TEX" class="h-16 opacity-70">
+                    <img src="images/catalogue/cert-grs.png" alt="GRS" class="h-16 opacity-70">
+                    <img src="images/catalogue/cert-gots.png" alt="GOTS" class="h-16 opacity-70">
+                    <img src="images/catalogue/cert-sgs.png" alt="SGS" class="h-16 opacity-70">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGE 6: CONTACT ========== -->
+    <section id="contact" class="page flex items-center bg-gradient-to-br from-primary to-secondary text-white">
+        <div class="max-w-7xl mx-auto px-6 py-20 w-full">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Get In Touch</span>
+                    <h2 class="text-4xl font-light mt-4 mb-8">Let's Create<br>Together</h2>
+                    <p class="text-gray-300 leading-relaxed mb-10">
+                        Ready to elevate your products with premium buttons? Our experienced team is here to assist with custom designs, sample requests, and bulk orders.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-accent"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Address</div>
+                                <div class="text-gray-400 text-sm">Qiaotou Town, Dongguan City, Guangdong, China</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                                <i class="fas fa-envelope text-accent"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Email</div>
+                                <div class="text-gray-400 text-sm">info@yenjor.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-accent"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">WhatsApp</div>
+                                <div class="text-gray-400 text-sm">+86 139 2585 2008</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                                <i class="fas fa-globe text-accent"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Website</div>
+                                <div class="text-gray-400 text-sm">www.yenjor.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white p-8 rounded-2xl inline-block">
+                        <!-- QR Code Placeholder -->
+                        <div class="w-64 h-64 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
+                            <div class="text-center">
+                                <i class="fas fa-qrcode text-6xl text-gray-400 mb-4"></i>
+                                <div class="text-gray-500 text-sm">Scan to Contact</div>
+                            </div>
+                        </div>
+                        <div class="text-gray-600 text-sm">WhatsApp QR Code</div>
+                    </div>
+                    <div class="mt-8">
+                        <img src="images/catalogue/logo.png" alt="Yenjor" class="h-12 mx-auto opacity-50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8 no-print">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="images/catalogue/logo.png" alt="Yenjor" class="h-8 mx-auto mb-4 opacity-50">
+            <p class="text-gray-500 text-sm">© 2025 Yenjor Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
